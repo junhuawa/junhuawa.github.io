@@ -2,6 +2,8 @@
 layout: post
 title: "Junhua Wang, Nokia Cop, Launches Site"
 date: 2016-08-06
+category: demo
+tags: [test, jekyll, welcome]
 ---
 
 Well. Finally got around to putting this old website together. Neat thing
