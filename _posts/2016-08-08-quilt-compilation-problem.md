@@ -7,7 +7,7 @@ tags: [quilt]
 
 quilt is a tool used for patch/unpatch. When I build a new project from another department, compilation report error because the codes haven't be patched sussessfully.
 
-######Problem Description:######
+######Problem Description:
 [junhuawa@Tesla]$make all
 cp cortina_3.6.6/cs4321_api.c .
 cp cortina_3.6.6/cs4321_api.h .
@@ -27,7 +27,7 @@ from cs4321_api.h:11,
 compilation terminated.
 [junhuawa@hzling40]$
 
-######Solution:######
+######Solution:
 Finnaly, find the root cause is that:
 There is a .quiltrc file in my home directory, the variables in the file override the default value of the quilt.
 Default locations of patches is in the patches sub-directory, the QUILT_PATCHES variable override it's value to wrlinux_quilt_patches, that's the root cause.
@@ -45,7 +45,7 @@ export PATH=$PATH:/var/fpwork/junhuawa/trunk/distro_build/host-cross/bin
 Remove the ~/.quiltrc, or change the QUILT_PATCHES to patches in the ~/.quiltrc, solve the problem.
 export QUILT_PATCHES=patches
 
-######Quilt cmds:######
+######Quilt cmds:
 [junhuawa@Tesla]$quilt push -a // apply all patches defined in the patches/series.
 Applying patch cortina_3.6.6/P001_add_image_len_and_endianess
 patching file cs4321_api.c
