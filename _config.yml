@@ -1,11 +1,11 @@
 # Site settings
-title: "Jekyll template"
-url: "//ihavee.github.io"
+title: "junhuawa"
+url: "//junhuawa.github.io"
 paginate: 5
 author:
-    name: Havee
-    github:
-    email:
+    name: Junhua Wang
+    github: https://github.com/junhuawa
+    email: junhua.h.wang@nokia.com
     gitcafe:
     twitter:
     facebook:
