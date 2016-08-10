@@ -35,7 +35,7 @@ Default locations of patches is in the patches sub-directory, the QUILT_PATCHES 
 [junhuawa@hzling40]$pwd  
 /var/fpwork1/junhuawa  
 [junhuawa@hzling40]$cat ~/quiltrc   
-export QUILT_PATCHES=wrlinux_quilt_patches  
+**export QUILT_PATCHES=wrlinux_quilt_patches** 
 export QUILT_PC=.pc  
 export WRLINUX_USE_QUILT=yes  
 export PATH=$PATH:/var/fpwork/junhuawa/trunk/distro_build/host-cross/bin  
@@ -43,7 +43,7 @@ export PATH=$PATH:/var/fpwork/junhuawa/trunk/distro_build/host-cross/bin
 
 
 Remove the ~/.quiltrc, or change the QUILT_PATCHES to patches in the ~/.quiltrc, solve the problem.  
-export QUILT_PATCHES=patches  
+**export QUILT_PATCHES=patches**  
 
 ###### Quilt cmds:
 [junhuawa@Tesla]$quilt push -a // apply all patches defined in the patches/series.  
@@ -61,11 +61,11 @@ Restoring cs_rtos.h
 ###### Attention:  
 Before quilt push/pop cmd work, there must have environment variable QUILD_DIR.In the directory, all the sub commands are located.  
 [junhuawa@hzling40]$env |grep QUILT  
-QUILT_DIR=/build/home/SC_LFS/sdk/tags/PS_LFS_SDK_3_28/bld-tools/i686-pc-linux-gnu/share/quilt/  
+**QUILT_DIR=/build/home/SC_LFS/sdk/tags/PS_LFS_SDK_3_28/bld-tools/i686-pc-linux-gnu/share/quilt/**  
 [junhuawa@hzling40]$ls /build/home/SC_LFS/sdk/tags/PS_LFS_SDK_3_28/bld-tools/i686-pc-linux-gnu/share/quilt/  
 add       applied  delete  edit   fold  graph  header  mail  next     pop       push     remove  revert   series  snapshot  unapplied  
 annotate  compat   diff    files  fork  grep   import  new   patches  previous  refresh  rename  scripts  setup   top       upgrade  
 
 
-quilt man page:  
+###### quilt man page:  
 *http://linux.die.net/man/1/quilt*
