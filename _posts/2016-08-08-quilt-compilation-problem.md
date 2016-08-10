@@ -35,7 +35,7 @@ Default locations of patches is in the patches sub-directory, the QUILT_PATCHES 
 [junhuawa@hzling40]$pwd  
 /var/fpwork1/junhuawa  
 [junhuawa@hzling40]$cat ~/quiltrc   
-**export QUILT_PATCHES=wrlinux_quilt_patches** 
+**export QUILT_PATCHES=wrlinux_quilt_patches**   
 export QUILT_PC=.pc  
 export WRLINUX_USE_QUILT=yes  
 export PATH=$PATH:/var/fpwork/junhuawa/trunk/distro_build/host-cross/bin  
