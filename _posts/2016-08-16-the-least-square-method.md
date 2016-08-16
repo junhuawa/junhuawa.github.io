@@ -21,4 +21,4 @@ hold on
 plot(p, the);  
 ```
 
-![image](/images/ordinaryleastsquarefit.png)  
+![image](/images/ordinaryleastsquarefit.png "The Ordinary Least Square Fit")  
