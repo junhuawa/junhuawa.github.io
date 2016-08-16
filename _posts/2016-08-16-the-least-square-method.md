@@ -19,4 +19,4 @@ plot(p, the, "ro");
 hold on   
 plot(p, the);  
 
-![image](https://github.com/junhuawa/junhuawa.github.io/blob/master/screenshots/ordinaryleastsquarefit.png)  
+![image](../screenshots/ordinaryleastsquarefit.png?raw=true)  
