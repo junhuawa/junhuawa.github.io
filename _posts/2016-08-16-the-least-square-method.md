@@ -3,9 +3,9 @@ layout: post
 title: "The Least-square method"
 date: 2016-08-16
 category: "misc" 
-tags: [The Least Square Method(最小二乘法)]
+tags: [The Least Square Method]
 ---
-
+# The Least Square Method (最小二乘法)
 A mathematical procedure for finding the best-fitting curve to a given set of points by minimizing the sum of the squares of the offsets ("the residuals") of the points from the curve. The sum of the squares of the offsets is used instead of the offset absolute values because this allows the residuals to be treated as a continuous differentiable quantity. However, because squares of the offsets are used, outlying points can have a disproportionate effect on the fit, a property which may or may not be desirable depending on the problem at hand.   
 
 The formulas for **linear least squares fitting** were independently derived by **Gauss** and **Legendre**.    

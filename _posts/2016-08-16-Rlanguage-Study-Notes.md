@@ -1,8 +1,8 @@
 ---
 layout: post
-title: "Rlanguage Study Notes"
+title: "R language Study Notes"
 category: "misc"
-tags: [quilt]
+tags: [R]
 ---
 
 List installed packages;  
