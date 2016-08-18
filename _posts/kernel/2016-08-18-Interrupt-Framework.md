@@ -10,7 +10,7 @@ tags: [kernel]
 
 kernel/irq/irqdesc.c  
 
-```c_cpp
+```c  
 struct irq_desc irq_desc[NR_IRQS] __cacheline_aligned_in_smp = {  
 	[0 ... NR_IRQS-1] = {  
 		.handle_irq	= handle_bad_irq,  
@@ -22,7 +22,7 @@ struct irq_desc irq_desc[NR_IRQS] __cacheline_aligned_in_smp = {
 
 NR_IRQS is defined in /arch/x86/include/asm/irq_vectors.h  
 
-```javascript  
+```c
 CONFIG_NR_CPUS=5120  
 
 #define IO_APIC_VECTOR_LIMIT		( 32 * MAX_IO_APICS )  
@@ -35,7 +35,7 @@ CONFIG_NR_CPUS=5120
 
 /arch/include/asm/apicdef.h  
 
-```javascript  
+```c  
 #ifdef CONFIG_X86_32  
 # define MAX_IO_APICS 64  
 # define MAX_LOCAL_APIC 256  
@@ -47,7 +47,7 @@ CONFIG_NR_CPUS=5120
 
 /arch/x86/kernel/irq.c  
 
-```javascript  
+```c  
 /*  
  * do_IRQ handles all normal device IRQ's (the special  
  * SMP cross-CPU interrupts have their own specific  
@@ -88,7 +88,7 @@ unsigned int __irq_entry do_IRQ(struct pt_regs *regs)
 in the /arch/x86/kernel/entry_64.S  
 there is jump code, which will jump to call do_IRQ().  
 
-```javascript  
+```c  
 ...  
 common_interrupt:  
 	XCPT_FRAME  
@@ -104,7 +104,7 @@ by handle_irq(irq, regs), it will call generic_handle_irq_desc(irq, desc) finall
 通过这个API， 中断的控制被传递到与体系结构无关的中断流控层。  
 /arch/x86/kernel/irq_64.c  
 
-```javascript  
+```c  
 bool handle_irq(unsigned irq, struct pt_regs *regs)  
 {  
 	struct irq_desc *desc;  
@@ -123,7 +123,7 @@ bool handle_irq(unsigned irq, struct pt_regs *regs)
 It will call the callback handler registered.  
 /include/linux/irqdesc.h  
 
-```javascript  
+```c  
 /*  
  * Architectures call this to let the generic IRQ layer  
  * handle an interrupt. If the descriptor is attached to an  
@@ -144,7 +144,7 @@ irq_set_chained_handler(irq, chained_handler);
 ----------------------------------  
 register a interrupt:/include/linux/interrupt.h  
 
-```javascript  
+```c  
 extern int __must_check  
 request_threaded_irq(unsigned int irq, irq_handler_t handler,  
 		     irq_handler_t thread_fn,  
@@ -162,7 +162,7 @@ struct irq_chip: 中断控制器的借口抽象
 
 /include/linux/irq.h  
 
-```javascript  
+```c  
 irq_data  
 /**  
  * struct irq_data - per irq and irq chip data passed down to chip functions  
