@@ -10,7 +10,7 @@ tags: [kernel]
 
 kernel/irq/irqdesc.c  
 
-```javascript  
+```c_cpp
 struct irq_desc irq_desc[NR_IRQS] __cacheline_aligned_in_smp = {  
 	[0 ... NR_IRQS-1] = {  
 		.handle_irq	= handle_bad_irq,  
