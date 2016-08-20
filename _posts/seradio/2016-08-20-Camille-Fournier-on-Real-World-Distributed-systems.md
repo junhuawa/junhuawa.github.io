@@ -5,7 +5,7 @@ date: 2016-08-20
 category: "seradio" 
 tags: [distributed system]
 ---
-#Camille-Fournier-on-Real-World-Distributed-Systems
+# Camille-Fournier-on-Real-World-Distributed-Systems
 
 **Self introduction:**  
     Get bacheler degree from Carnegie Mellon University, Computer Science, and Math and CS from University of Wisconsen. 
@@ -15,10 +15,10 @@ She lives with her son and husband in NewYork.  She is a member of Apache Softwa
     The failure of the computer you don't know exist can render your own computer machine unusable! (Lesile Lamport)        
     If you're talking to a Database through a network, it's a Distributed System. 
 
-3 layer:
->     view layer,
-    application layer,
-    Database layer. 
+**3 layer:**  
+    view layer,  
+    application layer,  
+    Database layer.   
 
 Develop Distributed system, it doesn't mean you need to engage with the entire world's distributed system's complexity to make it usable!  
 DS: It's a engineering problem and theory problem.   
@@ -30,13 +30,13 @@ DS: It's a engineering problem and theory problem.
 
     scaling and failure torlenance make each other harder!  
 **Real world: Face the conflict, need to balance the 2 things, which of them they care more!**  
-> 
-CAP theorem:
-    P:
-    Consistency:
-        can you lose data? Can you clients read data at the same time and see different results?
-    Availibity:
-        How many failures can you tolerate and still respond to clients?
+
+**CAP theorem: ** 
+    P:  
+    Consistency:  
+        can you lose data? Can you clients read data at the same time and see different results?  
+    Availibity:  
+        How many failures can you tolerate and still respond to clients? 
 
     It's a balance.   
     Normal people faces it when build out service architecture.   
@@ -111,9 +111,8 @@ In computer science, ACID (Atomicity, Consistency, Isolation, Durability) is a s
 
 
 **CAP Theorem**  
-In theoretical computer science, the CAP theorem, also named Brewer's theorem after computer scientist Eric Brewer, states that it is impossible for a distributed computer system to simultaneously provide all three of the following guarantees:[1][2][3]  
-
-    Consistency (all nodes see the same data at the same time)  
-    Availability (every request receives a response about whether it succeeded or failed)  
-    Partition tolerance (the system continues to operate despite arbitrary partitioning due to network failures)  
+In theoretical computer science, the CAP theorem, also named Brewer's theorem after computer scientist Eric Brewer, states that it is impossible for a distributed computer system to simultaneously provide all three of the following guarantees:
+    1. Consistency (all nodes see the same data at the same time)  
+    2. Availability (every request receives a response about whether it succeeded or failed)  
+    3. Partition tolerance (the system continues to operate despite arbitrary partitioning due to network failures)  
 
