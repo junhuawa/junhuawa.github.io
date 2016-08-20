@@ -27,18 +27,17 @@ DS: It's a engineering problem and theory problem.
     1. neet to scale  
     2. problems not fit to single machine ( more data/more volumes of user/more computations)  
     3. Failure torlenance (system need to survive a certain amount of failure)  
+    Scaling and failure torlenance make each other harder!  
 
-    scaling and failure torlenance make each other harder!  
 **Real world: Face the conflict, need to balance the 2 things, which of them they care more!**  
 
-**CAP theorem: ** 
+**CAP theorem:**  
     P:  
     Consistency:  
         can you lose data? Can you clients read data at the same time and see different results?  
     Availibity:  
-        How many failures can you tolerate and still respond to clients? 
-
-    It's a balance.   
+        How many failures can you tolerate and still respond to clients?  
+    **It's a balance**  
     Normal people faces it when build out service architecture.   
 
 **Stateless application:**  
@@ -71,7 +70,6 @@ Different application have different thresholds of losing data that we're willin
 
 **Configuration data consistency**  
     She is a member of Apache Zookeeper.  
-
     Zookeeper: every update goes to a **consensus algorithm**.  
     etcd rely on raft.   
     they do key-value stores.  
