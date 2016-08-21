@@ -8,8 +8,8 @@ tags: [distributed system]
 # Camille-Fournier-on-Real-World-Distributed-Systems
 
 **Self introduction:**  
-    Get bacheler degree from Carnegie Mellon University, Computer Science, and Math and CS from University of Wisconsen. 
-She lives with her son and husband in NewYork.  She is a member of Apache Software Foundation.
+    Get bachelor degree from Carnegie Mellon University, Computer Science, and Math and CS from University of Wisconsin. 
+She lives with her son and husband in New York.  She is a member of Apache Software Foundation.
 
 **Distributed system definition:**   
     The failure of the computer you don't know exist can render your own computer machine unusable! (Lesile Lamport)        
@@ -20,14 +20,14 @@ She lives with her son and husband in NewYork.  She is a member of Apache Softwa
     application layer,  
     Database layer.   
 
-Develop Distributed system, it doesn't mean you need to engage with the entire world's distributed system's complexity to make it usable!  
+Develop Distributed system, it does not mean you need to engage with the entire world's distributed system's complexity to make it usable!  
 DS: It's a engineering problem and theory problem.   
 
 **Challenges with DS:**  
-    1. neet to scale  
+    1. need to scale  
     2. problems not fit to single machine ( more data/more volumes of user/more computations)  
-    3. Failure torlenance (system need to survive a certain amount of failure)  
-    Scaling and failure torlenance make each other harder!  
+    3. Failure tolerance (system need to survive a certain amount of failure)  
+    Scaling and failure tolerance make each other harder!  
 
 **Real world: Face the conflict, need to balance the 2 things, which of them they care more!**  
 
@@ -35,7 +35,7 @@ DS: It's a engineering problem and theory problem.
     P:  
     Consistency:  
         can you lose data? Can you clients read data at the same time and see different results?  
-    Availibity:  
+    Availability:  
         How many failures can you tolerate and still respond to clients?  
     **It's a balance**  
     Normal people faces it when build out service architecture.   
@@ -46,7 +46,7 @@ Service architecture is a thin way to think of distributed system arch.
 Now is easier to day because we have cloud.   
 Don't buy complexity you don't need.   
 ACID transactional db  
-MongoDB, consentra  
+MongoDB, Cassandra  
 Biggest cost of your sw is developer time.   
 MongoDB: is easy to use, the start up cost of a Distributed system's storage system is really high.  
 Usability of a Database if more important to tackle first than the correctness. 
@@ -54,10 +54,10 @@ Usability of a Database if more important to tackle first than the correctness.
 stateless: web server application  
 
 **Stateful part:**  
-stateful part: Need to consider the level of consistency you need for various part of your data.   
-    where you comfortable having inconsistent state, where you need absolute consisitency.  
+Stateful part: Need to consider the level of consistency you need for various part of your data.   
+    where you comfortable having inconsistent state, where you need absolute consistency.  
 
-cache state: stale data, lose data/reconstructe that data.   
+cache state: stale data, lose data/reconstruct that data.   
     MongoDB, Redis  
 CDN: Content delivery network.   
 
@@ -73,7 +73,7 @@ Different application have different thresholds of losing data that we're willin
     Zookeeper: every update goes to a **consensus algorithm**.  
     etcd rely on raft.   
     they do key-value stores.  
-    very useful for service orchstration type work.   
+    very useful for service orchestration type work.   
     Cluster management understanding who is around and available, and give those people information.  
 Distributed locking: another huge use case for this type of system, to select a leader.  
    you don't want a system which can give you 2 different leader.  
@@ -89,7 +89,7 @@ You don't need to do if unless it's a part of the large zookeeper ecosystem.
 **Zookeeper support a bunch of hadoop family products.  It's like kafka is from linkedin. **  
 
 **Goldman Sachs:**  
-    Joined in 2005, it's a finacial institution, build by distributed system.   
+    Joined in 2005, it's a financial institution, build by distributed system.   
     building sth be valuable for the business.   
     Finally, I attend a project to build a global service discovery system.  
     Goldman Sachs not do code review, but we do a lot of pair programming, a lot of tests, and validation.  
@@ -114,3 +114,15 @@ In theoretical computer science, the CAP theorem, also named Brewer's theorem af
     2. Availability (every request receives a response about whether it succeeded or failed)  
     3. Partition tolerance (the system continues to operate despite arbitrary partitioning due to network failures)  
 
+**MongoDB** (from humongous) is a free and open-source cross-platform document-oriented database. Classified as a NoSQL database, MongoDB avoids the traditional table-based relational database structure in favor of JSON-like documents with dynamic schemas (MongoDB calls the format BSON), making the integration of data in certain types of applications easier and faster. As of July 2015, MongoDB was the fourth most widely mentioned database engine on the web, and the most popular for document stores.
+
+**Apache Cassandra** is a free and open-source distributed database management system designed to handle large amounts of data across many commodity servers, providing high availability with no single point of failure. Cassandra offers robust support for clusters spanning multiple datacenters, with asynchronous masterless replication allowing low latency operations for all clients.
+
+    Camille Fournier 在这个interview里介绍了各种分布式系统关注点的不同，及目前的应用。 首先提出了Lesile Lamport对分布式系统的定义：分布式系统就是一个你不知道的计算机出现的错误会导致你的计算机出错，崩溃。
+    分布式系统目前面临着更多的挑战： 在cloud下要能够水平扩展，要解决更复杂的问题（更多的数据，更多的用户和计算），并且要有容错机制, 单个节点的错误不能影响整体的性能。
+    根据应用场合可以将分布式系统分成不同的类别：
+        1. 无状态的应用，比如web server， 他们对数据一致性要求不高，MySQL这种数据库支持事务，但是在这种应用中可以不需要，所以可以用更易用的数据库，比如MongoDB。
+        2. 有状态的应用，开发者需要明白什么时候需要数据一致性，什么时候不需要。 不同的应用对数据有不同的要求和忍受力。比如twitter上一条post的丢失， 和电子商务网站一个订单的丢失是两个截然不同的结果。
+        3. 配置数据的一致性，在大规模的应用中，需要有一致性算法去保证数据的一致性。 Zookeeper，raft就是为了解决这个问题。他们保存健值对，当有状态改变时，会通知所有的用户。分布式锁也会用到一致性算法。
+
+        zookeeper 是hadoop家族的一员，正如libkafka始于Linkedin。
