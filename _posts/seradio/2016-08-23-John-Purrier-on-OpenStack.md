@@ -10,7 +10,7 @@ Open source cloud os.
 
 ### John Purrier self introduction
 
-John Purrier is founder of OpenStack, and CTO of atomic software, drive the organization's automation strategy  
+John Purrier is founder of OpenStack, and CTO of atomic software, drive the organization's automation strategy.  
 have more than 20 years IT industry leadership experience.  
 CTO of century link innovation lab.  
 multicloud inter operability and devops.  
@@ -75,6 +75,7 @@ schedulers are more intelligent as well.
 ### 2 main goal of openstack is scalability and elasticity.
 
 What's the difference:   
+
 > scale: get the resources on demand.  Add the resources on demand.  Massively scalable  
 > elasticity: you want to grow, you also want the shrink them. very key part of cloud, scale up and down  
 
