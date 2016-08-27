@@ -51,13 +51,11 @@ Openstack takes a collections of hypervisors that spared across a data center, o
 
 ### Cloud history
 
-> 20 years ago, client-server architectures,  
-15 years ago, rise of virtualization  
-10 years, most serious competition shops have virtualized. But that didn't solve the problem of delivering to the organization.  
+1. 20 years ago, client-server architectures,  
+2. 15 years ago, rise of virtualization  
+3. 10 years, most serious competition shops have virtualized. But that didn't solve the problem of delivering to the organization.  
 developer request a VM, a group of VMs, have to go to submitted a ticket, go to console or cmd line, create the resources, send a email back, this could take several days.  
-10 years ago, Amazon started Amazon webservices, key services at the time was EC2.  
-EC2 was automated way to get the VMs instantly. this was very revolutionary   
-Openstack and cloud software provide that level of automation over the top of virtualization.  
+4. 10 years ago, Amazon started Amazon webservices, key services at the time was EC2.  EC2 was automated way to get the VMs instantly. this was very revolutionary. Openstack and cloud software provide that level of automation over the top of virtualization.  
 
 The real world is messy. Openstack provides a abstracted interface over the top of the messiness, and manages the complexity underneath.
 
