@@ -33,7 +33,7 @@ x = 4*cos(t);
 y = 3*sin(t);
 plot(x, y);
 ```
-![image](/images/oval.png)
+![image](../images/oval.png)
 
 ##### 心型线
 ```javascript
@@ -46,7 +46,7 @@ y = r .* sin(theta);
 plot(x, y);
 grid on
 ```
-![image](/images/heart.png)
+![image](../images/heart.png)
 
 ##### Bernoulli Distribution
 ```javascript
@@ -67,4 +67,4 @@ xlabel("k");
 ylabel("P\{X=k\}");
 title("Bernoulli Distribution");
 ```
-![image](/images/Bernoulli.png)
+![image](../images/Bernoulli.png)
