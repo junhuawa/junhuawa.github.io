@@ -137,8 +137,8 @@ Testing:
 11. **Eventual Consisitency(最终一致性)**：分布式系统的重要概念，比如一个存储系统，对象存储系统要做多个备份。如果一个磁盘坏了，另外2个可以重新恢复它。但是在系统中有延时，比如一个程序在访问一个特定的存储，另一个在地理上不同的地方访问这个数据的备份，他们都认为自己在访问同一个文件，但是在某一个时刻，因为replication不是在同一时刻在几个备份的地方同时发生，所以在某一个时间窗口，程序A和B读到的数据可能不一样，但是他们都认为是从同一个文件读出来的。
 
 ## 名词定义
-最终一致性实际上是一种弱一致性，为了提高高可用性而引入。这种方式非正式保证：如果对数据没有新的更新，最终，所有对这个数据的访问将返回最后更新过的值。一个达到最终一致性的系统通常被称为是converged(收敛)或者达到replica convergence(副本收敛).
-最终一致性通常用BASE区分（Basically Available, Soft state, Eventual Consistency), 可以跟ACID(Atomic, Consistency, Isolation, Durability)做比较。
-
-Linearizability(严格一致性 strict/atomic Consistency）：读出的数据始终为最近写入的数据。这种一致性只有全局时钟存在时才有可能，在分布式网络环境不可能实现。
+>最终一致性实际上是一种弱一致性，为了提高高可用性而引入。这种方式非正式保证：如果对数据没有新的更新，最终，所有对这个数据的访问将返回最后更新过的值。一个达到最终一致性的系统通常被称为是converged(收敛)或者达到replica convergence(副本收敛).
+>   最终一致性通常用BASE区分（Basically Available, Soft state, Eventual Consistency), 可以跟ACID(Atomic, Consistency, Isolation, Durability)做比较。
+>
+>Linearizability(严格一致性 strict/atomic Consistency）：读出的数据始终为最近写入的数据。这种一致性只有全局时钟存在时才有可能，在分布式网络环境不可能实现。
 
