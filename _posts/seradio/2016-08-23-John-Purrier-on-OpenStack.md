@@ -6,117 +6,105 @@ category: "seradio"
 tags: [distributed system]
 ---
 ### OpenStack:
-    Open source cloud os.
-    John Purrier is founder of OpenStack, and CTO of otomic software, drive the organization's automation strategy.
-more than 20years IT industry leadership experience.
-CTO of centroy link innovation lab.
-multicloud interoperability and devops.
-microsoft exchange server
-lead R&D of Rackspace cloud
+Open source cloud os.
+
+### John Purrier self introduction
+John Purrier is founder of OpenStack, and CTO of atomic software, drive the organization's automation strategy.  
+have more than 20 years IT industry leadership experience.  
+CTO of century link innovation lab.  
+multicloud inter operability and devops.  
+microsoft exchange server   
+lead R&D of Rackspace cloud   
 
 ### Openstack is an opensource infrastructure as a platform(IAAS).
-    original founder: Rackspace and Nasa
-    2 original project: compute project and object storage project.
-    In last 6 years, the scope and number of projects have grown well beyond that vision.
-
-Instead of going out and buy your own computers, finding a building, getting a lease, hooking a power and running a datacenter. 
-
+Original founder: **Rackspace and Nasa**  
+2 original project: **compute project and object storage project**.  
+In last 6 years, the scope and number of projects have grown well beyond that vision.  
 Public cloud: Amazon, Azure and Google cloud
-Renting servers from somebody else.
 
-### Why we need any open source version of any priperatary implementations
+### Why we need any open source version of any proprietary implementations
 1. Good for industry and ecosystem
-2. Cloud is very collabative. Many companys come together to collabatively build a project is very powerful.
-Very few companies in the world today could launch and sustain a project as large as openstack today.
-over 30,000  members of openstack foundtation contribute to bettlements of the software.
+2. Cloud is very collabative. Many companys come together to collabatively build a project is very powerful. Very few companies in the world today could launch and sustain a project as large as openstack today.  
+
+over 30,000  members of openstack foundtation contribute to bettlements of the software.  
 
 ### Several hundreds of companies use openstack in one form and another 
-Walmart in their datacenter to build their e-commerce system
-CERN: the research laboratory,  the large scale collider over swissland
-they show their usecases in the openstack design summit, demonstrated how they doing large scale deployment of Openstack.
+1. Walmart in their datacenter to build their e-commerce system  
+2. CERN: the research laboratory,  the large scale collider over swissland  
+they show their usecases in the openstack design summit, demonstrated how they doing large scale deployment of Openstack.  
 
 >The name CERN is derived from the acronym for the French "Conseil Européen pour la Recherche Nucléaire", or European Council for Nucle
->ar Research, a provisional body founded in 1952 with the mandate of establishing a world-class fundamental physics research organization 
->in Europe. At that time, pure physics research concentrated on understanding the inside of the atom, hence the word "nuclear".
+ar Research, a provisional body founded in 1952 with the mandate of establishing a world-class fundamental physics research organization 
+in Europe. At that time, pure physics research concentrated on understanding the inside of the atom, hence the word "nuclear".
 
-About 15 years ago, this idea of virtualizing servers grow, A single PC, a hyperviser on it, abstracts the underlying hardware, presents the ability to run multiple stacks of software, run OSs independently.
-
-What's the relationship of hypervisor and the hardware on top of it. 
-    Hypervisor knows the CPU, storage system, network, essentially, creates driver level end points, can be accessed by a variety of virtual machines.
-    VM looks and act like virtual machines. have virtualized drivers, provides the same services the physical machine will do in terms of access to cpus, data storage and networks, etc.
-    **A translation layer between the virtualized environment and physical hardware.**
-
-Openstack takes a collections of hypervisors that spared across a data center, or multiple data centers. Ant it turns the collection of hypervisors into a shared pool of resources.
-**Cloud is a automation layer of virtual machines.**
+## What's the relationship of hypervisor and the hardware on top of it. 
+Hypervisor knows the CPU, storage system, network, essentially, creates driver level end points, can be accessed by a variety of virtual machines.  
+VM looks and act like virtual machines. have virtualized drivers, provides the same services the physical machine will do in terms of access to cpus, data storage and networks, etc.  
+**A translation layer between the virtualized environment and physical hardware.**  
+Openstack takes a collections of hypervisors that spared across a data center, or multiple data centers. Ant it turns the collection of hypervisors into a shared pool of resources.  
+**Cloud is a automation layer of virtual machines.**  
 
 ## Cloud history
-20 years ago, client-server architectures,
-15 years ago, rise of virtualization
-10 years, most serious competition shops have virtualized. But that didn't solve the problem of delivering to the organization.
-developer request a VM, a group of VMs, have to go to submitted a ticket, go to console or cmd line, create the resources, send a email back, this could take several days.
-
-10 years ago, Amazon started Amazon webservices, key services at the time was EC2.
-EC2 was automated way to get the VMs instantly. this was very revolusionary
-Openstack and cloud software provide that level of automation over the top of virtualization.
-
+> 20 years ago, client-server architectures,  
+15 years ago, rise of virtualization  
+10 years, most serious competition shops have virtualized. But that didn't solve the problem of delivering to the organization.  
+developer request a VM, a group of VMs, have to go to submitted a ticket, go to console or cmd line, create the resources, send a email back, this could take several days.  
+10 years ago, Amazon started Amazon webservices, key services at the time was EC2.  
+EC2 was automated way to get the VMs instantly. this was very revolutionary   
+Openstack and cloud software provide that level of automation over the top of virtualization.  
 
 The real world is messy. Openstack provides a abstracted interface over the top of the messiness, and manages the complexity underneath.
 
 Bare mental box is a box without hypervisor.
 
 ### What would keep me from running a openstack cross a huge cluster of REST api? 
-hot of docker and container, containers much lightweight than VM. 
-Openshift, cloud foundary, all of the systems run containerized systems. 
+Hot of docker and container, containers much lightweight than VM.  
+Openshift, cloud foundary, all of the systems run containerized systems.  
 
-Docker and containerized system: platform as a service. 
-rebuild the tools: monitoring system, health check, etc. 
+Docker and containerized system: platform as a service.   
+rebuild the tools: monitoring system, health check, etc.   
+schedulers are more intelligent as well.  
 
-schedulers are more intelligent as well.
+### 2 main goal of openstack is scalability and elasticity.
+What's the difference:   
+> scale: get the resources on demand.  Add the resources on demand.  Massively scalable  
+> elasticity: you want to grow, you also want the shrink them. very key part of cloud, scale up and down  
 
-### 2 main goal of openstack is scalability and elastisity.
-What's the difference: 
-   scale: get the resouces on demand.  Add the resources on demand.  Massively scalable
-   elastisity: you want to grow, you also want the shrink them. very key part of cloud, scale up and down
+## What's the feature that need to be optional, because it will limit the scalability and elasticity of Openstack:
+Original networking option we have flat networking, a variety of different modes of networking you could choose. 
+Software defined network: defined by Nicira which was acquired by VMware
+2 different networking systems we have.
 
-## What's the feature that need to be optional, because it will limit the scalability and elastisity of Openstack:
-    original networking option we have
-    flat networking, a variety of different modes of networking you could choose. 
-    software defined network: defined by Nicira which was acquired by VMware
+### Everything in the openstack should be asynchronous according to design tenants. why asynchronous so important?
+Synchronous -> contention -> blockage -> performance goes down. It's all about throughput, maintaining performance uptime, and scale  
 
-    2 different networking systems we have.
-
-### Everything in the openstack should be asynchoronous according to design tenants. why asynchronsity so important?
-
-synchronous -> contension -> blockage -> performance goes down. It's all about throughput, maintaining performace uptime, and scale
-
-### Openstack also emphasis a shared nothing archtecture, 
-    a trunk a memory, a trunk of disk to maintain the state. That's become problematic when you have VMs that called phymarial
-    VM can disappear, it can go away at any time though you have to architecture your system such that it's okay if VM go away. 
-    If you using shared state, and depend on this VM to maintain the view of the world, ant it goes away, that's a problem. 
-    To get around of this, you use things like message buses. Everybody communicate through a message bus.  You can subscribe to a certain events, you see state changes and things like that, each VM have his own view of the world. It operate on that view independently to everybody else's view.
+### Openstack also emphasis a shared nothing architecture, 
+A trunk of memory, a trunk of disk to maintain the state. That's become problematic when you have VMs that called phymarial  
+VM can disappear, it can go away at any time though you have to architecture your system such that it's okay if VM go away.  
+If you using shared state, and depend on this VM to maintain the view of the world, ant it goes away, that's a problem.  
+To get around of this, you use things like message buses. Everybody communicate through a message bus.  You can subscribe to a certain events, you see state changes and things like that, each VM have his own view of the world. It operate on that view independently to everybody else's view.  
 
 ### Why shared state would be dangerous? example of application bug
 
-    Object storage system internal, 
-    They have a centralized database, distress, your scale was impacted, the more people talk to your system, the more contension to the shared resources, the worse you going to be.
-    rebuild the system, now it's called swift. 
+Object storage system internal,  
+They have a centralized database, distress, your scale was impacted, the more people talk to your system, the more contention to the shared resources, the worse you going to be.  
+rebuild the system, now it's called swift.   
 
 ### Eventual Consistency:
-    Key concept for large scale distributed systems. 
-    A storage system, 10,000 distress, some object storage systems do redundant copies, if a drive go away, 2 other copies can recover it. 
-    We have latencies in the system, have delays in the system, a program looking at a particular storage, another program might be geographically disverse, but on the other side of the replication topology in the storage system, at any of the time, they both think they are looking at the file through, but at some amount of time before the replication occurs is not the same on both side. 
-    we need to accept the fact, in some time windows, program A and B will be in different results quering what they think it's the same storage object. 
+Key concept for large scale distributed systems.   
+A storage system, 10,000 distress, some object storage systems do redundant copies, if a drive go away, 2 other copies can recover it.   
+We have latency in the system, have delays in the system, a program looking at a particular storage, another program might be geographically diverse, but on the other side of the replication topology in the storage system, at any of the time, they both think they are looking at the file through, but at some amount of time before the replication occurs is not the same on both side.   
+we need to accept the fact, in some time windows, program A and B will be in different results query what they think it's the same storage object.   
 
 ### Openstack has some degree of unable consistency.
-
-    The tighter you bring the consistency requirement, you are tradeoff the resilliency, you can make a system entirely consistent, 
+The tighter you bring the consistency requirement, you are tradeoffs the resillence, you can make a system entirely consistent,   
 
 ### How openstack community works?
-    Version control, code review, test automation, 
-    if you don't play by the rules, you just can't affect the community. 
-    a very high level of communication, and the ability to get your voice heard. 
-Testing:
-    Have to start up with a policy, a set of process rules, when you checkin code, you checkin tests with it. you will not pass the code review, you there is no tests. 
+Version control, code review, test automation,    
+if you don't play by the rules, you just can't affect the community.   
+a very high level of communication, and the ability to get your voice heard.   
+### Testing:
+Have to start up with a policy, a set of process rules, when you checkin code, you checkin tests with it. you will not pass the code review, you there is no tests.   
 
 
 ## 在这一集中，John Purrier回答了很多问题:
