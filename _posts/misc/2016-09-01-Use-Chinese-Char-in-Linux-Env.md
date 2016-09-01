@@ -1,5 +1,10 @@
-Linux下中文字符乱码的处理
-----
+---
+layout: post
+title: "Linux下中文字符乱码的处理"
+date: 2016-09-01
+category: "misc" 
+tags: [misc]
+---
 ## 中文文件名乱码
 
 安装convmv工具，及语言包
