@@ -8,7 +8,7 @@ tags: [linux]
 ### How to return terminal from a ssh connection?
 
 Normal keys are forwarded over the ssh session, so none of those will work. Instead, use the escape sequences. 
-To kill the current session hit subsequently Enter ** ~, .**.  
+To kill the current session hit subsequently Enter ~,..  
 Note that escapes are only recognized immediately after newline.
 
 ### Tool to manipulate pictures
