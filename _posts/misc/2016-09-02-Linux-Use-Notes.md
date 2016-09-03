@@ -50,5 +50,10 @@ List files in package.
     [junhuawa@Tesla docomo-ps]$ rpm -qf /etc/environment 
     setup-2.8.71-6.el7.noarch
 
+### Create a terminal in linux terminal
+    gnome-terminal -e "ssh root@10.69.120.13"
+
+### Tool to manage ssh sessions in Linux
+    pac-4.5.5.7-2.x86_64
 
 

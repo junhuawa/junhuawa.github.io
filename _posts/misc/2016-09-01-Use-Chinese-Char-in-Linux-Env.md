@@ -79,3 +79,20 @@ config ~/.vimrc
     set fileencodings=utf-8,gb2312,gbk,gb18030
     set termencoding=utf-8
     set encoding=utf-8
+
+### Example
+
+File content:
+    我A
+    
+UTF-8 format:
+
+    [junhuawa@Tesla ~]$ hexdump -C /tmp/test_utf.txt 
+    00000000  e6 88 91 41 0a                                    |...A.|
+    00000005
+
+GBK format:
+
+    [junhuawa@Tesla ~]$ hexdump -C /tmp/test.txt 
+    00000000  ce d2 41 0a                                       |..A.|
+    00000004
