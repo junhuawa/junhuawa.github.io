@@ -54,6 +54,7 @@ List files in package.
     gnome-terminal -e "ssh root@10.69.120.13"
 
 ### Tool to manage ssh sessions in Linux
+
     pac-4.5.5.7-2.x86_64
 
 fcitx，ibus是输入法的一种框架，具体的输入法一般都有google pinyin,sogou pinyin等；不要将输入法框架和输入法本身搞混淆；
@@ -68,12 +69,12 @@ After plug-in the Jabra, select Jabra UC VOICE 750a as the device for sound outp
 * Add vboxusers group for your username, if not, no usb devices can be selected for VM, relogin the user, 
 in order for the newly added group to get picked up by your user account.
 
-> sudo usermod -a -G vboxusers  junhuawa
-groups junhuawa
+    sudo usermod -a -G vboxusers  junhuawa
+    groups junhuawa
 
-> [junhuawa@Tesla ~]$ groups junhuawa
-junhuawa : everybody vboxusers
-[junhuawa@Tesla ~]$
+    [junhuawa@Tesla ~]$ groups junhuawa
+    junhuawa : everybody vboxusers
+    [junhuawa@Tesla ~]$
 
 * In the USB Settings, Enable USB Controller(USB 2.0 EHCI Controller)
 
@@ -102,24 +103,24 @@ junhuawa : everybody vboxusers
 
 Command:
 
-import MyScreen.png
+    import MyScreen.png
 
 then, use mouse select an area, a png file will be created in current directory.
 
 show the image:
 
-eog MyScreen.png
+    eog MyScreen.png
 
 To capture the entire screen after a delay (so you can open some menus or whatever)
 
-sleep 10; import -window root MyScreenshot2.png
+    sleep 10; import -window root MyScreenshot2.png
 
 import -window root, tells ImageMagick to import the "root" window — that is, the entire screen. 
 
-sleep 15; import -window root MyScreenshot3.png; gimp MyScreenshot3.png;
+    sleep 15; import -window root MyScreenshot3.png; gimp MyScreenshot3.png;
 
 Take a screenshot and resize the image to a width of 500 pixels:
-import -window root -resize 500 AnotherScreenshot.png
+    import -window root -resize 500 AnotherScreenshot.png
 
 * Take screenshot with GIMP
 
