@@ -96,3 +96,9 @@ GBK format:
     [junhuawa@Tesla ~]$ hexdump -C /tmp/test.txt 
     00000000  ce d2 41 0a                                       |..A.|
     00000004
+
+fcix:  Free Chinese Input Toy for X
+scim: Smart Common Input Method
+ibus:  Intelligent Input Bus 
+
+ibus-typing-booster 

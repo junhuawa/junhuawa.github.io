@@ -56,4 +56,10 @@ List files in package.
 ### Tool to manage ssh sessions in Linux
     pac-4.5.5.7-2.x86_64
 
+fcitx，ibus是输入法的一种框架，具体的输入法一般都有google pinyin,sogou pinyin等；不要将输入法框架和输入法本身搞混淆；
+
+### Use Jabra UC VOICE 750 Duo Drk in Redhat and windows VM
+
+After plug-in the Jabra, select Jabra UC VOICE 750a as the device for sound output/input in System Tools -> Settings -> Sound.
+In the virtual box's Audio settings, select Pulse Audio for Host Audio Driver, Intel HD Audio for Audio Controller. It's sound is a little not synced with the video.
 
