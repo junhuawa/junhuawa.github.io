@@ -58,8 +58,79 @@ List files in package.
 
 fcitx，ibus是输入法的一种框架，具体的输入法一般都有google pinyin,sogou pinyin等；不要将输入法框架和输入法本身搞混淆；
 
-### Use Jabra UC VOICE 750 Duo Drk in Redhat and windows VM
+### Use Jabra UC VOICE 750 Duo Drk in Redhat
 
 After plug-in the Jabra, select Jabra UC VOICE 750a as the device for sound output/input in System Tools -> Settings -> Sound.
-In the virtual box's Audio settings, select Pulse Audio for Host Audio Driver, Intel HD Audio for Audio Controller. It's sound is a little not synced with the video.
+
+
+### Use usb device in the windows VM in Redhat 7.2
+
+1. Add vboxusers group for your username, if not, no usb devices can be selected for VM, relogin the user, 
+in order for the newly added group to get picked up by your user account.
+
+
+
+> sudo usermod -a -G vboxusers  junhuawa
+groups junhuawa
+
+
+
+> [junhuawa@Tesla ~]$ groups junhuawa
+junhuawa : everybody vboxusers
+[junhuawa@Tesla ~]$
+
+2. In the USB Settings, Enable USB Controller(USB 2.0 EHCI Controller)
+
+3. In the USB Device Filters, select you wanted USB devices
+
+
+### Take Screenshots in Linux
+
+* Take a snapshot of screen in linux by PrintScreen Button
+
+    Alt + PrintScreen
+
+* Take snapshot by Screenshot tool in gnome
+
+    It have delay to take snapshot function    
+
+* Use command line, need install imagemagick
+
+    show imagemagick version:
+    import --version
+
+    [junhuawa@Tesla misc]$ rpm -qa |grep ImageMagick
+    ImageMagick-6.7.8.9-15.el7_2.x86_64
+    [junhuawa@Tesla misc]$ 
+
+Command:
+
+import MyScreen.png
+
+then, use mouse select an area, a png file will be created in current directory.
+
+show the image:
+
+eog MyScreen.png
+
+To capture the entire screen after a delay (so you can open some menus or whatever)
+
+sleep 10; import -window root MyScreenshot2.png
+
+import -window root, tells ImageMagick to import the "root" window — that is, the entire screen. 
+
+sleep 15; import -window root MyScreenshot3.png; gimp MyScreenshot3.png;
+
+Take a screenshot and resize the image to a width of 500 pixels:
+import -window root -resize 500 AnotherScreenshot.png
+
+* Take screenshot with GIMP
+
+To take a screenshot with the GIMP, find the following menu option: File —> Acquire —> Screen Shot. 
+
+You will then be offered some options for the screenshot such as length of delay and whether you want to take a screenshot of the entire screen, or just a window.
+
+* Other methods
+
+[http://tips.webdesign10.com/how-to-take-a-screenshot-on-ubuntu-linux](URL)
 
