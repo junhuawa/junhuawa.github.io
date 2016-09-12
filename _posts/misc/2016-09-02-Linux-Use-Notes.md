@@ -65,23 +65,20 @@ After plug-in the Jabra, select Jabra UC VOICE 750a as the device for sound outp
 
 ### Use usb device in the windows VM in Redhat 7.2
 
-1. Add vboxusers group for your username, if not, no usb devices can be selected for VM, relogin the user, 
+* Add vboxusers group for your username, if not, no usb devices can be selected for VM, relogin the user, 
 in order for the newly added group to get picked up by your user account.
-
-
 
 > sudo usermod -a -G vboxusers  junhuawa
 groups junhuawa
-
-
 
 > [junhuawa@Tesla ~]$ groups junhuawa
 junhuawa : everybody vboxusers
 [junhuawa@Tesla ~]$
 
-2. In the USB Settings, Enable USB Controller(USB 2.0 EHCI Controller)
+* In the USB Settings, Enable USB Controller(USB 2.0 EHCI Controller)
 
-3. In the USB Device Filters, select you wanted USB devices
+* In the USB Device Filters, select you wanted USB devices
+![image](/images/usb-device-select-for-windows-vm.png)
 
 
 ### Take Screenshots in Linux
