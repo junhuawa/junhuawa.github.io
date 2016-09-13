@@ -132,3 +132,5 @@ You will then be offered some options for the screenshot such as length of delay
 
 [http://tips.webdesign10.com/how-to-take-a-screenshot-on-ubuntu-linux](URL)
 
+
+LXC: linux container
