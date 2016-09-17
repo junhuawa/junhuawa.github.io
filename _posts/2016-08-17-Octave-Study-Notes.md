@@ -34,7 +34,8 @@ y = 3*sin(t);
 plot(x, y);
 ```
 
-![image](../images/oval.png)
+![Oval image]
+(../images/oval.png)
 
 ##### 心型线
 ```javascript
@@ -48,7 +49,9 @@ plot(x, y);
 grid on
 ```
 
-![image](../images/heart.png)
+![Heart]
+(../images/heart.png)
+
 
 ##### Bernoulli Distribution
 ```javascript
@@ -70,4 +73,8 @@ ylabel("P\{X=k\}");
 title("Bernoulli Distribution");
 ```
 
-![image](../images/Bernoulli.png)
+![Bernoulli]
+(../images/Bernoulli.png)
+
+
+
