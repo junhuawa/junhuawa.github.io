@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Octave Study Notes"
-category: "misc"
+category: "Octave"
 tags: [Octave]
 ---
 [X, Y] = meshgrid(x, y)
