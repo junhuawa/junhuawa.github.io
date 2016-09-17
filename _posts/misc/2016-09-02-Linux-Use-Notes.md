@@ -5,6 +5,17 @@ date: 2016-09-02
 category: "linux" 
 tags: [linux]
 ---
+### My Linux OS
+
+    [junhuawa@Tesla Pictures]$ uname -a
+    Linux Tesla 3.10.0-327.22.2.el7.x86_64 #1 SMP Thu Jun 9 10:09:10 EDT 2016 x86_64 x86_64 x86_64 GNU/Linux
+    [junhuawa@Tesla Pictures]$ cat /etc/redhat-
+    redhat-access-insights/ redhat-lsb/             redhat-release          
+    [junhuawa@Tesla Pictures]$ cat /etc/redhat-release 
+    Red Hat Enterprise Linux Client release 7.2 (Maipo)
+    [junhuawa@Tesla Pictures]$ 
+
+
 ### How to return terminal from a ssh connection?
 
 Normal keys are forwarded over the ssh session, so none of those will work. Instead, use the escape sequences. 
@@ -69,28 +80,31 @@ After plug-in the Jabra, select Jabra UC VOICE 750a as the device for sound outp
 * Add vboxusers group for your username, if not, no usb devices can be selected for VM, relogin the user, 
 in order for the newly added group to get picked up by your user account.
 
-    sudo usermod -a -G vboxusers  junhuawa
+    sudo usermod -a -G vboxusers  junhuawa  
     groups junhuawa
 
-    [junhuawa@Tesla ~]$ groups junhuawa
-    junhuawa : everybody vboxusers
-    [junhuawa@Tesla ~]$
+    [junhuawa@Tesla ~]$ groups junhuawa  
+    junhuawa : everybody vboxusers  
+    [junhuawa@Tesla ~]$  
 
 * In the USB Settings, Enable USB Controller(USB 2.0 EHCI Controller)
 
-* In the USB Device Filters, select you wanted USB devices
-![image](/images/usb-device-select-for-windows-vm.png)
+* In the USB Device Filters, select you wanted USB devices  
+![image](../../images/usb-device-select-for-windows-vm.png)
 
 
 ### Take Screenshots in Linux
 
 * Take a snapshot of screen in linux by PrintScreen Button
 
-    Alt + PrintScreen
+    fn + PrintScreen
+
+    The image will be saved to Picutures directory with name "Screenshot from 2016-xx-xx xx-xx-xx.png"
 
 * Take snapshot by Screenshot tool in gnome
 
-    It have delay to take snapshot function    
+    It has delay to take snapshot function    
+![image](../../images/delay-seconds-to-take-snapshot.png)
 
 * Use command line, need install imagemagick
 
@@ -124,9 +138,12 @@ Take a screenshot and resize the image to a width of 500 pixels:
 
 * Take screenshot with GIMP
 
-To take a screenshot with the GIMP, find the following menu option: File —> Acquire —> Screen Shot. 
+To take a screenshot with the GIMP, find the following menu option: File —> Create —> Screen Shot. 
 
-You will then be offered some options for the screenshot such as length of delay and whether you want to take a screenshot of the entire screen, or just a window.
+You will then be offered some options for the screenshot such as length of delay and whether you want to take a screenshot of the entire screen, or just a window. Click Snap to take the screenshot, 
+When you're finished, the screenshot will open in the GIMP editing window. 
+
+![image](../../images/Gimp-screenshot.png)
 
 * Other methods
 
