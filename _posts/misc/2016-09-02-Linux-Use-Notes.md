@@ -90,6 +90,7 @@ in order for the newly added group to get picked up by your user account.
 * In the USB Settings, Enable USB Controller(USB 2.0 EHCI Controller)
 
 * In the USB Device Filters, select you wanted USB devices  
+
 ![image](../../images/usb-device-select-for-windows-vm.png)
 
 
@@ -104,6 +105,7 @@ in order for the newly added group to get picked up by your user account.
 * Take snapshot by Screenshot tool in gnome
 
     It has delay to take snapshot function    
+
 ![image](../../images/delay-seconds-to-take-snapshot.png)
 
 * Use command line, need install imagemagick
