@@ -34,7 +34,7 @@ y = 3*sin(t);
 plot(x, y);
 ```
 
-![Oval image](/images/oval.png)
+![Oval image](../images/oval.png)
 
 ##### 心型线
 ```javascript
@@ -48,7 +48,7 @@ plot(x, y);
 grid on
 ```
 
-![Heart](/images/heart.png)
+![Heart](../images/heart.png)
 
 
 ##### Bernoulli Distribution
