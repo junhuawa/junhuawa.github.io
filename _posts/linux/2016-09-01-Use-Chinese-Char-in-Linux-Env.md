@@ -2,7 +2,7 @@
 layout: post
 title: "Linux下中文字符乱码的处理"
 date: 2016-09-01
-category: "misc" 
+category: "linux" 
 tags: [misc]
 ---
 ### 中文文件名乱码

@@ -2,7 +2,7 @@
 layout: post
 title: "Virtual Machine in Linux"
 date: 2016-08-16
-category: "vm" 
+category: "linux" 
 tags: [Virtual Machine in Linux]
 ---
 

@@ -33,3 +33,8 @@ The problem, in short, is this: the ext3 filesystem, when running in the default
     
     1. data mode可以在mount文件系统的时候明确设置；
     2. 也可以通过tune2fs改变data mode。 
+
+
+### CFQ
+    Completely Fair Queuein
+    完全公平调度器

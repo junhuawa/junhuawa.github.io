@@ -2,7 +2,7 @@
 layout: post
 title: "The Least-square method"
 date: 2016-08-16
-category: "misc" 
+category: "Math" 
 tags: [The Least Square Method]
 ---
 # The Least Square Method (最小二乘法)
@@ -21,4 +21,4 @@ hold on
 plot(p, the);  
 ```
 
-![image](../images/ordinaryleastsquarefit.png "The Ordinary Least Square Fit")  
+![image](../../images/ordinaryleastsquarefit.png "The Ordinary Least Square Fit")  

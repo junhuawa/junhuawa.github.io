@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Octave Study Notes"
-category: "Octave"
+category: "Math"
 tags: [Octave]
 ---
 [X, Y] = meshgrid(x, y)
@@ -34,7 +34,7 @@ y = 3*sin(t);
 plot(x, y);
 ```
 
-![Oval image](../images/oval.png)
+![Oval image](../../images/oval.png)
 
 ##### 心型线
 ```javascript
@@ -48,7 +48,7 @@ plot(x, y);
 grid on
 ```
 
-![Heart](../images/heart.png)
+![Heart](../../images/heart.png)
 
 
 ##### Bernoulli Distribution
@@ -71,7 +71,7 @@ ylabel("P\{X=k\}");
 title("Bernoulli Distribution");
 ```
 
-![Bernoulli](../images/Bernoulli.png)
+![Bernoulli](../../images/Bernoulli.png)
 
 
 

@@ -1,9 +1,9 @@
 ---
 layout: post
-title: "Install ReText in Redhat7.2"
+title: "Office Tips"
 date: 2016-08-20
-category: "misc" 
-tags: [ReText]
+category: "office" 
+tags: [libreoffice]
 ---
 
 ## Calc

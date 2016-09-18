@@ -2,7 +2,7 @@
 layout: post
 title: "Hash table vs Balanced binary tree"
 date: 2016-09-02
-category: "data structure" 
+category: "datastructure" 
 tags: [data structure]
 ---
 ### Hash table vs Balanced binary tree

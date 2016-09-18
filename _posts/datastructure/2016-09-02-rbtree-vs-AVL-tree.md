@@ -2,7 +2,7 @@
 layout: post
 title: "Red-Black Tree VS AVL Tree"
 date: 2016-09-02
-category: "data structure" 
+category: "datastructure" 
 tags: [data structure]
 ---
 

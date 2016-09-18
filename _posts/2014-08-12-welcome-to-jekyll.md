@@ -52,6 +52,10 @@ int main(int argc, char **argv)
     return 0;
 }
 ```
+if we have images, we need to put the md file in category's directory, 
+and use relative path to refer the image, so ReText can see the whole html file.
+
+if not, the image can't be refered by ReText.
 
 下面是表格
 
