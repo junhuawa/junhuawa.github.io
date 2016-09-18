@@ -35,7 +35,7 @@ plot(x, y);
 ```
 
 ![Oval image]
-(../images/oval.png)
+(/images/oval.png)
 
 ##### 心型线
 ```javascript
@@ -50,7 +50,7 @@ grid on
 ```
 
 ![Heart]
-(../images/heart.png)
+(/images/heart.png)
 
 
 ##### Bernoulli Distribution
@@ -74,7 +74,7 @@ title("Bernoulli Distribution");
 ```
 
 ![Bernoulli]
-(../images/Bernoulli.png)
+(/images/Bernoulli.png)
 
 
 
