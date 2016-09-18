@@ -71,7 +71,7 @@ ylabel("P\{X=k\}");
 title("Bernoulli Distribution");
 ```
 
-![Bernoulli](/images/Bernoulli.png)
+![Bernoulli](../images/Bernoulli.png)
 
 
 
