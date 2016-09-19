@@ -31,7 +31,7 @@ is imcompatible with the old dmxmsg, recompile the LinDX project based on the ne
 
 3) timer_stats feature works, but it doesn't provide what we want.
 
-a. /proc/pid/status 
+#### a. /proc/pid/status 
 
 0075-$ cat 445/status 
 
@@ -81,7 +81,7 @@ SigQ:   48/30034
 
 
 
-	b. 0040-$ cat /proc/timer_stats
+#### b. 0040-$ cat /proc/timer_stats
 
 event count | pid(thread?) | process name | function(callback function) 
 only can record 1024 records(timer).
@@ -266,9 +266,9 @@ only can record 1024 records(timer).
         1,  8603 lnx-mmeDiaLBSHa  hrtimer_start_range_ns (posix_timer_fn)
     39148591 total events, 2124.299 events/sec
 
-        c. cat /proc/timer_list output the active timer and processes.
+#### c. cat /proc/timer_list output the active timer and processes.
 
-        d. cat /proc/pid/limits #can see all the limited resources for every process
+#### d. cat /proc/pid/limits #can see all the limited resources for every process
 
 0074-$ cat 347/limits 
 
@@ -292,7 +292,7 @@ only can record 1024 records(timer).
 
 0074-$
 
-	e. use ulimit in bash can set the pending signals count
+#### e. use ulimit in bash can set the pending signals count
 	
 Use sh can't set the pending signals by ulimit, need run bash cmd first. 
 
