@@ -86,20 +86,21 @@ People know it. you build the relationship ahead of the time. *Giving them value
 
 ### Marketing
 
-Connecting someone who needs a product, or service with that product or service. 
+*Connecting someone who needs a product, or service with that product or service.* 
 You provide code, or write code, without marketing, no one will know people need something, and people have something. 
 People should respect my ability and my code. They would love to do it, but don't know you are the great coder. 
 Because there is no evidence, because you haven't done any marketing. *没有一个创业公司，不打广告，而客户会自动找上门。* 
 
 **Marketing means Giving people values, helping people.**
 
-Good ways to do marketing
-    *. Blogging: consistent
-    *. Writing magazine articles. 
-    *. Write a book 
-    *. youtube screen catch, stack overflow, opensource project, quora 
+Good ways to do marketing:
 
-Using 10% of your work time on marketing type of activities, building your brand, and reputation, that will have a very big impact in your career. 
+    Blogging: consistent
+    Writing magazine articles. 
+    Write a book 
+    youtube screen catch, stack overflow, opensource project, quora 
+
+*Using 10% of your work time on marketing type of activities, building your brand, and reputation, that will have a very big impact in your career.*
 
 
 ### What can I do If I want to find a job in 3 month?
