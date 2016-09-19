@@ -4,10 +4,7 @@ title: "Guest STU Can't Startup"
 category: "case"
 tags: [case]
 ---
-
-
-
-### PR 58541ESPE05: MSS15 MS 27_18_0 PeV:STU unit doesn't rise back to SP-EX state,1010 alarm comes
+### Guest STU unit doesn't rise back to SP-EX state,1010 alarm comes
 
 The problem is reported to OSP, block their milestone, so very urgent. Xiaolong and I go to help them with Wang Jianping.
 

@@ -6,14 +6,8 @@ category: "case"
 tags: [Timer]
 ---
 
-7 prontoes are reported for the problem on Application and customer side.
+7 bugs are reported for the problem on Application and customer side.
 ------------------------------------------
-PR NA05532776: Cannot run QRS on IPDU-3 at SEMME000
-
-PR NA05526290: NS3.0 PILOT IPDU Interface Status Error
-
-PR 80174ESPE03: ZQRS COMMAND EXECUTION FAILED for IPDU3
-
 
 ### Main problem: 
 
