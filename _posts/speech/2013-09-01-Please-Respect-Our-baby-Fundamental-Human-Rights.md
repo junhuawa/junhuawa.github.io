@@ -48,9 +48,9 @@ I have a dream, that one day, our babies can enjoy exploring the world, and thei
 I have a dream, that one day, our babies can enjoy the fundamental human rights!
 
 
-至少提前半小时到场；
-熟悉舞台，麦克风；
-语速放慢，带感情去做speech；
-动作夸张一点，因为你是在做speech；
-主要目的是超越自己，把自己想表达的东西表达出来，感染别人！
-明天去跑下步，大声的朗读出来！像李阳疯狂英语一样！
+    至少提前半小时到场；
+    熟悉舞台，麦克风；
+    语速放慢，带感情去做speech；
+    动作夸张一点，因为你是在做speech；
+    主要目的是超越自己，把自己想表达的东西表达出来，感染别人！
+    明天去跑下步，大声的朗读出来！像李阳疯狂英语一样！
