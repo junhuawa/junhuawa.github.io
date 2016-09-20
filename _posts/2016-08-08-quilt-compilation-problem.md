@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "quilt compilation problem"
+date: 2016-08-08
 category: "demo"
 tags: [quilt]
 ---

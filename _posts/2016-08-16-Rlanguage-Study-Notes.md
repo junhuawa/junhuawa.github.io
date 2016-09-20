@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "R language Study Notes"
+date: 2016-08-16
 category: "misc"
 tags: [R]
 ---
