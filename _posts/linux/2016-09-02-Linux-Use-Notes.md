@@ -153,3 +153,32 @@ When you're finished, the screenshot will open in the GIMP editing window.
 
 
 LXC: linux container
+
+### Firefox 地址自动补全
+
+about:config
+    Set browser.urlbar.auto* related config to true.
+
+#### Disable save fingerprint of remote machine when using ssh/scp
+$ ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no peter@192.168.0.100
+Warning: Permanently added '192.168.0.100' (RSA) to the list of known hosts.
+peter@192.168.0.100's password:
+
+Also we can set the setting to /etc/ssh/ssh_config to let it take effect globally. 
+Also can target a particular user, modify the user-specific SSH configuration file (~/.ssh/config).
+Also can bypass key checking for a particular subnet (10.56.8.0/24).
+
+> Host 10.56.*.*
+    StrictHostKeyChecking no
+    UserKnownHostsFile=/dev/null
+
+>     bash-4.1$ cat ~/.ssh/config 
+    Host 10.56.*.*
+        StrictHostKeyChecking no
+        UserKnownHostsFile=/dev/null
+    bash-4.1$ ssh root@10.56.8.58
+    Warning: Permanently added '10.56.8.58' (RSA) to the list of known hosts.
+    root@10.56.8.58's password: 
+    -bash-4.3# 
+
+
