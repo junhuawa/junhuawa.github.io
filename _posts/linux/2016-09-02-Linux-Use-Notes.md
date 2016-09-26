@@ -181,4 +181,20 @@ Also can bypass key checking for a particular subnet (10.56.8.0/24).
     root@10.56.8.58's password: 
     -bash-4.3# 
 
+### Dia - A program for drawing structured diagrams
 
+[Manual Guide](http://dia-installer.de/doc/en/objects-chapter.html#entering-text)
+
+problem: 
+
+    *. Can change text in a copied box?
+        use F2/Enter Key enter text edit mode(dia version 0.97). 
+![image](../../images/linux-use-related/Enter-Text-Edit-mode-in-Dia.png)
+
+        Hit Escape/Click outside of editable area leave the Text Edit mode. 
+
+
+
+
+### /etc/service
+    provide the service port/protocl map currently used in this machine/server.
