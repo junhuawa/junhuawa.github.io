@@ -189,6 +189,7 @@ problem:
 
     *. Can change text in a copied box?
         use F2/Enter Key enter text edit mode(dia version 0.97). 
+
 ![image](../../images/linux-use-related/Enter-Text-Edit-mode-in-Dia.png)
 
         Hit Escape/Click outside of editable area leave the Text Edit mode. 
