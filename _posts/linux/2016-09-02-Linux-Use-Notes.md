@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Notes recorded when using linux"
+title: "Notes recorded when using Linux"
 date: 2016-09-02
 category: "linux" 
 tags: [linux]
@@ -100,7 +100,7 @@ in order for the newly added group to get picked up by your user account.
 
     fn + PrintScreen
 
-    The image will be saved to Picutures directory with name "Screenshot from 2016-xx-xx xx-xx-xx.png"
+    The image will be saved to Pictures directory with name "Screenshot from 2016-xx-xx xx-xx-xx.png"
 
 * Take snapshot by Screenshot tool in gnome
 
@@ -193,16 +193,56 @@ problem:
 ![image](../../images/linux-use-related/Enter-Text-Edit-mode-in-Dia.png)
 
         Hit Escape/Click outside of editable area leave the Text Edit mode. 
-### Tool for file compare like beyondcompare in windows
+### Tool for file compare like beyond compare in windows
 
     meld
 
 ### /etc/service
-    provide the service port/protocl map currently used in this machine/server.
+    provide the service port/protocol map currently used in this machine/server.
 
 ### download rpm packages, not installed
 
     yum install yum-utils
     yumdownloader RPM_Name
 
+### Install aspell checker
+[root@Tesla books]# rpm -qa |grep aspell
+aspell-en-7.1-5.el7.x86_64
+aspell-0.60.6.1-9.el7.x86_64
+[root@Tesla books]# 
 
+[root@Tesla books]# aspell dump dicts
+en
+en-variant_0
+en-variant_1
+en-variant_2
+en-w_accents
+en-wo_accents
+en_CA
+en_CA-variant_0
+en_CA-variant_1
+en_CA-w_accents
+en_CA-wo_accents
+en_GB
+en_GB-ise
+en_GB-ise-w_accents
+en_GB-ise-wo_accents
+en_GB-ize
+en_GB-ize-w_accents
+en_GB-ize-wo_accents
+en_GB-variant_0
+en_GB-variant_1
+en_GB-w_accents
+en_GB-wo_accents
+en_US
+en_US-variant_0
+en_US-variant_1
+en_US-w_accents
+en_US-wo_accents
+
+aspell -c file
+
+### Only show file name which grep finds the string "Linux"
+grep -l "Linux"
+
+grep -l prints the filenames whose contents match the pattern, without printing the actual matching lines.

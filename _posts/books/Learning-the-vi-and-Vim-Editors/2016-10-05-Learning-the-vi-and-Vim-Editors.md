@@ -19,11 +19,11 @@ vi is short for visual editor. It has 2 modes: command mode and insert mode.
 Bottom-Line commands:
     The slash(/) and the question mark (?) begin search commands.
     A colon(:) begins all ex commands. ex commands are those used by the ex line editor. 
-The ex editor is availabe to you when you use vi. because ex is the underlying editor and vi is really
+The ex editor is available to you when you use vi. because ex is the underlying editor and vi is really
 just its "visual" mode. 
 
 Remember that you are always working on a copy of your file in the buffer, 
-and that your edits will not affect your original file until you save teh buffer. 
+and that your edits will not affect your original file until you save the buffer. 
 
 vi in view mode:
     vi -R 
@@ -55,7 +55,7 @@ In a job-control shell:
     5. Move to a specific line: G(Go To) command
         Plain G: goes to the end of the file
         1G: goes to the top of the file
-        42G: gotest to line 42
+        42G: go to line 42
 
 #### Changing Text
 
@@ -119,7 +119,7 @@ In a job-control shell:
 
 |H| Move to home - the top line on screen|
 |M| Move to middle line on screen|
-|L| MOve to last line on screen|
+|L| Move to last line on screen|
 |nH| Move to n lines below top line|
 |nL| Move to n lines above last line|
 
@@ -149,7 +149,7 @@ vi is the visual mode of the more general, underlying line editor, which is **ex
 
 |ex practice| At the unix prompt, invoke the ex editor on a file called practice|
 |1/:1p| Go to and print(display) the 1st line|
-|1,3|Print(display) lines 1 througth 3|
+|1,3|Print(display) lines 1 through 3|
 |1s/screen/line|Substitute screen for line on line 1|
 |vi|Invoke the vi editor on file|
 
@@ -173,7 +173,7 @@ Full name |Abbreviation |Meaning
 |.=|Print the line number of the current line|
 |/pattern/=|Print the line number of the first line that matches pattern|
 
-#### Line Addressing Symobls
+#### Line Addressing Symbols
 
 |.|stands for the current line|
 |$|stands for the last line of the file|
@@ -203,12 +203,12 @@ Use :g! to search for all lines that do *not* contain pattern.
 |:x|Both writes the file and quits the editor. The file is written only if it has been
     modified.|
 
-#### Ivoking vi on Multiple Files
+#### Invoking vi on Multiple Files
 
 vi file1 file2
 
 |:n|Call in the next file, before switch, need to save the file by :w first|
-|:args/:ar| lists the files named on the comamnd line, with the current file enclosed in brackets|
+|:args/:ar| lists the files named on the command line, with the current file enclosed in brackets|
 |:rewind/:rew|resets the current file to be the first file named on the command line|
 |:last|move to the last file on the command line|
 |CTRL+^| Switching back to previous file|
@@ -226,7 +226,7 @@ vi will automatically insert a newline character.
 
     :set nu
 
-3. wrapscan: controls whether searches wrap
+3. redskin: controls whether searches wrap
 
     :set nowrapscan
 

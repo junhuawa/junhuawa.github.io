@@ -42,9 +42,22 @@ The Productive Programmer -- Neal Ford - 2009
     -n: print line number with output lines
     -H: print the file name for each match 
 
+### Find return error
+[junhuawa@Tesla Downloads]$ find . -name *fuliba*
+find: paths must precede expression: [fuliba.net]谭晓彤被封剪辑录像.mp4
+Usage: find [-H] [-L] [-P] [-Olevel] [-D help|tree|search|stat|rates|opt|exec] [path...] [expression]
+[junhuawa@Tesla Downloads]$ 
+
+Solution:
+
+    add single quote for pattern
+
 #### How to add a list of new files to the svn repo
 
 svn st|grep '^\?' |tr '^\?' ' '|sed 's/[ ]*//'|sed 's/[ ]/\\ /g'|xargs svn add
 
 sed 's/[ ]/\\ /g': replace the space with '\ ', if not, svn add can't find the file name with space.
+
+对于任何开发习惯，仅仅因为“我们一直是这样做的”而存在是站不住脚的。如果你明白为什么一直这样做，而且这样做确实有意义，
+那么一定要继续。但你应该始终保持对任何假设的质疑，并验证他们的正确性。
 
