@@ -12,6 +12,7 @@ tags: [books]
 ![images](../../../images/books/set-list.png)
 
 ctags create an information file that vi can use later to determine which files define which funcitions.
+
 |:!ctags file.c|Create a file named tags in current directory that contains info on the functions defined in file.c|
 
 |:tag name|looks at the tags file to find out which file contains teh defination of the function name.|

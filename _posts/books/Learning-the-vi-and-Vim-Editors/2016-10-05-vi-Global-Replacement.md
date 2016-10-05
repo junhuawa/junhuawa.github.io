@@ -11,7 +11,7 @@ Arnold Robbins, Elbert Hannah & Linda Lamp
 ### Global Replacement
 
 |:s/old/new/|Changes *the first* occurrence of the pattern *old* to *new* on the current line|
-|:s/old/new/g|Changes *every* occurrence of the pattern *old* to *new* on the current line, the g option in the syntax above stands for global.(The g option affects each pattern on a line, don't confuse it with the :g command, which affect each line of a file.)
+|:s/old/new/g|Changes *every* occurrence of the pattern *old* to *new* on the current line, the g option in the syntax above stands for global.(The g option affects each pattern on a line, don't confuse it with the :g command, which affect each line of a file.)|
 |:50,100s/old/new/g|Change every occurrence of old to new from line 50 to line 100|
 |:1,$s/old/new/g|Change every occurrence of old to new within the entire file, same to ':%s/old/new/g'|
 
@@ -62,13 +62,12 @@ For example, the pattern "\(That) or \(this\)" saves *That* in hold buffer numbe
 The pattern held can be "replayed" in substitutions by the sequences \1 to \9. 
 
     That or this --> this or That
+
     :%s/\(That\) or \(this\)/\2 or \1/
 
     abcdabcd --> alphabet-soup
+
     :%s/\(abcd\)\1/alphabet-soup/
-
-
-
 
 [^0-9] matches any character that is not a digit.
 
