@@ -212,33 +212,33 @@ aspell-0.60.6.1-9.el7.x86_64
 [root@Tesla books]# 
 
 [root@Tesla books]# aspell dump dicts
-en
-en-variant_0
-en-variant_1
-en-variant_2
-en-w_accents
-en-wo_accents
-en_CA
-en_CA-variant_0
-en_CA-variant_1
-en_CA-w_accents
-en_CA-wo_accents
-en_GB
-en_GB-ise
-en_GB-ise-w_accents
-en_GB-ise-wo_accents
-en_GB-ize
-en_GB-ize-w_accents
-en_GB-ize-wo_accents
-en_GB-variant_0
-en_GB-variant_1
-en_GB-w_accents
-en_GB-wo_accents
-en_US
-en_US-variant_0
-en_US-variant_1
-en_US-w_accents
-en_US-wo_accents
+    en
+    en-variant_0
+    en-variant_1
+    en-variant_2
+    en-w_accents
+    en-wo_accents
+    en_CA
+    en_CA-variant_0
+    en_CA-variant_1
+    en_CA-w_accents
+    en_CA-wo_accents
+    en_GB
+    en_GB-ise
+    en_GB-ise-w_accents
+    en_GB-ise-wo_accents
+    en_GB-ize
+    en_GB-ize-w_accents
+    en_GB-ize-wo_accents
+    en_GB-variant_0
+    en_GB-variant_1
+    en_GB-w_accents
+    en_GB-wo_accents
+    en_US
+    en_US-variant_0
+    en_US-variant_1
+    en_US-w_accents
+    en_US-wo_accents
 
 aspell -c file
 
@@ -246,3 +246,31 @@ aspell -c file
 grep -l "Linux"
 
 grep -l prints the filenames whose contents match the pattern, without printing the actual matching lines.
+
+### Syntax Highlight for Markdown file in Vim
+
+If you use [Pathogen](https://github.com/tpope/vim-pathogen), do this:
+
+```sh
+cd ~/.vim/bundle
+git clone https://github.com/plasticboy/vim-markdown.git
+```
+
+Add below in ~/.vimrc to disable fold:
+
+```vim
+execute pathogen#infect()
+syntax on
+filetype plugin indent on
+let g:vim_markdown_folding_disabled = 1
+```
+
+Install discount which include markdown cmd to convert md file to html.
+
+```sh
+[junhuawa@Tesla linux]$ rpm -qa |grep discount
+discount-2.1.8-2.el7.x86_64
+[junhuawa@Tesla linux]$
+```
+
+markdown -o Linux-Use-Note.html 2016-09-02-Linux-Use-Notes.md

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Junhua Wang, Nokia Cop, Launches Site"
+title: "Junhua Wang, Nokia Corp, Launches Site"
 date: 2016-08-06
 category: demo
 tags: [test, jekyll, welcome]
