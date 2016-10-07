@@ -43,10 +43,15 @@ The Productive Programmer -- Neal Ford - 2009
     -H: print the file name for each match 
 
 ### Find return error
-[junhuawa@Tesla Downloads]$ find . -name *fuliba*
-find: paths must precede expression: [fuliba.net]谭晓彤被封剪辑录像.mp4
-Usage: find [-H] [-L] [-P] [-Olevel] [-D help|tree|search|stat|rates|opt|exec] [path...] [expression]
-[junhuawa@Tesla Downloads]$ 
+
+    [junhuawa@Tesla Desktop]$ find . -name *.mp3
+    find: paths must precede expression: SE-Radio-Episode-241-Kyle-Kingsbury-on-Consensus-in-Distributed-Systems.mp3
+    Usage: find [-H] [-L] [-P] [-Olevel] [-D help|tree|search|stat|rates|opt|exec] [path...] [expression]
+    [junhuawa@Tesla Desktop]$ find . -name '*.mp3'
+    ./SE-Radio-Episode-241-Kyle-Kingsbury-on-Consensus-in-Distributed-Systems.mp3
+    ./SE-Radio203-LeslieLamport.mp3
+    ./SE-Radio-Episode-245-John-Sonmez-on-Marketing-Yourself-and-Managing-Your-Career.mp3
+    [junhuawa@Tesla Desktop]$ 
 
 Solution:
 
