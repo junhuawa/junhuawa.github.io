@@ -283,3 +283,19 @@ markdown -o Linux-Use-Note.html 2016-09-02-Linux-Use-Notes.md
 ### Xunlei address translation
     [junhuawa@Tesla ~]$ echo "QUFodHRwOi8vYWlrYW5keS5vcmcvW+efpeeUteW9sXd3dy56aGlkeS5jb21d44CQT01HIE9oIE15IEdvZCHjgJHjgJDpq5jmuIXok53lhYk3MjBQ54mIQkQtUk1WQi7kuK3lrZfjgJEucm12Yj9maWQ9eFZiZFpObUFWMk96dzNSLTNSdWI4ODdoNVdFQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQSZtaWQ9NjY2JnRocmVzaG9sZD0xNTAmdGlkPUU1MUREN0JDMDFBOTI4MkJBNzdFQzFDM0JFQjNDQkY3JnNyY2lkPTEyMCZ2ZXJubz0xWlo=" |base64 -d
     AAhttp://aikandy.org/[知电影www.zhidy.com]【OMG Oh My God!】【高清蓝光720P版BD-RMVB.中字】.rmvb?fid=xVbdZNmAV2Ozw3R-3Rub887h5WEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA&mid=666&threshold=150&tid=E51DD7BC01A9282BA77EC1C3BEB3CBF7&srcid=120&verno=1ZZ[junhuawa@Tesla ~]$ 
+
+### How to enter ssh password in a script automatically
+
+Variant I
+
+    sshpass -p PASSWORD ssh USER@SERVER
+
+Variant II
+
+    #!/usr/bin/expect -f
+    spawn ssh USERNAME@SERVER "touch /home/user/ssh_example"
+    expect "assword:"
+    send "PASSWORD\r"
+    interact
+
+
