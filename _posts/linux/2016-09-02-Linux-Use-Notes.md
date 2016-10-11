@@ -18,7 +18,7 @@ tags: [linux]
 1. [Use usb device in the windows VM in Redhat](#use-usb-device-in-the-windows-vm-in-redhat)
 1. [Take Screenshots in Linux](#take-screenshots-in-linux)
 1. [Firefox address autocomplete](#firefox-address-autocomplete)
-1. [Disable save fingerprint of remote machine when using ssh/scp](#disable-save-fingerprint-of-remote-machine-when-using-ssh/scp)
+1. [Disable save fingerprint of remote machine when using ssh/scp](#disable-save-fingerprint-of-remote-machine-when-using-sshscp)
 1. [Dia - A program for drawing structured diagrams](#dia-a-program-for-drawing-structured-diagrams)
 1. [Tool for file compare like beyond compare in windows](#tool-for-file-compare-like-beyond-compare-in-windows)
 1. [/etc/service](#etcservice)
@@ -99,7 +99,7 @@ fcitx，ibus是输入法的一种框架，具体的输入法一般都有google p
 After plug-in the Jabra, select Jabra UC VOICE 750a as the device for sound output/input in System Tools -> Settings -> Sound.
 
 
-### Use usb device in the windows VM in Redhat 7.2
+### Use usb device in the windows VM in Redhat
 
 * Add vboxusers group for your username, if not, no usb devices can be selected for VM, relogin the user, 
 in order for the newly added group to get picked up by your user account.
@@ -217,6 +217,7 @@ problem:
 ![image](../../images/linux-use-related/Enter-Text-Edit-mode-in-Dia.png)
 
         Hit Escape/Click outside of editable area leave the Text Edit mode. 
+
 ### Tool for file compare like beyond compare in windows
 
     meld
