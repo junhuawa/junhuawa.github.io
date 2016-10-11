@@ -5,6 +5,30 @@ date: 2016-09-02
 category: "linux" 
 tags: [linux]
 ---
+1. [My Linux OS](#my-linux-os)
+1. [How to return terminal from a ssh connection](#how-to-return-terminal-from-a-ssh-connection)
+1. [Tool to manipulate pictures](#tool-to-manipulate-pictures)
+1. [bittorrent client](#bittorrent-client)
+1. [Get a rpm package's content](#get-a-rpm-packages-content)
+1. [Convert an rpm package to cpio archive package](#convert-an-rpm-package-to-cpio-archive-package)
+1. [Query rpm package owning file "/etc/environment](#query-rpm-package-owning-file-etcenvironment)
+1. [Create a terminal in linux terminal](#create-a-terminal-in-linux-terminal)
+1. [Tool to manage ssh sessions in Linux](#tool-to-manage-ssh-sessions-in-linux)
+1. [Use Jabra UC VOICE 750 Duo Drk in Redhat](#use-jabra-uc-voice-750-duo-drk-in-redhat)
+1. [Use usb device in the windows VM in Redhat](#use-usb-device-in-the-windows-vm-in-redhat)
+1. [Take Screenshots in Linux](#take-screenshots-in-linux)
+1. [Firefox address autocomplete](#firefox-address-autocomplete)
+1. [Disable save fingerprint of remote machine when using ssh/scp](#disable-save-fingerprint-of-remote-machine-when-using-ssh/scp)
+1. [Dia - A program for drawing structured diagrams](#dia-a-program-for-drawing-structured-diagrams)
+1. [Tool for file compare like beyond compare in windows](#tool-for-file-compare-like-beyond-compare-in-windows)
+1. [/etc/service](#etcservice)
+1. [download rpm packages, not installed](#download-rpm-packages-not-installed)
+1. [Install aspell checker](#install-aspell-checker)
+1. [Only show file name which grep finds the string "Linux](#only-show-file-name-which-grep-finds-the-string-linux)
+1. [Syntax Highlight for Markdown file in Vim](#syntax-highlight-for-markdown-file-in-vim)
+1. [Xunlei address translation](#xunlei-address-translation)
+1. [How to enter ssh password in a script automatically](#how-to-enter-ssh-password-in-a-script-automatically)
+
 ### My Linux OS
 
     [junhuawa@Tesla Pictures]$ uname -a
@@ -154,7 +178,7 @@ When you're finished, the screenshot will open in the GIMP editing window.
 
 LXC: linux container
 
-### Firefox 地址自动补全
+### Firefox address autocomplete
 
 about:config
     Set browser.urlbar.auto* related config to true.
