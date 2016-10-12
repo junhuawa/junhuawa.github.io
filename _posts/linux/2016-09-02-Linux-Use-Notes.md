@@ -218,6 +218,21 @@ problem:
 
         Hit Escape/Click outside of editable area leave the Text Edit mode. 
 
+ What are the five radio-buttons in the Select menu for?
+
+They determine what happens when you drag-select objects. Normally (Replace), only the objects included in the drag area end up selected. By selecting other choices in the Select radio menu, you can change that behavior:
+
+Union
+    Both the drag-selected objects and the previously selected objects end up selected. 
+Intersect
+    The only objects that end up selected are those that were already selected and were drag-selected. 
+Remove
+    Those previously selected objects that are in the drag area become unselected. 
+Invert
+    The objects in the drag area change selectedness: Unselected objects become selected, selected objects become unselected. The objects outside the drag area are not affected. 
+
+These operations correspond to set operations between the previously selected objects and the drag-selected objects.
+
 ### Tool for file compare like beyond compare in windows
 
     meld
@@ -323,4 +338,26 @@ Variant II
     send "PASSWORD\r"
     interact
 
+### Reverse an applied patch
 
+    patch -p1 -R < path/file.patch
+    git apply -R path/file.patch
+
+### How to find the definition of struct module
+
+    use C+\ g/s can't find the wanted. 
+    use command: vimgrep "struct module {" * to find the matched files.
+    Then use C+\ f to open the matched file.
+
+[junhuawa@Tesla ccfinderx-core]$ ./autoconf_init.sh 
+./autoconf_init.sh: line 2: libtoolize: command not found
+aclocal: warning: autoconf input should be named 'configure.ac', not 'configure.in'
+automake: warning: autoconf input should be named 'configure.ac', not 'configure.in'
+automake: warning: autoconf input should be named 'configure.ac', not 'configure.in'
+Makefile.am:10: error: Libtool library used but 'LIBTOOL' is undefined
+Makefile.am:10:   The usual way to define 'LIBTOOL' is to add 'LT_INIT'
+Makefile.am:10:   to 'configure.in' and run 'aclocal' and 'autoconf' again.
+Makefile.am:10:   If 'LT_INIT' is in 'configure.in', make sure
+Makefile.am:10:   its definition is in aclocal's search path.
+
+yum install libtool

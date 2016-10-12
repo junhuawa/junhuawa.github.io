@@ -120,3 +120,40 @@ then execute to different line:
 
     'f' means search forward a character in the line. 'F' means search backward.
     ';' means do the search again.
+
+### How to make vim show ^M and substitute it
+
+[How to make vim show ^M and substitute it](http://stackoverflow.com/questions/3852868/how-to-make-vim-show-m-and-substitute-it)
+
+Vim does show ^M except in one case: if the fileformat=dos then it will not show a trailing crlf.
+
+You can find out which format (unix or dos) you have by typing :set and you can get rid of the ^M in the crlf by just changing the format (:set fileformat=unix) and then writing out the file.
+
+If you have a ^M in the middle of the line, then you should be able to see it, even in a fileformat=dos file, and you can pattern match it with \r. (Oddly, the syntax for subsituting a newline is a \r in the replacement part of the sub, so the way one changes ^M to ^N is by the not-at-all-a-noop :s/\r/\r/.)
+
+
+### In VIM, how do I apply a macro to a set of lines?
+Use the normal command in Ex mode to execute the macro on multiple/all lines:
+
+Execute the macro stored in register a on lines 5 through 10.
+
+:5,10norm! @a
+
+Execute the macro stored in register a on lines 5 through the end of the file.
+
+:5,$norm! @a
+
+Execute the macro stored in register a on all lines.
+
+:%norm! @a
+
+Execute the macro store in register a on all lines matching pattern.
+
+:g/pattern/norm! @a
+
+To execute the macro on visually selected lines, press V and the j or k until the desired region is selected. Then type :norm! @a and observe the that following input line is shown.
+
+:'<,'>norm! @a
+
+Enter :help normal in vim to read more.
+
