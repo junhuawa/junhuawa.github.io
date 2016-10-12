@@ -323,4 +323,8 @@ Variant II
     send "PASSWORD\r"
     interact
 
+### Reverse an applied patch
+
+    patch -p1 -R < path/file.patch
+    git apply -R path/file.patch
 
