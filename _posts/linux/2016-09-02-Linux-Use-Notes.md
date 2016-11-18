@@ -361,3 +361,8 @@ Makefile.am:10:   If 'LT_INIT' is in 'configure.in', make sure
 Makefile.am:10:   its definition is in aclocal's search path.
 
 yum install libtool
+
+CentOS minimal eth config
+vi /etc/sysconfig/network-config/ifcfg-enpos
+onboot=yes
+service network restart
