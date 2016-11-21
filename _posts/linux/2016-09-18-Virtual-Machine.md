@@ -6,6 +6,8 @@ category: "linux"
 tags: [Virtual Machine in Linux]
 ---
 
+Linux VM(Redhat 7.1) in Virtualbox
+
 ### virbr0
 
 virbr0: flags=4099<UP,BROADCAST,MULTICAST>  mtu 1500
@@ -22,9 +24,28 @@ host 上所有的虚拟机（guests）通过这个 virbr0 连起来。默认情�
 所以这种情况下 guest 通过 host 才能访问外部。
 
 ### Virtualbox Network Settings
-NAT
-    *. Bridged Network
+
+NAT (Network Address Translation)
+
+    VM visit network through host IP, external PC don't know the VM. 
+    One direction access, VM can visit host by network, host can't visit VM.
+    IP: 10.0.2.15
+    Gateway：10.0.2.2
+    DNS：10.0.2.3 
+
+Bridged Adapter
+
+    VM's NIC card bridged to external network, it can get IP from external
+    network, network functionality is the same to a real PC in the external
+    network.
+    VM and host can visit each other. 
     VM stay on the same network as the host. 
 
 Internal Network
+
+    VM's network is not same to the external network, Host can't visit VM, VM
+    can't visit host.
+
 Host Only Adapter
+
+    complicated
