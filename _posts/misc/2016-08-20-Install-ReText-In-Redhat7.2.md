@@ -5,19 +5,19 @@ date: 2016-08-20
 category: "misc" 
 tags: [ReText]
 ---
+
 # Install ReText in Redhat 7.2
 
 1. Follow the guide in [http://www.centoscn.com/image-text/install/2015/0516/5455.html](URL)
 
-2. run retext report error  
+2. run retext report error
 
-**The module don't have the method "set_start_menu()"**  
+    The module don't have the method "set_start_menu()"
+    My python3 version is 3.3
 
-**My python3 version is 3.3**  
+3. Check the method manually
 
-3. Check the method manually.  
-
-```sh
+```python
 [junhuawa@Tesla ~]$ python3
 Python 3.3.2 (default, Oct 11 2015, 17:47:16)   
 [GCC 4.8.3 20140911 (Red Hat 4.8.3-9)] on linux2  
@@ -28,7 +28,7 @@ Type "help", "copyright", "credits" or "license" for more information.
 >>>   
 ```
 
-Yes, there is no set_start_method() in multiprocessing module.  
+Yes, there is no set_start_method() interface in multiprocessing module.  
 
 **The method was added officially in python3.4.**  
 
@@ -47,7 +47,7 @@ python34-3.4.3-5.el7.x86_64
 [junhuawa@Tesla ~]$   
 ```
 
-manually install the pip3.4  
+Manually install the pip3.4  
 
 5. Follow the guide to install other packages  
 
