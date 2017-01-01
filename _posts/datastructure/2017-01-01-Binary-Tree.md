@@ -32,7 +32,7 @@ of t.
 
 **Property 2**
     A binary tree of height h, h >= 0, have at least h and at most
-    ![equation](http://www.sciweavers.org/tex2img.php?eq=%20%202%5E%7Bh%7D-1&bc=White&fc=Black&im=jpg&fs=12&ff=arev&edit=0)
+    ![equation](http://www.sciweavers.org/tex2img.php?eq=%24%202%5E%7Bh%7D%20-%201%20%24&bc=White&fc=Black&im=jpg&fs=12&ff=arev&edit=0)
     elements in it.
 
 **Property 3**
@@ -68,7 +68,7 @@ Note, the LeftSize also gives the rank of an element with respect to the
 elements in its subtree.
 
 
-### AVL TREES
+### AVL TREES(严格平衡的二叉树)
 
 #### Definition
 
@@ -88,3 +88,77 @@ where
 ![equation](http://www.sciweavers.org/tex2img.php?eq=h_%7BR%7D%20&bc=White&fc=Black&im=jpg&fs=12&ff=arev&edit=0) are the heights of 
 ![equation](http://www.sciweavers.org/tex2img.php?eq=%20T_%7BL%7D%20&bc=White&fc=Black&im=jpg&fs=12&ff=arev&edit=0) and 
 ![equation](http://www.sciweavers.org/tex2img.php?eq=%20T_%7BR%7D%20&bc=White&fc=Black&im=jpg&fs=12&ff=arev&edit=0), respectively.
+
+#### AVL Tree representation
+Usually, use the linked representation scheme for binary trees. To facilitate
+insertion and deletion, a balance factor *bf* is associated with each node. 
+    
+    bf(x) = height of left subtree of x - height of right subtree of x
+
+The permissible balance factors are -1, 0, and 1.
+
+#### Height of an AVL Tree
+
+Let Nh be the minimum number of nodes in an AVL tree of height h. In the worst
+case the height of one of the subtrees is h-1, and the height of the other is
+h-2. Both these subtrees are also AVL trees. Hence
+    Nh = Nh-1 + Nh-2 +1, N0 = 0, and N1 = 1
+This is similar to Fibonacci numbers.
+    Fn = Fn-1 + Fn-2, F0 = 0, and F1 = 1
+
+Nh = Fh+2 -1 for h>=0. From Fibonacci number theory we know that Fh = h/ where
+
+### RED-BLACK TREES(黑平衡的二叉树)
+
+A red-black tree is a binary search tree in which every node is colored either
+red or black. The remaining properties satisfied by a red-black tree are best
+stated in terms of the corresponding extended binary tree. The additional
+properties are:
+RB1. The root and all external nodes are colored black. 
+RB2. No root-to-external-node path has 2 consecutive(连续的) red nodes.
+RB3. All root-to-external-node paths have the same number of black nodes.
+
+#### rank
+The rank of a node in a red-black tree be the number of black pointers on any
+path from the node to any external node in its subtree. 
+
+#### Lemma 1
+Let the lenght of a root-to-external-node path be the number of pointers on
+the path. If P and Q are 2 root-to-external-node paths in a red-black tree,
+then *Length(P) <= 2Length(Q)*. 
+红黑树是平衡二叉树，通过对任何一条从根到叶子的简单路径上各个节点的颜色进行约束，确保没有一条路径会比其他路径长2倍，因而是近似平衡的。
+
+
+#### Lemma 2
+Let h be the height of a red-black tree (excluding the external nodes), let n
+be the number of internal nodes in the tree, and let r be the rank of the
+root. 
+
+a. *h <= 2r*
+
+b. *n >= 2r -1*
+
+c. *h <= 2log2(n+1)*
+
+### AVL VS RBTREE
+The worst-case height of an AVL Tree is least, so AVL trees have the best
+worst-case performance in applications where search is the dominant operation. 
+
+Inserion and deletion in Red-Black tree is more simple to AVL tree, **at most**it only
+need 1 time rotation. While in AVL tree, 
+at most 1 single rotation is needed for insertion, 
+
+But to deletion, 1 rotation may not suffice to restore balance, the number of
+rotations needed is O(*logn*).
+
+
+[Chinese version](https://www.zhihu.com/question/30527705/answer/52919336)
+
+AVL树：平衡二叉树，一般是用平衡因子差值决定并通过旋转来实现，左右子树树高差不超过1，那么和红黑树比较它是严格的平衡二叉树，
+平衡条件非常严格（树高差只有1），只要插入或删除不满足上面的条件就要通过旋转来保持平衡。
+由于旋转是非常耗费时间的。我们可以推出AVL树适合用于插入删除次数比较少，但查找多的情况。
+
+红黑树：平衡二叉树，通过对任何一条从根到叶子的简单路径上各个节点的颜色进行约束，确保没有一条路径会比其他路径长2倍，因而是近似平衡的。
+所以相对于严格要求平衡的AVL树来说，它的旋转保持平衡次数较少。用于搜索时，插入删除次数多的情况下我们就用红黑树来取代AVL。
+
+
