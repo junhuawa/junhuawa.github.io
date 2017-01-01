@@ -5,9 +5,8 @@ date: 2016-10-05
 category: books
 tags: [books]
 ---
-Learning the vi and Vim Editors - 
-Arnold Robbins, Elbert Hannah & Linda Lamp
-----
+# Learning the vi and Vim Editors - Arnold Robbins, Elbert Hannah & Linda Lamp
+
 ### Global Replacement
 
 |:s/old/new/|Changes *the first* occurrence of the pattern *old* to *new* on the current line|
@@ -15,7 +14,7 @@ Arnold Robbins, Elbert Hannah & Linda Lamp
 |:50,100s/old/new/g|Change every occurrence of old to new from line 50 to line 100|
 |:1,$s/old/new/g|Change every occurrence of old to new within the entire file, same to ':%s/old/new/g'|
 
-#### Confirming Substitutions
+### Confirming Substitutions
 
 |:1,30s/his/the/gc|after search, confirm each replacement before it is made|
 
@@ -23,7 +22,7 @@ Another way to make repetitive changes that you may not want to make globally.
 
 **Combination of the vi commands n (repeat last search) and dot (.) (repeat last command)**
 
-Replace *which* with *that* 
+### Replace *which* with *that* 
 
 |/which|Search for *which*|
 |cwthat [ESC]|Change to that|
@@ -31,7 +30,7 @@ Replace *which* with *that*
 |n|Repeat Search, skip a change|
 |.|Repeat change (if appropriate)|
 
-#### Context-Sensitive Replacement
+### Context-Sensitive Replacement
 
     :g/pattern/s/old/new/g
 
@@ -45,7 +44,7 @@ The last g indicates that the substitution is to occur globally on that line.
 Regular expressions can be used with the vi search commands / and ?, as well as in the ex commands :g and :s.
 Works with other Unix programs, such as grep, sed and awk.
 
-#### Metacharacters Used in Search Patterns
+### Metacharacters Used in Search Patterns
 
 |. (period, dot)| Matches any single character except a newline.|
 |* |Matches zero or more (as many as there are) of the single character that immediately precedes it. for example: bugs*|
