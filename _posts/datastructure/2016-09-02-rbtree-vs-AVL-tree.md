@@ -22,3 +22,5 @@ That's Red-Black Tree are more popular than AVL Tree although implementing Red-B
 * To keep track of the virtual memory segments for a process - the start address of the range serves as the key. 
 * In various implementations of Associative Data structures (for e.g C++ STL uses RB tree internally to implement Set and Map)
 * HashMap in java 8 uses RB tree instead of linked list to store key value pair in the bucket corresponding to hash of key.
+
+### Why AVL Tree is more suitable for search than red-black tree? 

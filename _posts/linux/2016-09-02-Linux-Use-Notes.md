@@ -366,3 +366,32 @@ CentOS minimal eth config
 vi /etc/sysconfig/network-config/ifcfg-enpos
 onboot=yes
 service network restart
+
+####
+One of the possible reasons for this is : Unsupported fonts.
+
+Step 1 : From Windows, copy this folder : C:\Windows\Fonts.
+
+Step 2 : Create a new folder in /home directory with the name .fonts (dont forget the dot ".").
+
+Step 3 : Copy the content inside Fonts of Windows to .fonts and also to /use/share/fonts (if you want to use them system wide).
+
+Step 4 : Rebuild your font-cache with fc-cache -f -v or reboot.
+
+### Set static ip addr for network interface in CentOS7
+
+/etc/sysconfig/network-scripts/ifcfg-enp0s11u1
+
+
+### calculator in the linux environment
+bc - An arbitrary precision calculator language
+
+It have 4 special variables: scale, ibase, obase, last
+
+scale defines how some operations  use  digits  after  the  decimal point.   The  default  value of scale is 0. 
+
+ibase and obase define the conversion base for input and output numbers.  The default for both input and output is base 10.
+
+last (an extension) is a variable that has the value of the last printed number.
+
+Input numbers may contain the characters 0-9 and A-F. (Note: They must be capitals.  Lower case letters are variable names.)
