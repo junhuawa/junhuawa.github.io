@@ -23,18 +23,17 @@ of t.
 
 #### Properties of binary trees
 **Property 1**
-
-    The drawing of every binary tree with n elements, n > 0, has exactly n-1
-    edges. 
+The drawing of every binary tree with n elements, n > 0, has exactly n-1
+edges. 
 
 *The height(or depth) of a binary tree is the number of levels in it.*
 
 **Property 2**
-    A binary tree of height h, h >= 0, have at least h and at most $$2^h - 1$$ elements in it.
+A binary tree of height h, h >= 0, have at least h and at most $$2^h - 1$$ elements in it.
 
 **Property 3**
-    The height of a binary tree that contains n, n >= 0, elements is at most
-    n and at least $ log_2^{(n+1)} $.
+The height of a binary tree that contains n, n >= 0, elements is at most
+n and at least $$log_2^{(n+1)}$$.
 
 #### Full binary tree
 A binary tree of height h that contains exactly $$2^h -1$$ elements.
@@ -65,7 +64,7 @@ Note, the LeftSize also gives the rank of an element with respect to the
 elements in its subtree.
 
 
-### AVL TREES(严格平衡的二叉树)
+### AVL TREES (严格平衡的二叉树)
 
 #### Definition
 
@@ -74,7 +73,7 @@ $$T_L$$ and $$T_R$$ as its left and right subtrees. then T is an AVL tree iff
 
 1. $$T_L$$ and $$T_R$$ are AVL trees;
 
-2. $$|h_L - h_R| \leq 1$$ where $$h_L$$ and $$h_R$$ are the heights of $$T_L$$ and $$T_L$$, respectively.
+2. $$\vert h_L - h_R\vert \leq 1$$ where $$h_L$$ and $$h_R$$ are the heights of $$T_L$$ and $$T_L$$, respectively.
 
 #### AVL Tree representation
 Usually, use the linked representation scheme for binary trees. To facilitate
@@ -87,16 +86,16 @@ The permissible balance factors are -1, 0, and 1.
 #### Height of an AVL Tree
 
 Let $$ N_h $$ be the minimum number of nodes in an AVL tree of height h. In the worst
-case the height of one of the subtrees is h-1, and the height of the other is
-h-2. Both these subtrees are also AVL trees. Hence
+case the height of one of the subtrees is $$ h - 1$$, and the height of the other is
+$$ h-2$$. Both these subtrees are also AVL trees. Hence
 
-$$N_h = N_{h-1} + N_{h-2} +1, N_0 = 0, and N_1 = 1$$
+$$N_h = N_{h-1} + N_{h-2} +1, N_0 = 0,\hbox{ and } N_1 = 1$$
 
 This is similar to Fibonacci numbers.
 
-$$F_n = F_{n-1} + F_{n-2}, F_0 = 0, and F_1 = 1$$
+$$F_n = F_{n-1} + F_{n-2}, F_0 = 0,\hbox{ and } F_1 = 1$$
 
-$$N_h = F_{h+2} -1 $$ for $$ h \geq 0$$. From Fibonacci number theory we know that Fh = h/ where
+$$N_h = F_{h+2} - 1 \hbox{ for } h \geq 0$$. From Fibonacci number theory we know that Fh = h/ where
 
 ### RED-BLACK TREES(黑平衡的二叉树)
 
