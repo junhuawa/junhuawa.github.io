@@ -17,6 +17,7 @@ x_{21} & x_{22} & \ldots \\
 $$
 
 [Math on GitHub Pages](http://g14n.info/2014/09/math-on-github-pages/)
+
 [Math Blocks](https://kramdown.gettalong.org/syntax.html#math-blocks)
 
 1. Surround your math ccontent with 2 dollar signs, end with 2 dollar signs.

@@ -42,11 +42,11 @@ it's because there is already a setting that "cscope add cscope.out" in the vim'
 
 Load external cscope database:
 
-:cs add /path/to/your/kernel/cscope.out
+    :cs add /path/to/your/kernel/cscope.out
 
 Load external ctags database:
 
-:set tags=/path/to/your/kernel/tags
+    :set tags=/path/to/your/kernel/tags
 
 
 ### cscope parameters definition
@@ -59,26 +59,28 @@ Load external ctags database:
     cscope 在构建数据库时，如果头文件在当前目录找不到，则自动到/usr/include目录下搜索，
     禁止到/usr/bin目录下搜索，使用"-k"(kernel mode).
 
-cscope -Rbq
+    cscope -Rbq
 
 
 ### 设置使用哪一个cscope
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" cscope setting
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-if has("cscope")
-  set csprg=/usr/bin/cscope
-  set csto=1
-  set cst
-  set nocsverb
-  " add any database in current directory
-  if filereadable("cscope.out")
-      cs add cscope.out
-  endif
-  set csverb
-endif
+
+    """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+    " cscope setting
+    """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+    if has("cscope")
+    set csprg=/usr/bin/cscope
+    set csto=1
+    set cst
+    set nocsverb
+    " add any database in current directory
+    if filereadable("cscope.out")
+        cs add cscope.out
+    endif
+    set csverb
+    endif
 
 csto: 
+
     set the order of find between cscope and ctags.
     0 means find in cscope first;
     1 means find in tags first.

@@ -13,12 +13,12 @@ The formulas for **linear least squares fitting** were independently derived by 
 Using Least-square method to fit the data provided in the text, using octave:   
 
 ```javascript
-p = [36.9 46.7 63.7 77.8 84.0 87.5]   
-theta=[181 197 235 270 283 292]   
-the = 2.234*p + 95.35   
-plot(p, the, "ro");   
-hold on   
-plot(p, the);  
+p = [36.9 46.7 63.7 77.8 84.0 87.5] 
+theta=[181 197 235 270 283 292] 
+the = 2.234*p + 95.35 
+plot(p, the, "ro"); 
+hold on 
+plot(p, the);
 ```
 
 ![image](../../images/ordinaryleastsquarefit.png "The Ordinary Least Square Fit")  

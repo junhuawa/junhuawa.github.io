@@ -59,7 +59,7 @@ Solution:
 
 #### How to add a list of new files to the svn repo
 
-svn st|grep '^\?' |tr '^\?' ' '|sed 's/[ ]*//'|sed 's/[ ]/\\ /g'|xargs svn add
+    svn st|grep '^\?' |tr '^\?' ' '|sed 's/[ ]*//'|sed 's/[ ]/\\ /g'|xargs svn add
 
 sed 's/[ ]/\\ /g': replace the space with '\ ', if not, svn add can't find the file name with space.
 
