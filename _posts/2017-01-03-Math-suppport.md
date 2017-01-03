@@ -25,3 +25,5 @@ $$
    recognized as a table line. This problem can be avoided by using the \vert
    command instead of |!
 
+3. If there is text in the math content, need use \hbox*{embeded text}*.
+
