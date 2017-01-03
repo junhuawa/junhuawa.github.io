@@ -31,9 +31,7 @@ of t.
 **The height(or depth) of a binary tree is the number of levels in it. **
 
 **Property 2**
-    A binary tree of height h, h >= 0, have at least h and at most
-    ![equation](http://www.sciweavers.org/tex2img.php?eq=%24%202%5E%7Bh%7D%20-%201%20%24&bc=White&fc=Black&im=jpg&fs=12&ff=arev&edit=0)
-    elements in it.
+    A binary tree of height h, h >= 0, have at least h and at most $$ 2^h - 1 $$ elements in it.
 
 **Property 3**
     The height of a binary tree that contains n, n >= 0, elements is at most
