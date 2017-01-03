@@ -42,9 +42,9 @@ A binary tree of height h that contains exactly $$ 2^h -1 $$ elements.
 #### Complete binary tree
 
 We number the elements in a full binary tree of height h using the numbers 1
-through $ 2^h - 1 $.
+through $2^h - 1$.
 
-Suppose we delete the element k, k >=0, elelents numbered $ 2^h - i $, $ 1 \leq i \leq k $ for
+Suppose we delete the element k, k >=0, elelents numbered $2^h - i$, $1 \leq i \leq k$ for
 any k. The resuling binary tree is called a complete binary tree. 
 
 There is a very nice relationship among the numbers assigned to an element and
@@ -70,11 +70,11 @@ elements in its subtree.
 #### Definition
 
 An empty binary tree is an AVL tree. If T is a nonempty binary tree with 
-$$ T_L $$ and $$ T_R $$ as its left and right subtrees. then T is an AVL tree iff
+$$T_L$$ and $$T_R$$ as its left and right subtrees. then T is an AVL tree iff
 
-1. $$ T_L $$ and $$ T_R $$ are AVL trees;
+1. $$T_L$$ and $$T_R$$ are AVL trees;
 
-2. $  |h_L - h_R| \leq 1 $ where $ h_L $ and $ h_R $ are the heights of $ T_L $ and $ T_L $, respectively.
+2. $$|h_L - h_R| \leq 1$ where $h_L$ and $h_R$ are the heights of $T_L$ and $T_L$, respectively.
 
 #### AVL Tree representation
 Usually, use the linked representation scheme for binary trees. To facilitate
@@ -90,13 +90,13 @@ Let $ N_h $ be the minimum number of nodes in an AVL tree of height h. In the wo
 case the height of one of the subtrees is h-1, and the height of the other is
 h-2. Both these subtrees are also AVL trees. Hence
 
-    $ N_h = N_{h-1} + N_{h-2} +1, N_0 = 0, and N_1 = 1 $
+$N_h = N_{h-1} + N_{h-2} +1, N_0 = 0, and N_1 = 1$
 
 This is similar to Fibonacci numbers.
 
-    $ F_n = F_{n-1} + F_{n-2}, F_0 = 0, and F_1 = 1
+$F_n = F_{n-1} + F_{n-2}, F_0 = 0, and F_1 = 1$
 
-$ N_h = F_{h+2} -1 $ for $ h \geq 0 $. From Fibonacci number theory we know that Fh = h/ where
+$N_h = F_{h+2} -1 $ for $ h \geq 0$. From Fibonacci number theory we know that Fh = h/ where
 
 ### RED-BLACK TREES(黑平衡的二叉树)
 
@@ -134,7 +134,7 @@ a. *h <= 2r*
 
 b. *n >= 2r -1*
 
-c. *$ h \leq 2log_2^{(n+1)} $*
+c. *$h \leq 2log_2^{(n+1)}$*
 
 ### AVL VS RBTREE
 The worst-case height of an AVL Tree is least, so AVL trees have the best
