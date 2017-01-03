@@ -34,7 +34,7 @@ of t.
 
 **Property 3**
     The height of a binary tree that contains n, n >= 0, elements is at most
-    n and at least $$ log_2^{(n+1)} $$.
+    n and at least $ log_2^{(n+1)} $.
 
 #### Full binary tree
 A binary tree of height h that contains exactly $$2^h -1$$ elements.
