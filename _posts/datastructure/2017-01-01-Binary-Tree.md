@@ -34,7 +34,7 @@ of t.
 
 **Property 3**
     The height of a binary tree that contains n, n >= 0, elements is at most
-    n and at least $$ log_2^(n+1) $$.
+    n and at least $$ log_2^{(n+1)} $$.
 
 #### Full binary tree
 A binary tree of height h that contains exactly $$ 2^h -1 $$ elements.
@@ -44,7 +44,7 @@ A binary tree of height h that contains exactly $$ 2^h -1 $$ elements.
 We number the elements in a full binary tree of height h using the numbers 1
 through $ 2^h - 1 $.
 
-Suppose we delete the element k, k >=0, elelents numbered 2h - i, $ 1 \leq i \leq k $ for
+Suppose we delete the element k, k >=0, elelents numbered $ 2^h - i $, $ 1 \leq i \leq k $ for
 any k. The resuling binary tree is called a complete binary tree. 
 
 There is a very nice relationship among the numbers assigned to an element and
@@ -74,7 +74,7 @@ $$ T_L $$ and $$ T_R $$ as its left and right subtrees. then T is an AVL tree if
 
 1. $$ T_L $$ and $$ T_R $$ are AVL trees;
 
-2. $ \mid h_L - h_R \mid \leq 1 $ where $ h_L $ and $ h_R $ are the heights of $ T_L $ and $ T_L $, respectively.
+2. $  |h_L - h_R| \leq 1 $ where $ h_L $ and $ h_R $ are the heights of $ T_L $ and $ T_L $, respectively.
 
 #### AVL Tree representation
 Usually, use the linked representation scheme for binary trees. To facilitate
@@ -86,14 +86,17 @@ The permissible balance factors are -1, 0, and 1.
 
 #### Height of an AVL Tree
 
-Let Nh be the minimum number of nodes in an AVL tree of height h. In the worst
+Let $ N_h $ be the minimum number of nodes in an AVL tree of height h. In the worst
 case the height of one of the subtrees is h-1, and the height of the other is
 h-2. Both these subtrees are also AVL trees. Hence
-    Nh = Nh-1 + Nh-2 +1, N0 = 0, and N1 = 1
-This is similar to Fibonacci numbers.
-    Fn = Fn-1 + Fn-2, F0 = 0, and F1 = 1
 
-Nh = Fh+2 -1 for h>=0. From Fibonacci number theory we know that Fh = h/ where
+    $ N_h = N_{h-1} + N_{h-2} +1, N_0 = 0, and N_1 = 1 $
+
+This is similar to Fibonacci numbers.
+
+    $ F_n = F_{n-1} + F_{n-2}, F_0 = 0, and F_1 = 1
+
+$ N_h = F_{h+2} -1 $ for $ h \geq 0 $. From Fibonacci number theory we know that Fh = h/ where
 
 ### RED-BLACK TREES(黑平衡的二叉树)
 
@@ -101,22 +104,28 @@ A red-black tree is a binary search tree in which every node is colored either
 red or black. The remaining properties satisfied by a red-black tree are best
 stated in terms of the corresponding extended binary tree. The additional
 properties are:
+
 RB1. The root and all external nodes are colored black. 
+
 RB2. No root-to-external-node path has 2 consecutive(连续的) red nodes.
+
 RB3. All root-to-external-node paths have the same number of black nodes.
 
 #### rank
+
 The rank of a node in a red-black tree be the number of black pointers on any
 path from the node to any external node in its subtree. 
 
 #### Lemma 1
+
 Let the lenght of a root-to-external-node path be the number of pointers on
 the path. If P and Q are 2 root-to-external-node paths in a red-black tree,
 then *Length(P) <= 2Length(Q)*. 
+
 红黑树是平衡二叉树，通过对任何一条从根到叶子的简单路径上各个节点的颜色进行约束，确保没有一条路径会比其他路径长2倍，因而是近似平衡的。
 
-
 #### Lemma 2
+
 Let h be the height of a red-black tree (excluding the external nodes), let n
 be the number of internal nodes in the tree, and let r be the rank of the
 root. 
@@ -125,7 +134,7 @@ a. *h <= 2r*
 
 b. *n >= 2r -1*
 
-c. *h <= 2log2(n+1)*
+c. *$ h \leq 2log_2^{(n+1)} $*
 
 ### AVL VS RBTREE
 The worst-case height of an AVL Tree is least, so AVL trees have the best
@@ -134,9 +143,8 @@ worst-case performance in applications where search is the dominant operation.
 Inserion and deletion in Red-Black tree is more simple to AVL tree, **at most**it only
 need 1 time rotation. While in AVL tree, 
 at most 1 single rotation is needed for insertion, 
-
 But to deletion, 1 rotation may not suffice to restore balance, the number of
-rotations needed is O(*logn*).
+rotations needed is O( *logn* ).
 
 
 [Chinese version](https://www.zhihu.com/question/30527705/answer/52919336)
