@@ -27,29 +27,28 @@ of t.
     The drawing of every binary tree with n elements, n > 0, has exactly n-1
     edges. 
 
-
-**The height(or depth) of a binary tree is the number of levels in it. **
+*The height(or depth) of a binary tree is the number of levels in it.*
 
 **Property 2**
     A binary tree of height h, h >= 0, have at least h and at most $$ 2^h - 1 $$ elements in it.
 
 **Property 3**
     The height of a binary tree that contains n, n >= 0, elements is at most
-    n and at least log2(n+1).
+    n and at least $$ log_2^(n+1) $$.
 
 #### Full binary tree
-A binary tree of height h that contains exactly 2h -1 elements.
+A binary tree of height h that contains exactly $$ 2^h -1 $$ elements.
 
 #### Complete binary tree
 
-    We number the elements in a full binary tree of height h using the numbers 1
-    through 2h-1.
+We number the elements in a full binary tree of height h using the numbers 1
+through $ 2^h - 1 $.
 
-    Suppose we delete the element k, k >=0, elelents numbered 2h-i, 1 \<\= i \<\=k for
-    any k. The resuling binary tree is called a complete binary tree. 
+Suppose we delete the element k, k >=0, elelents numbered 2h - i, $ 1 \leq i \leq k $ for
+any k. The resuling binary tree is called a complete binary tree. 
 
-    There is a very nice relationship among the numbers assigned to an element and
-    its children in a complete binary tree.
+There is a very nice relationship among the numbers assigned to an element and
+its children in a complete binary tree.
 
 #### Extended binary tree
 
@@ -71,21 +70,11 @@ elements in its subtree.
 #### Definition
 
 An empty binary tree is an AVL tree. If T is a nonempty binary tree with 
-![equation](http://www.sciweavers.org/tex2img.php?eq=%20T_%7BL%7D%20&bc=White&fc=Black&im=jpg&fs=12&ff=arev&edit=0)
-and
-![equation](http://www.sciweavers.org/tex2img.php?eq=%20T_%7BR%7D%20&bc=White&fc=Black&im=jpg&fs=12&ff=arev&edit=0) as its left and right subtrees. then T is an AVL tree iff
+$$ T_L $$ and $$ T_R $$ as its left and right subtrees. then T is an AVL tree iff
 
-1.
-![equation](http://www.sciweavers.org/tex2img.php?eq=%20T_%7BL%7D%20&bc=White&fc=Black&im=jpg&fs=12&ff=arev&edit=0) and 
-![equation](http://www.sciweavers.org/tex2img.php?eq=%20T_%7BR%7D%20&bc=White&fc=Black&im=jpg&fs=12&ff=arev&edit=0) are AVL trees;
+1. $$ T_L $$ and $$ T_R $$ are AVL trees;
 
-2.
-![equation](http://www.sciweavers.org/tex2img.php?eq=%20%5Cmid%20%20h_%7BL%7D%20-%20h_%7BR%7D%5Cmid%20%5Cleq%201%20&bc=White&fc=Black&im=jpg&fs=12&ff=arev&edit=0)
-where
-![equation](http://www.sciweavers.org/tex2img.php?eq=h_%7BL%7D%20&bc=White&fc=Black&im=jpg&fs=12&ff=arev&edit=0) and 
-![equation](http://www.sciweavers.org/tex2img.php?eq=h_%7BR%7D%20&bc=White&fc=Black&im=jpg&fs=12&ff=arev&edit=0) are the heights of 
-![equation](http://www.sciweavers.org/tex2img.php?eq=%20T_%7BL%7D%20&bc=White&fc=Black&im=jpg&fs=12&ff=arev&edit=0) and 
-![equation](http://www.sciweavers.org/tex2img.php?eq=%20T_%7BR%7D%20&bc=White&fc=Black&im=jpg&fs=12&ff=arev&edit=0), respectively.
+2. $ \mid h_L - h_R \mid \leq 1 $ where $ h_L $ and $ h_R $ are the heights of $ T_L $ and $ T_L $, respectively.
 
 #### AVL Tree representation
 Usually, use the linked representation scheme for binary trees. To facilitate
