@@ -49,16 +49,14 @@ Fold commands all begin with z.
 
 ### Syntax Highlighting
 
-:syntax enable |Display a file's syntax highlighting
-:syntax on | Enable syntax
-:set syntax=sh |Force Vim to use the syntax highlighting of your choice by setting the syntax manually form the command line.
+|:syntax enable | Display a file's syntax highlighting|
+|:syntax on | Enable syntax|
+|:set syntax=sh | Force Vim to use the syntax highlighting of your choice by setting the syntax manually form the command line.|
+|:colorscheme *schemeName* | Changes colors for different syntax highlights such as comments, keywords,
+or strings by redefining these syntax groups|
+|:set background? | Set background color your screen has|
 
 syntax files are in $VIMRUNTIME/syntax directory.
-
-:colorscheme *schemeName*|Changes colors for different syntax highlights such as comments, keywords,
-or strings by redefining these syntax groups
-:set background? | Set background color your screen has
-
 ### Compiling and Checking Errors with Vim
 
 :make fibonacci

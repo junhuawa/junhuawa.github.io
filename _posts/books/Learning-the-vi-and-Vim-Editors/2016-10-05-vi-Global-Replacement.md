@@ -45,7 +45,6 @@ Regular expressions can be used with the vi search commands / and ?, as well as 
 Works with other Unix programs, such as grep, sed and awk.
 
 ### Metacharacters Used in Search Patterns
-
 |. (period, dot)| Matches any single character except a newline.|
 |* |Matches zero or more (as many as there are) of the single character that immediately precedes it. for example: bugs*|
 |^ |When used at the start of a regular expression, requires that the following regular expression be found at the beginning of the line.|
