@@ -95,7 +95,10 @@ This is similar to Fibonacci numbers.
 
 $$F_n = F_{n-1} + F_{n-2}, F_0 = 0,\hbox{ and } F_1 = 1$$
 
-$$N_h = F_{h+2} - 1 \hbox{ for } h \geq 0$$. From Fibonacci number theory we know that Fh = h/ where
+$$N_h = F_{h+2} - 1 \hbox{ for } h \geq 0$$. From Fibonacci number theory we know that $$F_h = \phi^h/\sqrt{5}$$ where $$\phi = (1 + \sqrt{5})/2$$.
+Hence $$N_h = \phi^{h+2}/\sqrt{5} - 1$$. If there are $$n$$ nodes in the tree,
+then its height $$h$$ is at most $$log_\phi(\sqrt{5}(n + 1)) - 2$$ $$\sim$$
+$$1.44log_2^{(n+2)} =$$ O(log$$n$$).
 
 ### RED-BLACK TREES(黑平衡的二叉树)
 
@@ -119,7 +122,7 @@ path from the node to any external node in its subtree.
 
 Let the lenght of a root-to-external-node path be the number of pointers on
 the path. If P and Q are 2 root-to-external-node paths in a red-black tree,
-then *Length(P) <= 2Length(Q)*. 
+then *Length(P) \leq 2Length(Q)*. 
 
 红黑树是平衡二叉树，通过对任何一条从根到叶子的简单路径上各个节点的颜色进行约束，确保没有一条路径会比其他路径长2倍，因而是近似平衡的。
 
@@ -129,9 +132,9 @@ Let h be the height of a red-black tree (excluding the external nodes), let n
 be the number of internal nodes in the tree, and let r be the rank of the
 root. 
 
-a. *h <= 2r*
+a. *$$h \leq 2r$$*
 
-b. *n >= 2r -1*
+b. *$$n \geq 2r -1$$*
 
 c. *$$h \leq 2log_2^{(n+1)}$$*
 
