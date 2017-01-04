@@ -45,15 +45,16 @@ Regular expressions can be used with the vi search commands / and ?, as well as 
 Works with other Unix programs, such as grep, sed and awk.
 
 ### Metacharacters Used in Search Patterns
-|. (period, dot)| Matches any single character except a newline.|
-|* |Matches zero or more (as many as there are) of the single character that immediately precedes it. for example: bugs*|
-|^ |When used at the start of a regular expression, requires that the following regular expression be found at the beginning of the line.|
-|$ |When used at the end of a regular expression, requires that the preceding regular expression be found at the end of the line. |
-|\ |Treats the following special character as an ordinary character (escaping the character)|
+
+| \.(period,dot) | Matches any single character except a newline |
+| * |Matches zero or more (as many as there are) of the single character that immediately precedes it. for example: bugs* |
+| ^ |When used at the start of a regular expression, requires that the following regular expression be found at the beginning of the line |
+| $ |When used at the end of a regular expression, requires that the preceding regular expression be found at the end of the line |
+| \ |Treats the following special character as an ordinary character (escaping the character) |
 |[]|Matches any one of the characters enclosed between the brackets.|
 |\\< \\>|Matches characters at the beginning (\\<) or at the end (\\>) of a word|
-|~ | Matches whatever regular expression was used in the last search. Can use this pattern only in a regular search (with /).|
-|\( \) | Saves the pattern enclosed between \( and \) into a special holding space, or a "hold buffer". 
+|~| Matches whatever regular expression was used in the last search. Can use this pattern only in a regular search (with /).|
+|\( \)| Saves the pattern enclosed between \( and \) into a special holding space, or a "hold buffer". 
 Up to nine patterns can be saved in this way on a single line. 
 For example, the pattern "\(That) or \(this\)" saves *That* in hold buffer number 1 and saves *this* in hold buffer number 2. 
 The pattern held can be "replayed" in substitutions by the sequences \1 to \9.|
