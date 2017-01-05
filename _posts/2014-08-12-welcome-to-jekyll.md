@@ -67,3 +67,12 @@ if not, the image can't be refered by ReText.
 |row3text1|row3text2|row3text3|row3text4|
 |row4text1|row4text2|row4text3|row4text4|
 
+### Strike through the line
+Use ~~tildes around the words~~.
+
+I just used the following syntax
+
+<del> ... </del>
+
+successfully on GitHub in an issue description.
+
