@@ -53,3 +53,5 @@ webmaster:
         verify:
     bing:
         verify:
+
+theme: jekyll-theme-hacker
