@@ -2,7 +2,7 @@
 layout: post
 title: "Vim Setting"
 date: 2016-10-08
-category: "linux" 
+category: "vim" 
 tags: [vim]
 ---
 ## Vim setting for browse src code like sourceinsight in Windows
