@@ -383,7 +383,7 @@ Step 4 : Rebuild your font-cache with fc-cache -f -v or reboot.
 /etc/sysconfig/network-scripts/ifcfg-enp0s11u1
 
 
-### calculator in the linux environment
+### Calculator in the linux environment
 bc - An arbitrary precision calculator language
 
 It have 4 special variables: scale, ibase, obase, last
@@ -395,3 +395,10 @@ ibase and obase define the conversion base for input and output numbers.  The de
 last (an extension) is a variable that has the value of the last printed number.
 
 Input numbers may contain the characters 0-9 and A-F. (Note: They must be capitals.  Lower case letters are variable names.)
+
+### How to capture output from a linux terminal
+
+script - make typescript of terminal session
+
+Before execute your cmd, issue `script`, after execution your cmd, issue `exit`, the log file typescript will be in your local directory.
+

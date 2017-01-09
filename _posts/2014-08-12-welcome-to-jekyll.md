@@ -76,3 +76,5 @@ I just used the following syntax
 
 successfully on GitHub in an issue description.
 
+
+[Keyword for Code Highlight in Markdown](https://github.com/github/linguist/blob/master/lib/linguist/languages.yml)
