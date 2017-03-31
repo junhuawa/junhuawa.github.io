@@ -2,7 +2,7 @@
 layout: post
 title:  "我是如何治好慢性结膜炎+干眼症的!"
 date: 2017-03-31
-category: Personal 
+category: personal 
 tags: [eye]
 ---
 # 我是如何治好慢性结膜炎+干眼症的
