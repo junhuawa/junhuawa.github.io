@@ -402,3 +402,18 @@ script - make typescript of terminal session
 
 Before execute your cmd, issue `script`, after execution your cmd, issue `exit`, the log file typescript will be in your local directory.
 
+### Show thread name from linux terminal
+
+$ ps -eLf | egrep "th_name|UID"
+
+### How do I make Thunderbird's reply format look like Outlook's?
+
+http://askubuntu.com/questions/173505/how-do-i-make-thunderbirds-reply-format-look-like-outlooks
+
+### Linux Terminal 上下翻页
+
+shift+PageUp
+shift+PageDown
+
+### Auto ssh
+autossh
