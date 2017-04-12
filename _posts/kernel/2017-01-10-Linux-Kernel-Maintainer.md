@@ -1,4 +1,9 @@
 ### Steven Rostedt
+works for Red Hat and maintains the stable Linux kernel releases of the
+real-time patch.
+He works upstream mainly developing and maintaining ftrace (the official
+tracer of the Linux kernel). He also maintains trace-cmd and kernelshark which
+are user space interfaces into ftrace.
 
 Inside RT Patch
 
