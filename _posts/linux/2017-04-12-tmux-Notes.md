@@ -59,3 +59,19 @@ Hit C-b z again to shrink it back to its previous size.
 
 
 
+#### Why the tmux in Lab use Ctrl+x as prefix?
+Because the default setting was changed by ~/.tmux.conf
+
+    # re-define the prefix group
+    set -g prefix C-x
+    set-option -g history-limit 5000
+    unbind C-b
+    # like vim
+    setw -g mode-keys vi
+    bind h select-pane -L
+    bind j select-pane -D
+    bind k select-pane -U
+    bind l select-pane -R
+    # mouse
+    #set-option -g mouse on
+    #bind -n WheelUpPane copy-mode
