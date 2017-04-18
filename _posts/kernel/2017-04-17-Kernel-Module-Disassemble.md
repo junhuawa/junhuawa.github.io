@@ -34,6 +34,17 @@ tags: [linux]
 
 ### Makefile for kernel module compilation
 
+    MODULE=mddg_sfn
+
+    KDIR  := /dev/shm/junhuawa/mREC/src-fsmbos/src/kernel/build/fcmd/kernel 
+    PWD   := $(shell pwd)
+
+    default:
+        $(MAKE) -C $(KDIR)  SUBDIRS=$(PWD) modules ARCH=powerpc CROSS_COMPILE=/build/home/SC_LFS/sdk/tags/PS_LFS_SDK_3_28/bld-tools/x86_64-pc-linux-gnu/bin/powerpc-e500-linux-gnu- EXTRA_CFLAGS="-g"
+
+    clean:
+        rm -rf $(MODULE).o *~ core .depend .*.cmd *.ko *.mod.[co] .tmp_versions Module.symvers
+
 ### Links
 
 https://www.linux.com/learn/kernel-newbie-corner-kernel-and-module-debugging-gdb
