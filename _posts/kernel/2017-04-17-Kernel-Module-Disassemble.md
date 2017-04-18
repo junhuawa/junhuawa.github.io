@@ -45,6 +45,10 @@ tags: [linux]
     clean:
         rm -rf $(MODULE).o *~ core .depend .*.cmd *.ko *.mod.[co] .tmp_versions Module.symvers
 
+### Kernel module example
+
+[sfn.tar.gz](./sfn.tar.gz)
+
 ### Links
 
 https://www.linux.com/learn/kernel-newbie-corner-kernel-and-module-debugging-gdb
