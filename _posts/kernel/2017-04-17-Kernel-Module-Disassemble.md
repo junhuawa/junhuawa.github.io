@@ -6,12 +6,41 @@ category: "linux"
 tags: [linux]
 ---
 ### Problem Description
-This problem was happend when we develop the eDRX feature, which need to
+This problem was happened when we develop the eDRX feature, which need to
 enlarge the sfn value from 12 bits to 20 bits, colleague have changed the
 code, but found sometimes kernel complain oops when call the
 ddal_sfn_wait_for() api.
 
 This API will let the process wait after a certain period(certain sfn value).
+When the API call, it will open the fd of /dev/sfn, set specific value to the
+fd by ioctl, then poll the fd until POLLIN success, then get the sfn value,
+then close the fd.
+
+    int ddal_sfn_wait_for(uint32_t *sfn, struct timespec *timestamp)
+
+    ioctl(global_fd, SFN_WAIT_SPECIFIC, &sfn_for)
+
+    while (running)
+    {   
+        ddal_poll_fd.fd = global_fd;
+        ddal_poll_fd.events = POLLIN;
+
+        poll(&ddal_poll_fd, 1, 1000);
+
+        if (ddal_poll_fd.revents & POLLIN)
+        {   
+            ret = ddal_sfn_get(sfn, timestamp);
+            break;
+        }
+
+        if (ddal_poll_fd.revents & POLLERR)
+        {   
+            return -errno;
+        }
+    }
+
+So, in the driver, ioctl will add the process to a wait queue, when poll, it
+will set poll_interrupt_sync = 1, 
 
 ### Add debug info to the Kernel module when do compilation
     
@@ -56,34 +85,34 @@ This API will let the process wait after a certain period(certain sfn value).
 ### Logs for OOPS problem
 a stack trace
 
-[  115.372701] Unable to handle kernel paging request for data at address 0x0000
-[  115.380176] Faulting instruction address: 0xd68fb520
-[  115.385137] Oops: Kernel access of bad area, sig: 11 [#1]
-[  115.390526] PREEMPT FCMD
-[  115.393053] Modules linked in: udpcp sctp crc32c libcrc32c mddg_muksu sfp mddddg_paniclog ipv6 deflate zlib_deflate cryptomgr pcompress aead crypto_hash cryp
-[  115.432543] NIP: d68fb520 LR: d68fb42c CTR: c01587d4
-[  115.437502] REGS: c7b79dd0 TRAP: 0300   Not tainted  (2.6.32.60-2-sampleversi
-[  115.445323] MSR: 00021000 <ME,CE>  CR: 44002024  XER: 20000000
-[  115.451165] DEAR: 00000000, ESR: 00000000
-[  115.455167] TASK = c7aef120[1473] 'mv' THREAD: c7b78000
-[  115.460209] GPR00: d68fb42c c7b79e80 c7aef120 00000028 0001efc2 ffffffff c015
-[  115.468581] GPR08: c02eeb28 ffffffe4 00000000 c7b79e40 c021dc0c 100cc28c 0eff
-[  115.476952] GPR16: 48018538 48018f6c 4802bf18 4802c850 00000001 100a50b0 0000
-[  115.485324] GPR24: c028cbe8 00000004 00000001 00000013 00000000 00000000 0000
-[  115.493885] NIP [d68fb520] sfn_interrupt+0x374/0x3d0 [mddg_sfn]
-[  115.499802] LR [d68fb42c] sfn_interrupt+0x280/0x3d0 [mddg_sfn]
-[  115.505626] Call Trace:
-[  115.508070] [c7b79e80] [d68fb42c] sfn_interrupt+0x280/0x3d0 [mddg_sfn] (unrel
-[  115.515741] [c7b79ec0] [d68067f8] cpu_isr+0x78/0xc4 [mddg_irq]
-[  115.521580] [c7b79ee0] [c0060288] handle_IRQ_event+0x54/0x10c
-[  115.527328] [c7b79f10] [c0062794] handle_fasteoi_irq+0xcc/0x154
-[  115.533249] [c7b79f30] [c0003ea8] do_IRQ+0x5c/0x90
-[  115.538044] [c7b79f40] [c000e668] ret_from_except+0x0/0x18
-[  115.543523] Instruction dump:
-[  115.546484] 7d234b78 38800001 38a00001 38c00000 48001811 81210008 8129001c 91
-[  115.554248] 81210010 3929ffe4 91210008 81210008 <8129001c> 91210024 81210024
-[  115.562190] Kernel panic - not syncing: Fatal exception in interrupt
-[  115.568673] Rebooting in 180 seconds..
+    [  115.372701] Unable to handle kernel paging request for data at address 0x0000
+    [  115.380176] Faulting instruction address: 0xd68fb520
+    [  115.385137] Oops: Kernel access of bad area, sig: 11 [#1]
+    [  115.390526] PREEMPT FCMD
+    [  115.393053] Modules linked in: udpcp sctp crc32c libcrc32c mddg_muksu sfp mddddg_paniclog ipv6 deflate zlib_deflate cryptomgr pcompress aead crypto_hash cryp
+    [  115.432543] NIP: d68fb520 LR: d68fb42c CTR: c01587d4
+    [  115.437502] REGS: c7b79dd0 TRAP: 0300   Not tainted  (2.6.32.60-2-sampleversi
+    [  115.445323] MSR: 00021000 <ME,CE>  CR: 44002024  XER: 20000000
+    [  115.451165] DEAR: 00000000, ESR: 00000000
+    [  115.455167] TASK = c7aef120[1473] 'mv' THREAD: c7b78000
+    [  115.460209] GPR00: d68fb42c c7b79e80 c7aef120 00000028 0001efc2 ffffffff c015
+    [  115.468581] GPR08: c02eeb28 ffffffe4 00000000 c7b79e40 c021dc0c 100cc28c 0eff
+    [  115.476952] GPR16: 48018538 48018f6c 4802bf18 4802c850 00000001 100a50b0 0000
+    [  115.485324] GPR24: c028cbe8 00000004 00000001 00000013 00000000 00000000 0000
+    [  115.493885] NIP [d68fb520] sfn_interrupt+0x374/0x3d0 [mddg_sfn]
+    [  115.499802] LR [d68fb42c] sfn_interrupt+0x280/0x3d0 [mddg_sfn]
+    [  115.505626] Call Trace:
+    [  115.508070] [c7b79e80] [d68fb42c] sfn_interrupt+0x280/0x3d0 [mddg_sfn] (unrel
+    [  115.515741] [c7b79ec0] [d68067f8] cpu_isr+0x78/0xc4 [mddg_irq]
+    [  115.521580] [c7b79ee0] [c0060288] handle_IRQ_event+0x54/0x10c
+    [  115.527328] [c7b79f10] [c0062794] handle_fasteoi_irq+0xcc/0x154
+    [  115.533249] [c7b79f30] [c0003ea8] do_IRQ+0x5c/0x90
+    [  115.538044] [c7b79f40] [c000e668] ret_from_except+0x0/0x18
+    [  115.543523] Instruction dump:
+    [  115.546484] 7d234b78 38800001 38a00001 38c00000 48001811 81210008 8129001c 91
+    [  115.554248] 81210010 3929ffe4 91210008 81210008 <8129001c> 91210024 81210024
+    [  115.562190] Kernel panic - not syncing: Fatal exception in interrupt
+    [  115.568673] Rebooting in 180 seconds..
 
 ### Disassemble the sfn_interrupt function(kernel module)
 
