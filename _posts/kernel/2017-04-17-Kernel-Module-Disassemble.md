@@ -2,7 +2,7 @@
 layout: post
 title: "Disassemble Code fore debugging"
 date: 2017-04-17
-category: "linux" 
+category: "oops" 
 tags: [linux]
 ---
 ### Problem Description
@@ -40,47 +40,11 @@ then close the fd.
     }
 
 So, in the driver, ioctl will add the process to a wait queue, when poll, it
-will set poll_interrupt_sync = 1, 
+will set poll_interrupt_sync = 1, when the specifice time is come, POLLIN will
+be set, and the process get new sfn value, then call sfn_close() to close the
+fd. 
 
-### Add debug info to the Kernel module when do compilation
-    
-    make -C /KDIR modules EXTRA_CFLAGS="-g"
-    make -C /KDIR modules EXTRA_CFLAGS="-DDEBUG"
-
-### Dump the disassemble of the module
-
-    [junhuawa@hzling42 sfn]$ powerpc-e500-linux-gnu-objdump -S mddg_sfn.o > /tmp/test
-    cat /tmp/test
-
-        printk(KERN_INFO "Initializing sfn_mod\n");
-    #ifdef CONFIG_FCMD              //By FCMD is Frame Register on CASA2
-        if (!(sfn_number = ioremap(CFG_CASA2_BASE + (CASA2_FRAME_NR_REG * 2), 2)))
-        {
-            printk(KERN_ERR "CASA2: unable to map FRAME_REG\n");
-    94:   38 63 00 00     addi    r3,r3,0
-    98:   4c c6 31 82     crclr   4*cr1+eq
-    9c:   48 00 00 01     bl      9c <init_module+0x9c>
-            return -ENOMEM;
-    a0:   48 00 00 dc     b       17c <init_module+0x17c>
-    a4:   7c 00 04 ac     sync    
-    a8:   a1 23 00 00     lhz     r9,0(r3)
-    ac:   0c 09 00 00     twi     0,r9,0
-    b0:   4c 00 01 2c     isync
-        sfn_number = &sfn_fspc;
-    #endif
-
-### Makefile for kernel module compilation
-
-    MODULE=mddg_sfn
-
-    KDIR  := /dev/shm/junhuawa/mREC/src-fsmbos/src/kernel/build/fcmd/kernel 
-    PWD   := $(shell pwd)
-
-    default:
-        $(MAKE) -C $(KDIR)  SUBDIRS=$(PWD) modules ARCH=powerpc CROSS_COMPILE=/build/home/SC_LFS/sdk/tags/PS_LFS_SDK_3_28/bld-tools/x86_64-pc-linux-gnu/bin/powerpc-e500-linux-gnu- EXTRA_CFLAGS="-g"
-
-    clean:
-        rm -rf $(MODULE).o *~ core .depend .*.cmd *.ko *.mod.[co] .tmp_versions Module.symvers
+When we do the testing, OOPS happen when complete the test.
 
 ### Logs for OOPS problem
 a stack trace
@@ -114,6 +78,24 @@ a stack trace
     [  115.562190] Kernel panic - not syncing: Fatal exception in interrupt
     [  115.568673] Rebooting in 180 seconds..
 
+### Add debug info to the Kernel module when do compilation
+    
+    make -C /KDIR modules EXTRA_CFLAGS="-g"
+    make -C /KDIR modules EXTRA_CFLAGS="-DDEBUG"
+
+### Makefile for kernel module compilation
+
+    MODULE=mddg_sfn
+
+    KDIR  := /dev/shm/junhuawa/mREC/src-fsmbos/src/kernel/build/fcmd/kernel 
+    PWD   := $(shell pwd)
+
+    default:
+        $(MAKE) -C $(KDIR)  SUBDIRS=$(PWD) modules ARCH=powerpc CROSS_COMPILE=/build/home/SC_LFS/sdk/tags/PS_LFS_SDK_3_28/bld-tools/x86_64-pc-linux-gnu/bin/powerpc-e500-linux-gnu- EXTRA_CFLAGS="-g"
+
+    clean:
+        rm -rf $(MODULE).o *~ core .depend .*.cmd *.ko *.mod.[co] .tmp_versions Module.symvers
+
 ### Disassemble the sfn_interrupt function(kernel module)
 
     powerpc-e500-linux-gnu-objdump -S mddg_sfn.ko > /tmp/mddg_sfn.s
@@ -122,7 +104,7 @@ a stack trace
 
 ### Bug in the code 
 
-Here **4096** should be (2^20) or (SFN_MAX + 1)
+Here **4096** should be (2^20) or (SFN_MAX + 1), because sfn value range is (0 ~ 2^20 -1), instead of previous 4096.
 
     static int sfn_close(struct inode *inode, struct file *file)
     {
@@ -152,9 +134,8 @@ Here **4096** should be (2^20) or (SFN_MAX + 1)
         return 0;
     }
 
-    0x374 = 884(decimal)
-
 #### Code where Instruction is located
+    0x374 = 884(decimal)
 
     if (poll_interrupt_sync)
     {   /*Syncronisation between ISR and sfn_poll (SFN_WAIT_FOR and SFN_WAIT_ASYNC)*/
@@ -168,10 +149,10 @@ Here **4096** should be (2^20) or (SFN_MAX + 1)
      51c:   81 21 00 08     lwz     r9,8(r1)
      520:   81 29 00 1c     lwz     r9,28(r9)
      524:   91 21 00 24     stw     r9,36(r1)
-#define ARCH_HAS_PREFETCHW
-#define ARCH_HAS_SPINLOCK_PREFETCH
+    #define ARCH_HAS_PREFETCHW
+    #define ARCH_HAS_SPINLOCK_PREFETCH
 
-#### Where NIP shows
+#### Code Where NIP shows
 
     [junhuawa@hzling42 build]$ powerpc-e500-linux-gnu-gdb fcmd/kernel/extra/sfn/mddg_sfn.ko
     GNU gdb (GDB) 7.8.2.20150113-cvs
@@ -242,6 +223,36 @@ Here **4096** should be (2^20) or (SFN_MAX + 1)
     260             if (sfn_interrupt_tmp->sfn_periodic)
     (gdb) 
 
+### list_for_each_entry()
+
+include/linux/list.h
+
+```c
+    /**
+    * list_for_each_entry	-	iterate over list of given type
+    * @pos:	the type * to use as a loop cursor.
+    * @head:	the head for your list.
+    * @member:	the name of the list_struct within the struct.
+    */
+    #define list_for_each_entry(pos, head, member)				\
+        for (pos = list_entry((head)->next, typeof(*pos), member);	\
+            &pos->member != (head); 	\
+            pos = list_entry(pos->member.next, typeof(*pos), member))
+```
+
+### Root Cause of the OOPS
+Because the error in sfn_close(indoe, file) function, 
+the private_data(poll_list of the file descriptor) was freeed,
+although poll_interrupt_sync still = 1 when the sfn_close() called. 
+So, everytime 10ms Interrupt comes, in isr, it
+will go into the poll_interrrupt_sync part to check if the sfn == expected
+sfn, if true, will call 
+**list_for_each_entry(sfn_interrupt_tmp, &global_poll_struct.poll_list, poll_list)**
+to find the poll waiting process. 
+Because at this time, the private_data(poll_list of the file descriptor) already freeed, but it haven't delete from the 
+global_poll_struct.poll_list, so, an invalid pointer was found from the
+iteration,
+Segmentation fault was happened.
 
 ### Kernel module example
 
