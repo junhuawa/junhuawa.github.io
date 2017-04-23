@@ -256,9 +256,9 @@ Segmentation fault was happened.
 
 ### Kernel module example
 
-[sfn.tar.gz](./sfn.tar.gz)
+[sfn.tar.gz](./oops/sfn.tar.gz)
 
-### Links
+### Links related to OOPS
 
 https://www.linux.com/learn/kernel-newbie-corner-kernel-and-module-debugging-gdb
 
@@ -268,13 +268,21 @@ http://stackoverflow.com/questions/316131/how-do-you-diagnose-a-kernel-oops
 
 [Understanding a Kernel Oops!](http://opensourceforu.com/2011/01/understanding-a-kernel-oops/)
 
-root@FCMD:/ffs/run >cat /proc/sys/kernel/printk
-7       4       1       7
-root@FCMD:/ffs/run >dmesg -n 8
-root@FCMD:/ffs/run >cat /proc/sys/kernel/printk
-8       4       1       7
-root@FCMD:/ffs/run >
-
 http://stackoverflow.com/questions/28298220/kernel-module-no-debugging-symbols-found
 
 [OOPS on Powerpc Analysis]http://www.cnblogs.com/wahaha02/p/5363793.html
+
+### Change the log print level to the serial terminal
+
+Option 1: 
+
+    root@FCMD:/ffs/run >cat /proc/sys/kernel/printk
+    7       4       1       7
+    root@FCMD:/ffs/run >dmesg -n 8
+    root@FCMD:/ffs/run >cat /proc/sys/kernel/printk
+    8       4       1       7
+    root@FCMD:/ffs/run >
+
+Option 1: 
+
+    dmesg -n 8 // 8 is lowest level, it means all log higher then 8 will be printed to the console.
