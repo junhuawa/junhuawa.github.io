@@ -16,6 +16,7 @@ When the API call, it will open the fd of /dev/sfn, set specific value to the
 fd by ioctl, then poll the fd until POLLIN success, then get the sfn value,
 then close the fd.
 
+```c
     int ddal_sfn_wait_for(uint32_t *sfn, struct timespec *timestamp)
 
     ioctl(global_fd, SFN_WAIT_SPECIFIC, &sfn_for)
@@ -38,6 +39,7 @@ then close the fd.
             return -errno;
         }
     }
+```
 
 So, in the driver, ioctl will add the process to a wait queue, when poll, it
 will set poll_interrupt_sync = 1, when the specifice time is come, POLLIN will
@@ -85,6 +87,7 @@ a stack trace
 
 ### Makefile for kernel module compilation
 
+```makefile
     MODULE=mddg_sfn
 
     KDIR  := /dev/shm/junhuawa/mREC/src-fsmbos/src/kernel/build/fcmd/kernel 
@@ -100,12 +103,14 @@ a stack trace
 
     powerpc-e500-linux-gnu-objdump -S mddg_sfn.ko > /tmp/mddg_sfn.s
     -S --source Display source code intermixed with disassembly, if possible.  Implies -d.
+```
 
 
 ### Bug in the code 
 
 Here **4096** should be (2^20) or (SFN_MAX + 1), because sfn value range is (0 ~ 2^20 -1), instead of previous 4096.
 
+```c
     static int sfn_close(struct inode *inode, struct file *file)
     {
         struct struct_poll_sfn *pp = file->private_data;
@@ -133,6 +138,7 @@ Here **4096** should be (2^20) or (SFN_MAX + 1), because sfn value range is (0 ~
 
         return 0;
     }
+```
 
 #### Code where Instruction is located
     0x374 = 884(decimal)
@@ -276,12 +282,14 @@ http://stackoverflow.com/questions/28298220/kernel-module-no-debugging-symbols-f
 
 Option 1: 
 
+```sh
     root@FCMD:/ffs/run >cat /proc/sys/kernel/printk
     7       4       1       7
     root@FCMD:/ffs/run >dmesg -n 8
     root@FCMD:/ffs/run >cat /proc/sys/kernel/printk
     8       4       1       7
     root@FCMD:/ffs/run >
+```
 
 Option 1: 
 
