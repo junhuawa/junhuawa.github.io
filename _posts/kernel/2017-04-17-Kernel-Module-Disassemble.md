@@ -294,3 +294,16 @@ Option 1:
 Option 1: 
 
     dmesg -n 8 // 8 is lowest level, it means all log higher then 8 will be printed to the console.
+
+### How to detect if a elf's debug symbols are stripped
+
+readelf --sections can show the sections in a elf file. 
+
+readelf --sections binary_path | grep debug_info
+
+It is not trivial to say in general whether a binary was stripped or not,
+because there are different ways to strip a file. Essentially stripping
+removes some sections related to symbols and debugging. However, if you
+replace "debug_info" with "debug", you can see that there are still some
+debug-related sections left in standard binaries of Ubuntu distribution.
+

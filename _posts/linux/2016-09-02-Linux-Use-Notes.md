@@ -417,3 +417,6 @@ shift+PageDown
 
 ### Auto ssh
 autossh
+
+tigervnc
+tigervnc-server
