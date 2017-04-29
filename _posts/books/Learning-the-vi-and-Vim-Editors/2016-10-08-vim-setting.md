@@ -114,3 +114,26 @@ cscope.files was created by below command:
 
     find . -name "*.[ch]" |grep -v testsuite > cscope.files
 
+
+### Use Colorscheme Gruvbox
+
+    git clone https://github.com/morhetz/gruvbox.git ~/.vim/bundle/gruvbox
+
+At the end of the ~/.vimrc, append below cmd:
+
+    colorscheme gruvbox
+
+gruvbox is heavily inspired by badwolf, jellybeans and solarized.
+
+Designed as a bright theme with pastel 'retro groove' colors and light/dark mode switching in the way of solarized. The main focus when developing gruvbox is to keep colors easily distinguishable, contrast enough and still pleasant for the eyes.
+
+    let g:gruvbox_italic=1
+
+### Install vim-airline
+
+    git clone https://github.com/vim-airline/vim-airline ~/.vim/bundle/vim-airline
+    Remember to run :Helptags to generate help tags
+
+
+[gruvbox](https://github.com/morhetz/gruvbox)
+[vim-airline](https://github.com/bling/vim-airline)
