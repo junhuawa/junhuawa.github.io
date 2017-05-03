@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Disassemble Code fore debugging"
+title: "Oops: Kernel access of bad area, sig: 11"
 date: 2017-04-17
 category: "oops" 
 tags: [linux]
@@ -15,6 +15,11 @@ This API will let the process wait after a certain period(certain sfn value).
 When the API call, it will open the fd of /dev/sfn, set specific value to the
 fd by ioctl, then poll the fd until POLLIN success, then get the sfn value,
 then close the fd.
+
+```sh
+    (10:20:24 AM)test@Tesla: /var/fpwork1/jiajuwu/mREC/src-fcmdtest/tests/functional/ddal/sfn
+    (10:21:00 AM)test@Tesla: make test TARGET_IP=10.69.6.16 TARGET_PORT=22
+```
 
 ```c
     int ddal_sfn_wait_for(uint32_t *sfn, struct timespec *timestamp)
