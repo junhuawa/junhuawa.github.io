@@ -45,3 +45,12 @@ Also remember to set restrictive file system permissions on that file:
 
     chmod 600 ~/.netrc
 
+For example: 
+    
+~/.netrc
+
+```sh
+    machine github.com
+    login ***
+    password ***
+```
