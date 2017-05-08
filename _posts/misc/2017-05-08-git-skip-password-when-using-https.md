@@ -45,7 +45,7 @@ Also remember to set restrictive file system permissions on that file:
 
     chmod 600 ~/.netrc
 
-For example: 
+For example, github blog also use below machine name:
     
 ~/.netrc
 
