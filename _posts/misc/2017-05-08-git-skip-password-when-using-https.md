@@ -16,7 +16,7 @@ called **credential helpers**.
 
 Which tells Git to keep your password cached in memory for (by default) 15 minutes. You can set a longer timeout with:
 
-git config --global credential.helper "cache --timeout=3600"
+    git config --global credential.helper "cache --timeout=3600"
 
 ### With Git versions before 1.7.9
 
