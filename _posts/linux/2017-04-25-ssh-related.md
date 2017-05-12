@@ -67,7 +67,7 @@ ssh -vvv user@example.com
 On the server side, you can review /var/log/auth.log for details.
 
 
-### Example ssh to hzling42 without password
+### Example ssh to Tesla without password
 
 Copy the public key to server, and append it to the ~/.ssh/authorized_keys.
 
@@ -76,19 +76,19 @@ ssh-copy-id also assigns proper permission to the remote-host’s home, ~/.ssh,
 and ~/.ssh/authorized_keys.
 
 ```sh
-    [junhuawa@Tesla .ssh]$ ssh-copy-id -i ~/.ssh/id_rsa.pub hzling42.china.nsn-net.net
+    [junhuawa@Tesla .ssh]$ ssh-copy-id -i ~/.ssh/id_rsa.pub Tesla.china.nsn-net.net
     /usr/bin/ssh-copy-id: INFO: attempting to log in with the new key(s), to filter out any that are already installed
     /usr/bin/ssh-copy-id: INFO: 1 key(s) remain to be installed -- if you are prompted now it is to install the new keys
-    junhuawa@hzling42.china.nsn-net.net's password: 
+    junhuawa@Tesla.china.nsn-net.net's password: 
 
     Number of key(s) added: 1
 
-    Now try logging into the machine, with:   "ssh 'hzling42.china.nsn-net.net'"
+    Now try logging into the machine, with:   "ssh 'Tesla.china.nsn-net.net'"
     and check to make sure that only the key(s) you wanted were added.
 
-    [junhuawa@Tesla .ssh]$ ssh hzling42.china.nsn-net.net
+    [junhuawa@Tesla .ssh]$ ssh Tesla.china.nsn-net.net
     Last login: Tue Apr 25 15:39:36 2017 from 10.140.30.70
-    [junhuawa@hzling42 ~]$ 
+    [junhuawa@Tesla ~]$ 
 ```
 
 
@@ -116,15 +116,15 @@ The ssh client allows you to selects a file from which the identity (private key
 
 
 ```sh
-    [junhuawa@hzling42 .ssh]$ ssh -i id_rsa_junhuawa_Tesla 10.140.30.70
+    [junhuawa@Tesla .ssh]$ ssh -i id_rsa_junhuawa_Tesla 10.140.30.70
     Last login: Tue Apr 25 10:51:49 2017 from 127.0.0.1
     [junhuawa@Tesla ~]$ exit
     logout
     Connection to 10.140.30.70 closed.
-    [junhuawa@hzling42 .ssh]$ ssh 10.140.30.70
+    [junhuawa@Tesla .ssh]$ ssh 10.140.30.70
     junhuawa@10.140.30.70's password: 
 
-    [junhuawa@hzling42 .ssh]$
+    [junhuawa@Tesla .ssh]$
 ```
 
 ### ~/.ssh/config SSH Client Configuration
@@ -136,7 +136,7 @@ vi ~/.ssh/config
 Add both host names and their identity file as follows:
 
     Host ling42
-    HostName hzling42.china.nsn-net.net
+    HostName Tesla.china.nsn-net.net
     StrictHostKeyChecking no
     UserKnownHostsFile=/dev/null
     IdentityFile ~/.ssh/id_rsa

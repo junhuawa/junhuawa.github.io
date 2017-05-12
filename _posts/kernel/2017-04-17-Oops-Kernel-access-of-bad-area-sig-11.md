@@ -165,7 +165,7 @@ Here **4096** should be (2^20) or (SFN_MAX + 1), because sfn value range is (0 ~
 
 #### Code Where NIP shows
 
-    [junhuawa@hzling42 build]$ powerpc-e500-linux-gnu-gdb fcmd/kernel/extra/sfn/mddg_sfn.ko
+    [junhuawa@Tesla build]$ powerpc-e500-linux-gnu-gdb fcmd/kernel/extra/sfn/mddg_sfn.ko
     GNU gdb (GDB) 7.8.2.20150113-cvs
     Copyright (C) 2014 Free Software Foundation, Inc.
     License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
