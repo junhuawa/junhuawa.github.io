@@ -131,7 +131,7 @@ The ssh client allows you to selects a file from which the identity (private key
 
 You can set identity file in ~/.ssh/config as follows:
 
-vi ~/.ssh/config
+    vi ~/.ssh/config
 
 Add both host names and their identity file as follows:
 
@@ -174,8 +174,8 @@ server; remember to restart the SSH service afterwards).
 
 Another thing that can go wrong is GSSAPI authentication timing out. If you
 don't know what that is, you're probably not relying on it; you can turn it
-off by adding the line GSSAPIAuthentication no to /etc/ssh/ssh_config or
-~/.ssh/config (that's on the client side).
+off by adding the line GSSAPIAuthentication no to **/etc/ssh/ssh_config** or
+**~/.ssh/config** (that's on the client side).
 
 ### /etc/ssh/sshd_config
 

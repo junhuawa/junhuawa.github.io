@@ -8,7 +8,7 @@ tags: [hsfn]
 
 #### Code of mddg_sfn.c
 
-```
+```c
     static u32 local_hsfn;
     static void local_hsfn_update(u32 hsfn)
     {
@@ -105,7 +105,6 @@ means the local_hsfn value will increment like below:
 
     0xFFFFD -> 0xFFFFE -> 0xFFF
 
-This is not what we expect. 
 
     ok 750 - sfn prev: 0xFFFFA, current: 0xFFFFB
     ok 751 - sfn prev: 0xFFFFB, current: 0xFFFFC
@@ -116,6 +115,10 @@ This is not what we expect.
     #     Condition: sfn_current == (sfn_prev + 1)%(DDAL_MAX_HSFN + 1)
     ok 755 - sfn prev: 0xFFF, current: 0x1000
     ok 756 - sfn prev: 0x1000, current: 0x1001
+
+what we expect is:
+
+    0xFFFFD -> 0xFFFFE -> 0xFFFFF -> 0x00000 -> 0x00001
 
 So, the correction is to change the order of local_hsfn update and check if
 it's out of range. 
