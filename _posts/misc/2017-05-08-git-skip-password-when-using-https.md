@@ -54,3 +54,8 @@ For example, github blog also use below machine name:
     login ***
     password ***
 ```
+
+#### Debug ssh
+
+    ssh -T git@github.com
+    ssh -T -vv git@github.com

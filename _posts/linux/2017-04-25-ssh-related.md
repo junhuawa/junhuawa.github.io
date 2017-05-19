@@ -185,3 +185,70 @@ off by adding the line GSSAPIAuthentication no to **/etc/ssh/ssh_config** or
     GSSAPIAuthentication no
     GSSAPICleanupCredentials no
 
+
+### Questions related to public key
+If I save my public key to my git server, and my private key to my lin42
+server, both keys are created from my own PC, not from lin42 server. 
+
+It will be failed if I clone data from git server. 
+
+But if I create a new key pair in the lin42 server, and put to the public key
+to git server, save private key to lin42 server. 
+Clone data from git server will be successful.
+
+Don't know why.  :(
+
+Finally, I create a new key pair from lin42 server, and copy them to my own
+pc, add public key to my ~/.ssh/authorized_key file, now, in my own pc, ssh to
+localhost can be successfuly without password. 
+When I ssh to lin42 server, it report **Agent admitted failure to sign using
+the key.** error. 
+
+    16:38 junhuawa@Tesla:~/.ssh $ ssh hzling42.china.nsn-net.net -v
+    OpenSSH_6.6.1, OpenSSL 1.0.1e-fips 11 Feb 2013
+    debug1: Reading configuration data /etc/ssh/ssh_config
+    debug1: /etc/ssh/ssh_config line 56: Applying options for *
+    debug1: Connecting to hzling42.china.nsn-net.net [10.159.215.233] port 22.
+    debug1: Connection established.
+    debug1: identity file /home/junhuawa/.ssh/id_rsa type 1
+    debug1: identity file /home/junhuawa/.ssh/id_rsa-cert type -1
+    debug1: identity file /home/junhuawa/.ssh/id_dsa type -1
+    debug1: identity file /home/junhuawa/.ssh/id_dsa-cert type -1
+    debug1: identity file /home/junhuawa/.ssh/id_ecdsa type -1
+    debug1: identity file /home/junhuawa/.ssh/id_ecdsa-cert type -1
+    debug1: identity file /home/junhuawa/.ssh/id_ed25519 type -1
+    debug1: identity file /home/junhuawa/.ssh/id_ed25519-cert type -1
+    debug1: Enabling compatibility mode for protocol 2.0
+
+    ...
+    debug1: Next authentication method: publickey
+    debug1: Offering RSA public key: /home/junhuawa/.ssh/id_rsa
+    debug1: Server accepts key: pkalg ssh-rsa blen 277
+    Agent admitted failure to sign using the key.
+    debug1: Trying private key: /home/junhuawa/.ssh/id_dsa
+    debug1: Trying private key: /home/junhuawa/.ssh/id_ecdsa
+    debug1: Trying private key: /home/junhuawa/.ssh/id_ed25519
+    debug1: Next authentication method: password
+    junhuawa@hzling42.china.nsn-net.net's password:
+
+
+This error can be solved by below 2 methods.
+
+    using SSH_AUTH_SOCK=0 ssh -vvv remote@10.0.7.112 prevents the error.
+
+    ssh-add fixes it too. 
+
+If you set SSH_AUTH_SOCK=0 then you are not using the ssh-agent any longer. The ssh-key you created is passphraseless I assume, as you will then use just this plain key.
+
+The purpose of the agent is to allow a one time sign in with the passphrase of the ssh-key, and authorize all further application of the ssh-key during your session.
+
+When you get this failure always, maybe we can look into the used keys in the ssh-agent. What is:
+Code:
+
+    $ ssh-add -l
+
+running ssh-add after ssh-copy-id seems to be preventing "agent admitted to failure to sign using the key" from showing up now. 
+
+
+**From this testing, get the conslusion that: same key pair can be used at
+different servers with same user account.**

@@ -24,3 +24,12 @@ tags: [books]
 **TCP/IP Illustrated Volume 1: The Protocols - W. Richard Stevens** 
 
 Start: 2017.4.21
+
+工作4年了，你应该学会经营关系，一些关系是血缘带来了，更多的其实是自己后天经营的。
+那些本来没有根基，后天通过自己努力营造出强大关系网的人不要太多。 
+Don't waste your energy trying to change opinions ... Do your thing, and don't
+care if they like it.
+
+Linux将快乐重新带回到计算机领域。利用linux，任何人可以了解系统并以任何可能的方式贡献自己的代码。
+Linux不仅为我们提供了一个顶级质量的操作系统，而且也为我们提供了参与其未来开发过程的机会，我们完全可以从
+中得到无尽的快乐！
