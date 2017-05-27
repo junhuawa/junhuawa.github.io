@@ -9,9 +9,13 @@ tags: [tool]
 #### 事情经过
 
 我喜欢把代码仓库在/dev/shm/junhuawa目录下面checkout(即内存里)，因为在内存，怕断电丢失change，所以经常做了改动就checkin了。
+
 在开发新的feature，编译LFS时，需要在LFS包含的包里加上几个额外的包用于测试 (sysbench, iperf3, lmbench3).
+
 在修改了包管理工具rootfs.list后，我顺手commit了change.
+
 因为这个是svn管理的仓库，commit之后就触发了CI重新编译，跑Case。并且编译出来的包会被Application 拿去进一步测试。
+
 几天之后，忽然收到邮件，说我的没有经过review的change导致了Application Test
 case失败！！！
 
