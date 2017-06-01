@@ -97,5 +97,13 @@ spaces are not required.)
 
     In a world without walls and fences, who needs DOORS, WINDOWS and GATES?
 
+#### How to get a vertical pipe in the table
+You need to use the &#124; entity code to get a vertical pipe. It appears as
+"|" in the rendered table.
+
+| parameters | desc |
+| :--------- | :-------- |
+| -w &#124; --word | Parameter for word |
+
 [Keyword for Code Highlight in Markdown](https://github.com/github/linguist/blob/master/lib/linguist/languages.yml)
 [Lists in Markdown](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet#lists)

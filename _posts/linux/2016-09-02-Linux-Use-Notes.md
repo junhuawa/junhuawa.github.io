@@ -420,3 +420,8 @@ autossh
 
 tigervnc
 tigervnc-server
+
+### shunit2
+http://ssb.stsci.edu/testing/shunit2/shunit2.html
+
+shell script unit test framework

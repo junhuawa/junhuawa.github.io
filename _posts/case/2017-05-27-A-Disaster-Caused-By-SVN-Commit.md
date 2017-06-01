@@ -63,3 +63,8 @@ case失败！！！
     对于代码的commit，一定要follow正式的流程，经过review才merge到repo;
     以前总是在内存中改/checkout代码，正是怕丢，所以急着commit，这个习惯要改，如果着急，可以在memory checkout代码，编译完copy到disk，开发工作还是要在disk上，这样就不会有丢失的风险！！！
 
+
+#### 总结
+还有一个原因是，因为以前部门一直
+用svn，而且那时候还有tag，代码commit到trunk里，不会立即发布出去，最多只会触发组内的CI，出包只能用tag版本；
+而这个新部门没有tag的概念，一切CI都是建立在trunk只上的。
