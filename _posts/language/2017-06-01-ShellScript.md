@@ -65,6 +65,7 @@ Translate the string "," to "\n".
 
 #### Array in shell script
 
+```sh
     [junhuawa@Tesla ~]$ list=("cricket" "frog" "cat" "dog")
     [junhuawa@Tesla ~]$ echo $list
     cricket
@@ -80,7 +81,17 @@ Translate the string "," to "\n".
     4
     [junhuawa@Tesla ~]$ echo ${#list[0]}
     7
+```
 
+```sh
+    test=(KA KB KC)
+    for soc in ${test[@]}; do
+        echo -n "$soc "
+    done
+```
+Result:
+
+    >> KA KB KC 
 
 Number of strings in $fep_matching_list[@]
 
@@ -101,7 +112,7 @@ Number of strings in $fep_matching_list[@]
 
     [junhuawa@hzling30]$find . -type f -exec file '{}' \;
 
-find normal file, and use file cmd to show the results. 
+Find normal file, and use file cmd to show the results. 
 
 Notice that the braces are enclosed in single quote marks to protect them from interpretation as shell script punctuation.   
 The semicolon is similarly protected by the use of a  back-slash, though â;â could have been used in that case also.
@@ -197,10 +208,12 @@ fi
 
 #### sed 替换
 
+```sh
     10:41 junhuawa@Tesla:~ $ echo "powerpc__NEW_LINE__" |sed 's/__NEW_LINE__ */\x0/g'//替换成16进制的0
     powerpc
     10:41 junhuawa@Tesla:~ $ echo "powerpc__NEW_LINE__" |sed 's/__NEW_LINE__ *//g'
     powerpc
     10:41 junhuawa@Tesla:~ $
+```
 
 
