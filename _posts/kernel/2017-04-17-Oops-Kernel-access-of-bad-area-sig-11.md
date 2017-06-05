@@ -87,8 +87,7 @@ a stack trace
 
 ### Add debug info to the Kernel module when do compilation
     
-    make -C /KDIR modules EXTRA_CFLAGS="-g"
-    make -C /KDIR modules EXTRA_CFLAGS="-DDEBUG"
+    make -C /KDIR modules EXTRA_CFLAGS="-g -DDEBUG"
 
 ### Makefile for kernel module compilation
 
@@ -99,17 +98,16 @@ a stack trace
     PWD   := $(shell pwd)
 
     default:
-        $(MAKE) -C $(KDIR)  SUBDIRS=$(PWD) modules ARCH=powerpc CROSS_COMPILE=/build/home/SC_LFS/sdk/tags/PS_LFS_SDK_3_28/bld-tools/x86_64-pc-linux-gnu/bin/powerpc-e500-linux-gnu- EXTRA_CFLAGS="-g"
+        $(MAKE) -C $(KDIR)  SUBDIRS=$(PWD) modules ARCH=powerpc CROSS_COMPILE=/build/home/SC_LFS/sdk/tags/PS_LFS_SDK_3_28/bld-tools/x86_64-pc-linux-gnu/bin/powerpc-e500-linux-gnu- EXTRA_CFLAGS="-g -DDEBUG"
 
     clean:
         rm -rf $(MODULE).o *~ core .depend .*.cmd *.ko *.mod.[co] .tmp_versions Module.symvers
+```
 
 ### Disassemble the sfn_interrupt function(kernel module)
 
     powerpc-e500-linux-gnu-objdump -S mddg_sfn.ko > /tmp/mddg_sfn.s
     -S --source Display source code intermixed with disassembly, if possible.  Implies -d.
-```
-
 
 ### Bug in the code 
 
@@ -305,6 +303,7 @@ Option 1:
 readelf --sections can show the sections in a elf file. 
 
 readelf --sections binary_path | grep debug_info
+readelf -S binary_path | grep debug
 
 It is not trivial to say in general whether a binary was stripped or not,
 because there are different ways to strip a file. Essentially stripping
