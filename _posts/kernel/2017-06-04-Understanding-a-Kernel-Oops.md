@@ -71,7 +71,7 @@ dump总是将消息dump到终端，它包含错误发生时的处理器状态和
             rm -rf *.o *.ko *.order *.symvers *.mod.c
 ```
 
-一旦执行，该模块生成如下的Oops:
+在一台MIPS的机器上，一旦执行，该模块生成如下的Oops:
 
     [ 9097.517831] oops from the module
     [ 9107.517558] CPU 26 Unable to handle kernel paging request at virtual address 0000000000000000, epc == ffffffffc0d5403c, ra == ffffffffc0d5401c
@@ -139,7 +139,7 @@ dump总是将消息dump到终端，它包含错误发生时的处理器状态和
 `Tainted`标志有几种不同的值，其含义可以在kernel/panic.c里找到：
 
 EPC?
-`my_oops_init+0x3c/0x4c`表示<symbol> + the offset/length.
+`my_oops_init+0x3c/0x4c`表示\<symbol\> + the offset/length.
 
     [ 9107.620607] epc   : ffffffffc0d5403c my_oops_init+0x3c/0x4c [oops]
 
@@ -194,45 +194,46 @@ Oops发生时16进制指令码:
 
     (gdb) disassemble my_oops_init
     Dump of assembler code for function my_oops_init:
-    0x0000000000000030 <+0>: daddiu  sp,sp,-16
-    0x0000000000000034 <+4>: lui a0,0x0
-    0x0000000000000038 <+8>: lui v0,0x0
-    0x000000000000003c <+12>:    sd  ra,8(sp)
+    0x0000000000000030 <+0>:     daddiu  sp,sp,-16
+    0x0000000000000034 <+4>:     lui     a0,0x0
+    0x0000000000000038 <+8>:     lui     v0,0x0
+    0x000000000000003c <+12>:    sd      ra,8(sp)
     0x0000000000000040 <+16>:    daddiu  v0,v0,0
     0x0000000000000044 <+20>:    jalr    v0
     0x0000000000000048 <+24>:    daddiu  a0,a0,0
-    0x000000000000004c <+28>:    sw  zero,0(zero)
-    0x0000000000000050 <+32>:    ld  ra,8(sp)
-    0x0000000000000054 <+36>:    move    v0,zero
-    0x0000000000000058 <+40>:    jr  ra
-    0x000000000000005c <+44>:    daddiu  sp,sp,16
+    0x000000000000004c <+28>:    lui     a0,0x0
+    0x0000000000000050 <+0>:     ld      v1,0(a0)
+    0x0000000000000054 <+4>:     j       0x0
+    0x0000000000000058 <+8>:     daddiu  v1,v1,2500
+    0x000000000000005c <+12>:    ld      v0,0(a0)
+    0x0000000000000060 <+16>:    dsubu   v0,v0,v1
+    0x0000000000000064 <+20>:    bltz    v0,0x5c <my_oops_init+12>
+    0x0000000000000068 <+24>:    move    v0,zero
+    0x000000000000006c <+28>:    sw      zero,0(zero)
+    0x0000000000000070 <+32>:    ld      ra,8(sp)
+    0x0000000000000074 <+36>:    jr      ra
+    0x0000000000000078 <+40>:    daddiu  sp,sp,16
     End of assembler dump.
 
 `0x1c`是出错函数里出错语句的偏移地址, 从上面的反汇编中可以看出，`my_oops_init`函数的起始地址是: 0x0000000000000030, 那么出错的指令对应的地址是:
 
-    0x0000000000000030 + 0x1c = 0x000000000000004c. 
+    0x0000000000000030 + 0x3c = 0x000000000000006c. 
 
-    (gdb) list * 0x000000000000004c
-    0x4c is in my_oops_init (/var/fpwork1/junhuawa/LCP/src-lrcddg/src/build/lcpa/linux/extra/test/oops.c:6).
-    1   #include <linux/kernel.h>
-    2   #include <linux/module.h>
-    3   #include <linux/init.h>
-    4    
-    5   static void create_oops(void) {
-    6           *(int *)0 = 0;
-    7   }
-    8    
-    9   static int __init my_oops_init(void) {
-    10          printk("oops from the module\n");
-    (gdb) 
+    (gdb) list * 0x0006c
+    0x6c is in my_oops_init (/var/fpwork1/junhuawa/LCP/src-lrcddg/src/build/lcpa/linux/extra/test/oops.c:12).
+    7           j = jiffies + 10*HZ;
+    8
+    9           while(time_before(jiffies, j)) {
+    10              cpu_relax();
+    11          }
+    12          *(int *)0 = 0;
+    13      }
+    14       
+    15      static int __init my_oops_init(void) {
+    16              printk("oops from the module\n");
+    (gdb)
 
-
-1. Check is their system is 100% free:
-(check /proc/sys/kernel/tainted).
-2. dmesg (“diagnostic message”)
-Found in all systems, Displays the kernel log buffer
-
-#### no debugging symbols found when loading module by gdb
+#### No debugging symbols found when loading module by gdb
 
     Reading symbols from src/build.bak/lcpa/modules/lib/modules/3.10.64--sampleversion-lcpa/extra/test/oops.ko...(no debugging symbols found)...done.
 
@@ -262,7 +263,6 @@ Found in all systems, Displays the kernel log buffer
 
 用gdb调试时，也可以加载symbol file,
 并将模块文本段的地址作为参数传进去，这样用gdb反汇编出来的函数的地址跟运行时的地址是一至的。 
-
 
     [junhuawa@hzling42 src-lrcddg]$ mips64-octeon2-linux-gnu-gdb src/build/lcpa/modules/lib/modules/3.10.64--sampleversion-lcpa/extra/test/oops.ko
     GNU gdb (GDB) 7.8.2.20150113-cvs
@@ -326,3 +326,12 @@ Found in all systems, Displays the kernel log buffer
 根据测试结果，加上symbol file，反汇编出来的函数的起始地址还是没有变化，不知道加symbol file的意义何在？ 
 
 [Understanding a Kernel Oops!](http://www.opensourceforu.com/2011/01/understanding-a-kernel-oops/)
+
+1. Check is their system is 100% free:
+
+(check /proc/sys/kernel/tainted).
+
+2. dmesg (“diagnostic message”)
+
+Found in all systems, Displays the kernel log buffer
+
