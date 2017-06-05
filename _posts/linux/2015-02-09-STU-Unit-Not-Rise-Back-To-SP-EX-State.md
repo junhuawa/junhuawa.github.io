@@ -84,7 +84,7 @@ Check igb driver in VMU and iPXE code in STU, found there is no obvious error.
 Check ETHLIB code, found there is an error:
 
 ```c
-ethsiogx.c:
+    ethsiogx.c:
      static error_t sio_set_pkt_filter(eth_dev__t  *edp)
          else
     {
@@ -93,7 +93,7 @@ ethsiogx.c:
     }
     /* furthermore ENET_ADDR_CMD_T_ACC_ALL_MA_C is not an option */
     vmolr |= SIO_VF_VMOLR_RESET_MPE;
-ethsiogx.h:
+    ethsiogx.h:
      #define SIO_VF_VMOLR_RESET_MPE    
      (1 << 28) /* Disable prom. multicasts */
 ```c
