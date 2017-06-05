@@ -18,7 +18,7 @@ Virtual service terminal session can see only
 This problem occurs only when traffic is ongoing in network element.
 6.5MBHCA stability test traffic used.
 
-ACPI5_A blade use in VMU.
+New blade use in VMU.
 
 After traffic stopped, STU comes automatically back to SP-EX state. Not checked how
 much traffic need to be decreased to get with traffic STU back to SP-EX state.
@@ -31,7 +31,6 @@ much traffic need to be decreased to get with traffic STU back to SP-EX state.
 
  Description of the correction (incl. risk analysis): The igbvf driver in iPXE
  disable promisc mode, filter packages in MAC level.
-
 
 #### Testing the network traffic bandwidth by `iperf`
 
@@ -106,6 +105,7 @@ All spend 12 hours.
 
 Set env to build the kernel module, then set KDIR and PWD variable value.
 
+```makefile
     obj-m := igb.o
 
     igb-objs := igb_main.o igb_ethtool.o igb_param.o \
@@ -124,5 +124,6 @@ Set env to build the kernel module, then set KDIR and PWD variable value.
         rm *.mod.c
         rm .*cmd
         rm -r .tmp_versions
+```
 
 Intel® 82576EB Gigabit Ethernet Controller Datasheet.pdf
