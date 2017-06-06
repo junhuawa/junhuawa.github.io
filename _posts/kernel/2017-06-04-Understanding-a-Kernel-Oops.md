@@ -138,6 +138,20 @@ dump总是将消息dump到终端，它包含错误发生时的处理器状态和
 `CPU： 1`表示出错时在哪个CPU上运行.
 `Tainted`标志有几种不同的值，其含义可以在kernel/panic.c里找到：
 
+    'P' - Proprietary module has been loaded.
+    'F' - Module has been forcibly loaded.
+    'S' - SMP with CPUs not designed for SMP.
+    'R' - User forced a module unload.
+    'M' - System experienced a machine check exception.
+    'B' - System has hit bad_page.
+    'U' - Userspace-defined naughtiness.
+    'D' - Kernel has oopsed before
+    'A' - ACPI table overridden.
+    'W' - Taint on warning.
+    'C' - modules from drivers/staging are loaded.
+    'I' - Working around severe firmware bug.
+    'O' - Out-of-tree module has been loaded.
+
 EPC?
 `my_oops_init+0x3c/0x4c`表示\<symbol\> + the offset/length.
 
