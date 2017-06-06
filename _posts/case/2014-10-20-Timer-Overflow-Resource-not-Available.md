@@ -386,7 +386,7 @@ From the log of /proc/timer_stats, we can see there are many timers are used by 
 Every row is 1 timer and it's event count. 
 
 
-# cat /proc/timer_stats 
+### cat /proc/timer_stats 
 
     Timer Stats Version: v0.2
     Sample period: 251.329 s
