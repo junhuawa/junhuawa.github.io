@@ -107,3 +107,7 @@ You need to use the &#124; entity code to get a vertical pipe. It appears as
 
 [Keyword for Code Highlight in Markdown](https://github.com/github/linguist/blob/master/lib/linguist/languages.yml)
 [Lists in Markdown](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet#lists)
+
+#### Podcast
+
+[Machine Learning](http://lineardigressions.com/)
