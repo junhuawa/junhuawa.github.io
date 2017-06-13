@@ -9,6 +9,7 @@ tags: [linux]
 #### Env Setup
 
     Test Device(192.168.255.5) --- (192.168.255.254) PC133 (10.69.6.133) --- Ling42(Server)
+
 I want to create a IP tunnel, so I can login and ssh the Test Device automatically, don't need to visit the PC133.
 
 #### Setup IP Tunnel in Ling42
@@ -20,7 +21,7 @@ I want to create a IP tunnel, so I can login and ssh the Test Device automatical
 
 #### Example
 
-ssh -i /path/to/sshkey -l username -f -N -T -L 8088:idc2-server2:80 idc1-server1
+    ssh -i /path/to/sshkey -l username -f -N -T -L 8088:idc2-server2:80 idc1-server1
 
 -L 8088:idc2-server2:80 idc1-server1
 
