@@ -60,12 +60,12 @@ For each test case, output one line containing "Case #x: y", where x is the test
 
    在B上建完站之后，A，B节点及连边都可以从图上删掉，还有一些特殊情况需要考虑：
 
-![image](../../images/datastructure/q5-link-between-2covered-nodes.png)
+![image](../../../images/datastructure/q5-link-between-2covered-nodes.png)
 在Node 5, Node 7上建站后，Node 3, 4, 6, 8, 5, 7
 都已经被覆盖，在接下来的计算中，Node 3，4连边已经不需要了，所以需要删掉！ Node
 3, 4 的状态应该是COVERED.
 
-![image](../../images/datastructure/q5-link-to-covered-node.png)
+![image](../../../images/datastructure/q5-link-to-covered-node.png)
 
 在Node 6上建站后，Node 5 已经被覆盖，所以Node 3 和 5的连边需要删掉！
 
@@ -74,7 +74,7 @@ For each test case, output one line containing "Case #x: y", where x is the test
 而且环中的个别节点已经被覆盖。
 
 
-![image](../../images/datastructure/q5-loop.png)
+![image](../../../images/datastructure/q5-loop.png)
 
 因为这时候问题规模已经很小，可以直接用暴力求解的方法将需要覆盖的最小点数求出来。
 
