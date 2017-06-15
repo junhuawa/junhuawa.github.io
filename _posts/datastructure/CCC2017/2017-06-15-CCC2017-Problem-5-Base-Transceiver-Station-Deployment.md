@@ -67,7 +67,10 @@ For each test case, output one line containing "Case #x: y", where x is the test
 
 ![image](../../../images/datastructure/q5-link-to-covered-node.png)
 
-在Node 6上建站后，Node 5 已经被覆盖，所以Node 3 和 5的连边需要删掉！
+如左图，在Node 6上建站后，Node 5
+已经被覆盖，因为5和1个未知节点3相连，在3上建站比在5上建站更优，所以Node 3 和 5的连边需要删掉！
+
+如果如右图，如果节点5和两个未知节点相连，则5和未知节点的连边不能删掉，因为在5上有可能建站。 
 
 4.
 递归的执行1，2，3，直到问题规模不能继续缩小，这时候碰到的应该是类似于环的图,
