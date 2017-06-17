@@ -1,3 +1,10 @@
+---
+layout: post
+title: "Bootstrap"
+date: 2017-06-17
+category: "bootstrap"
+tags: [bootstrap]
+---
 ### Bootstrap
 
 [Bootstrap](http://v3.bootcss.com/)
@@ -45,7 +52,7 @@ HTML 标记标签通常被称为 HTML 标签 (HTML tag)。
 
 Web浏览器（如谷歌浏览器，Internet Explorer，Firefox，Safari）是用于读取HTML文件，并将其作为网页显示。
 
-浏览器并不是直接显示的HTML标签，但可以使用标签来决定如何展现HTML页面的内容给用户：
+浏览器并不是直接显示HTML标签，但可以使用标签来决定如何展现HTML页面的内容给用户：
 
 #### HTML example
 
@@ -69,6 +76,13 @@ Web浏览器（如谷歌浏览器，Internet Explorer，Firefox，Safari）是�
 静态网页文件的扩展名: htm/html 
 
     <!DOCTYPE html>  声明为HTML5文档
+
+title 与 heading 这两个单词在日常的英语中是可以通用的，在HTML中，<title>
+指定整个网页的标题，并不显示在网页上，而显示在浏览器窗口的标题栏中。
+而heading标签使一些文本突出显示在网页上。 
+
+一个网页只能有一个\<title\>, 且只能出现在\<head\>和\<\/head\> 标签之间，而\<h1\>, \<h2\>
+和\<h3\> 可以有任意多个，顺序也可以根据需要任意安排。
 
 ### Node.js
 
