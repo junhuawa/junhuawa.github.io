@@ -81,8 +81,8 @@ title 与 heading 这两个单词在日常的英语中是可以通用的，在HT
 指定整个网页的标题，并不显示在网页上，而显示在浏览器窗口的标题栏中。
 而heading标签使一些文本突出显示在网页上。 
 
-一个网页只能有一个\<title\>, 且只能出现在\<head\>和\<\/head\> 标签之间，而\<h1\>, \<h2\>
-和\<h3\> 可以有任意多个，顺序也可以根据需要任意安排。
+一个网页只能有一个\<title\>, 且只能出现在\<head\>和\<\/head\> 标签之间，而\<h1\>, 
+\<h2\> 和\<h3\> 可以有任意多个，顺序也可以根据需要任意安排。
 
 ### Node.js
 
@@ -91,3 +91,28 @@ title 与 heading 这两个单词在日常的英语中是可以通用的，在HT
     Node.js 的包管理器 npm，是全球最大的开源库生态系统。 
 
     npm: node package manager
+
+
+#### Container in Bootstrap
+
+container is a container of row elements.
+
+row elements are containers of columns (the docs call it grid system)
+
+Also, container sets the content's margins dealing with the responsive behaviors of your layout.
+
+Thus the container class is often used to create 'boxed' contents based on the style guidelines of the Bootstrap project.
+
+If you want to go "out of the box" creating a full width grid you can use only row elements with columns inside (spanning the usual 12cols total).
+
+https://stackoverflow.com/questions/19983857/when-should-i-use-container-and-row-in-twitter-bootstrap-3
+
+[The Subtle Magic Behind Why the Bootstrap 3 Grid Works](http://www.helloerik.com/the-subtle-magic-behind-why-the-bootstrap-3-grid-works)
+
+http://getbootstrap.com/css/
+
+### Less
+
+Less 是一门 CSS 预处理语言，它扩充了 CSS 语言，增加了诸如变量、混合（mixin）、函数等功能，让 CSS 更易维护、方便制作主题、扩充。
+
+Less 可以运行在 Node、浏览器和 Rhino 平台上。网上有很多第三方工具帮助你编译 Less 源码。
