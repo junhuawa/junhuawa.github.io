@@ -187,7 +187,7 @@ Oops发生时16进制指令码:
 
 将怀疑的kernel module用gdb debugger加载:
 
-    [junhuawa@hzling42 src-lrcddg]$ mips64-octeon2-linux-gnu-gdb src/build/lcpa/modules/lib/modules/3.10.64--sampleversion-lcpa/extra/test/oops.ko
+    [junhuawa@ling42 src-lrcddg]$ mips64-octeon2-linux-gnu-gdb src/build/lcpa/modules/lib/modules/3.10.64--sampleversion-lcpa/extra/test/oops.ko
     GNU gdb (GDB) 7.8.2.20150113-cvs
     Copyright (C) 2014 Free Software Foundation, Inc.
     License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
@@ -253,7 +253,7 @@ Oops发生时16进制指令码:
 
 这种情况一般是因为kernel module没有携带debug信息，需要编译时加参数 `-DDEBUG`.
 
-    [junhuawa@hzling42 src]$ git diff Makefile 
+    [junhuawa@ling42 src]$ git diff Makefile 
     diff --git a/src-lrcddg/src/Makefile b/src-lrcddg/src/Makefile
     index c33352b..a0ea0d4 100644
     --- a/src-lrcddg/src/Makefile
@@ -278,7 +278,7 @@ Oops发生时16进制指令码:
 用gdb调试时，也可以加载symbol file,
 并将模块文本段的地址作为参数传进去，这样用gdb反汇编出来的函数的地址跟运行时的地址是一至的。 
 
-    [junhuawa@hzling42 src-lrcddg]$ mips64-octeon2-linux-gnu-gdb src/build/lcpa/modules/lib/modules/3.10.64--sampleversion-lcpa/extra/test/oops.ko
+    [junhuawa@ling42 src-lrcddg]$ mips64-octeon2-linux-gnu-gdb src/build/lcpa/modules/lib/modules/3.10.64--sampleversion-lcpa/extra/test/oops.ko
     GNU gdb (GDB) 7.8.2.20150113-cvs
     Copyright (C) 2014 Free Software Foundation, Inc.
     License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>

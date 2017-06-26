@@ -96,7 +96,7 @@ Done
    Loading Device Tree to 007fb000, end 007fffff ... OK
 [    0.000000] Using FCMD machine description
 [    0.000000] Memory CAM mapping: 64/64/64 Mb, residual: 48Mb
-[    0.000000] Linux version 2.6.32.60-2-sampleversion-fcmd (junhuawa@hzling42.c
+[    0.000000] Linux version 2.6.32.60-2-sampleversion-fcmd (junhuawa@ling42.c
 [    0.000000] Found initrd at 0xc78f8000:0xc7fffd18
 [    0.000000] bootconsole [udbg0] enabled
 setup_arch: bootmem

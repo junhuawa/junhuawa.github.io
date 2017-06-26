@@ -57,7 +57,7 @@ Here to disable promisc mode, we should set VMOLR to 0, not 1. 0 means disable p
 Intel® 82576EB Gigabit Ethernet Controller Datasheet.pdf
 
 
-\[junhuawa@hzling30]$cat cpio.conf |grep pxe
+\[junhuawa@ling30]$cat cpio.conf |grep pxe
 
     file /opt/vmanakvm/pxe-igbvf.rom ../src/qemu-kvm/qemu/pc-bios/pxe-igbvf.rom 0644 0 0
 

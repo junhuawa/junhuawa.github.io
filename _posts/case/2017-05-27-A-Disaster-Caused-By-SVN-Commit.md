@@ -41,8 +41,8 @@ case失败！！！
     libnss_files-2
     @@ -96,3 +94,6 @@
     smartmontools
-    vlan    # requested by TRSW
-    arptables  # requested by pengying.li@nokia.com to configure the ARP packet priority in new feature LBT3211
+    vlan    # requested by SW
+    arptables  # requested by CM
     +sysbench
     +iperf
     +lmbench3

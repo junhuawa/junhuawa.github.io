@@ -204,11 +204,11 @@ localhost can be successfuly without password.
 When I ssh to lin42 server, it report **Agent admitted failure to sign using
 the key.** error. 
 
-    16:38 junhuawa@Tesla:~/.ssh $ ssh hzling42.china.nsn-net.net -v
+    16:38 junhuawa@Tesla:~/.ssh $ ssh ling42.china.nsn-net.net -v
     OpenSSH_6.6.1, OpenSSL 1.0.1e-fips 11 Feb 2013
     debug1: Reading configuration data /etc/ssh/ssh_config
     debug1: /etc/ssh/ssh_config line 56: Applying options for *
-    debug1: Connecting to hzling42.china.nsn-net.net [10.159.215.233] port 22.
+    debug1: Connecting to ling42.china.nsn-net.net [10.159.215.233] port 22.
     debug1: Connection established.
     debug1: identity file /home/junhuawa/.ssh/id_rsa type 1
     debug1: identity file /home/junhuawa/.ssh/id_rsa-cert type -1
@@ -229,7 +229,7 @@ the key.** error.
     debug1: Trying private key: /home/junhuawa/.ssh/id_ecdsa
     debug1: Trying private key: /home/junhuawa/.ssh/id_ed25519
     debug1: Next authentication method: password
-    junhuawa@hzling42.china.nsn-net.net's password:
+    junhuawa@ling42.china.nsn-net.net's password:
 
 
 This error can be solved by below 2 methods.

@@ -14,6 +14,8 @@ Bootstrap
 让前端开发更快速、简单。所有开发者都能快速上手、所有设备都可以适配、所有项目都适用。
 
 Bootstrap 是完全开源的。它的代码托管、开发、维护都依赖 GitHub 平台。
+Bootstrap was developed by Mark Otto and Jacob Thornton at Twitter. It was
+released as an open source product in August 2011 on GitHub.
 
 CSS预处理脚本: Less & Sass
 

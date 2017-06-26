@@ -60,3 +60,34 @@ document 只能在客户端使用，在server端要输出测试log，可以用co
 ```
 The innerHTML property sets or returns the HTML content (inner HTML) of an
 element.
+
+
+Javascript 是一门阻断式语言。
+
+ECMA-263第三版中定义的ECMAscript是各浏览器实现最多的一个版本。
+ECMAScript标识符采用驼峰大小写格式，即第一个字母小写，剩下的每个有意义的单词的首字母大写。
+ECMAScript语句以一个分号结尾，如果省略分号，则由解析器确定语句的结尾。
+
+ECMAScript的变量是松散类型的，所谓松散类型就是可以用来保存任何类型的数据。还句话说，每个变量仅仅是一个用于保存值的占位符而已。定义变量时要使用`var`操作符，未经初始化的变量会保存一个特殊值- undefined.
+有一点必须注意，即使用var操作符定义的变量将成为定义该变量的作用域中的局部变量。 
+
+省略var操作符，可以创建一个全局变量。 
+
+如果定义的变量准备在将来用于保存对象，那么最好将该变量初始化为null而不是其他值。
+
+#### Debug Javascript in the Browser
+
+`F12` show the console log.
+
+    console.log() can print log to the Browser console.
+
+    Show which where the HTML code is displayed in the Web Browser:
+
+Developer -> Network -> Inspector
+
+#### JQuery Syntax
+
+    $('#random_and_compression').on('shown.bs.collapse', function () {
+        ...
+    })
+

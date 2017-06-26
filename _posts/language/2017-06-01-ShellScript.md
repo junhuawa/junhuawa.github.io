@@ -40,8 +40,8 @@ Enclosing a variable name in curly braces, then aplying a special operator to ac
 
 #### Remove sections of each line of files
 
-    [junhuawa@Tesla Docomo]$ echo "DEVEL*.FEP:INFO," |cut -d ':' -f1  
-    DEVEL*.FEP  
+    [junhuawa@Tesla Test]$ echo "DEVEL*.IMG:INFO," |cut -d ':' -f1  
+    DEVEL*.IMG  
 
 Use delimiter(分隔符) ':' to split the string, and only save the first string of the splited strings.  
 
@@ -54,12 +54,11 @@ Use delimiter(分隔符) ':' to split the string, and only save the first string
 
 #### Translate or delete characters
 
-    [junhuawa@Tesla Docomo]$ echo "LCP____AO*.FEP,LCP____SO*.FEP,LCP____SF*.FEP,*.OEP,LCP____AF*.FEP" |tr "," "\n"
-    > LCP____AO*.FEP  
-    LCP____SO*.FEP  
-    LCP____SF*.FEP  
-    *.OEP  
-    LCP____AF*.FEP  
+    [junhuawa@Tesla Test]$ echo "TestA*.IMG, TestS*.IMG, TestSF*.IMG,*.OEP, TestAF*.IMG" |tr "," "\n"
+    > TestA*.IMG  
+    TestS*.IMG  
+    TestSF*.IMG  
+    TestAF*.IMG  
 
 Translate the string "," to "\n".
 
@@ -110,7 +109,7 @@ Number of strings in $fep_matching_list[@]
 
 #### Command find
 
-    [junhuawa@hzling30]$find . -type f -exec file '{}' \;
+    [junhuawa@ling30]$find . -type f -exec file '{}' \;
 
 Find normal file, and use file cmd to show the results. 
 
@@ -216,4 +215,11 @@ fi
     10:41 junhuawa@Tesla:~ $
 ```
 
+#### Multiple conditions in a if 
+```sh
+    if [[ -z ${TESTA} || -z ${TESTB} || -z ${TESTC} ]]; then
+        echo "Need to set TESTA, TESTB, TESTC first in the config!"
+        exit -1
+    fi
+```
 
