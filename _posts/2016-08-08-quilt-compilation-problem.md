@@ -20,7 +20,7 @@ No series file found
 make: *** [cs4321_api.c] Error 2  
 [junhuawa@Tesla]$  
 
-[junhuawa@Tesla]$/home/junhuawa/Test/bld/sdk3/bld-tools/x86_64-pc-linux-gnu/bin/mips64-octeon2-linux-gnu-gcc -O2 -Wall  -fdata-sections -ffunction-sections -DAPI_VERSION=366   -c -o io.o io.c  
+[junhuawa@Tesla]$/home/junhuawa/LRC/bld/sdk3/bld-tools/x86_64-pc-linux-gnu/bin/mips64-octeon2-linux-gnu-gcc -O2 -Wall  -fdata-sections -ffunction-sections -DAPI_VERSION=366   -c -o io.o io.c  
 In file included from cs_rtos.h:31:0,  
 from cs4321_api.h:11,  
     from io.c:24:  
