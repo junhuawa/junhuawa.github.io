@@ -20,7 +20,7 @@ No series file found
 make: *** [cs4321_api.c] Error 2  
 [junhuawa@Tesla]$  
 
-[junhuawa@Tesla]$/var/fpwork1/junhuawa/LRC/bld/sdk3/bld-tools/x86_64-pc-linux-gnu/bin/mips64-octeon2-linux-gnu-gcc -O2 -Wall  -fdata-sections -ffunction-sections -DAPI_VERSION=366   -c -o io.o io.c  
+[junhuawa@Tesla]$/home/junhuawa/LRC/bld/sdk3/bld-tools/x86_64-pc-linux-gnu/bin/mips64-octeon2-linux-gnu-gcc -O2 -Wall  -fdata-sections -ffunction-sections -DAPI_VERSION=366   -c -o io.o io.c  
 In file included from cs_rtos.h:31:0,  
 from cs4321_api.h:11,  
     from io.c:24:  
@@ -34,12 +34,12 @@ There is a .quiltrc file in my home directory, the variables in the file overrid
 Default locations of patches is in the patches sub-directory, the QUILT_PATCHES variable override it's value to wrlinux_quilt_patches, that's the root cause.  
 
 [junhuawa@Tesla]$pwd  
-/var/fpwork1/junhuawa  
+/home/junhuawa  
 [junhuawa@Tesla]$cat ~/quiltrc   
 **export QUILT_PATCHES=wrlinux_quilt_patches**   
 export QUILT_PC=.pc  
 export WRLINUX_USE_QUILT=yes  
-export PATH=$PATH:/var/fpwork/junhuawa/trunk/distro_build/host-cross/bin  
+export PATH=$PATH:/home/junhuawa/trunk/distro_build/host-cross/bin  
 [junhuawa@Tesla]$  
 
 

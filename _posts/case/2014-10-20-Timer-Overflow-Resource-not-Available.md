@@ -21,7 +21,7 @@ Finally root cause: The NE use kernel version 3.101-0, we build the kernel with 
    feature, it will change the structure size of net_device. It cause the oops when use the old igb.ko.
 
 2) Use new LN071C04.IMG(file system with new igb.ko), it report another OOPS when startup lnx-dmxmsg-epo-d. Because the new kernel
-is imcompatible with the old dmxmsg, recompile the LinDX project based on the new hack64gcc. 
+is imcompatible with the old dmxmsg, recompile the Test project based on the new hack64gcc. 
 
 3) timer_stats feature works, but it doesn't provide what we want.
 

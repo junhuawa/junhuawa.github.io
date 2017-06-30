@@ -234,7 +234,7 @@ Oops发生时16进制指令码:
     0x0000000000000030 + 0x3c = 0x000000000000006c. 
 
     (gdb) list * 0x0006c
-    0x6c is in my_oops_init (/var/fpwork1/junhuawa/LCP/src-lrcddg/src/build/lcpa/linux/extra/test/oops.c:12).
+    0x6c is in my_oops_init (/home/junhuawa/LCP/src-lrcddg/src/build/lcpa/linux/extra/test/oops.c:12).
     7           j = jiffies + 10*HZ;
     8
     9           while(time_before(jiffies, j)) {
@@ -324,7 +324,7 @@ Oops发生时16进制指令码:
     0x0000000000000078 <+40>:    daddiu  sp,sp,16
     End of assembler dump.
     (gdb) list * 0x0006c
-    0x6c is in my_oops_init (/var/fpwork1/junhuawa/LCP/src-lrcddg/src/build/lcpa/linux/extra/test/oops.c:12).
+    0x6c is in my_oops_init (/home/junhuawa/LCP/src-lrcddg/src/build/lcpa/linux/extra/test/oops.c:12).
     7           j = jiffies + 10*HZ;
     8
     9           while(time_before(jiffies, j)) {

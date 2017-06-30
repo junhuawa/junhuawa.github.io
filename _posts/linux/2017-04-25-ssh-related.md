@@ -149,14 +149,6 @@ Add both host names and their identity file as follows:
     IdentityFile ~/.ssh/id_rsa
     User root
 
-    Host ulm
-    HostName ulegcpding.emea.nsn-net.net
-    StrictHostKeyChecking no
-    UserKnownHostsFile=/dev/null
-    IdentityFile ~/.ssh/id_rsa
-    User junhuawa
-
-
 ### Why ssh's password prompt too so long to appear
 
 There are several things that can go wrong. Add -vvv to make ssh print a

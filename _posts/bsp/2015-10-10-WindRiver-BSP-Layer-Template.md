@@ -100,10 +100,10 @@ Note that the way to turn a flag off is with a comment asserting that the config
 This actually clears any previous value the flag has, rather than merely having no effect. 
 If you simply don’t want to affect a value, don’t mention it at all in your kernel configuration fragment.
 
-### nsn_cpvc-standard.scc:
+### cpvc-standard.scc:
 
-    scc_leaf bsp/intel_xeon_c600_pch/intel_xeon_c600_pch-standard nsn_cpvc-standard
-    kconf hardware nsn_cpvc.cfg
+    scc_leaf bsp/intel_xeon_c600_pch/intel_xeon_c600_pch-standard cpvc-standard
+    kconf hardware cpvc.cfg
 
 
 ### make linux.config
