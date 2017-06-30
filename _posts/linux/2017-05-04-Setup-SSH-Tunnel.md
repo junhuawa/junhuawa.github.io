@@ -15,7 +15,9 @@ don't need to visit the PC133 first, and then login the Test device by ssh.
 
 ### 免密登陆 Test Device 的设置步骤
 
-1. 创建公私钥, 并将公钥通过`ssh-copy-id` 上传至PC133,
+#### 免密登陆PC133
+
+创建公私钥, 并将公钥通过`ssh-copy-id` 上传至PC133,
    在MyPC侧的 ~/.ssh/config 配置免密登陆, 主机名为 pc133.
 
 ```sh
@@ -34,13 +36,13 @@ don't need to visit the PC133 first, and then login the Test device by ssh.
     [root@localhost ~]# 
 ```
 
-2. 在 MyPC 端创建连接 Test Device 的 SSH 隧道
+#### 在 MyPC 端创建连接 Test Device 的 SSH 隧道
 
 将本地port 2222上的数据全部转发到远端的IP(192.168.255.33), 端口22上.
 
     ssh -L 2222:192.168.255.33:22 pc133
 
-3. 使用正确的 user name ssh 连接本地的 2222 端口, 即可以登陆远端的 Test Device
+#### 使用正确的 user name ssh 连接本地的 2222 端口, 即可以登陆远端的 Test Device
 
 ```sh
     15:38 junhuawa@Tesla:~/junhuawa.github.io/_posts/linux $ ssh -p 2222 root@localhost
@@ -54,7 +56,7 @@ don't need to visit the PC133 first, and then login the Test device by ssh.
     rootfs on / type rootfs (rw,size=117244k,nr_inodes=29311)
     proc on /proc type proc (rw,relatime)
 ```
-4. 也可以设置 ssh config 文件实现免密登陆 Test Device
+#### 也可以设置 ssh config 文件实现免密登陆 Test Device
 
 注意，此时的 `HostName` 应是 `localhost`, 因为监听的端口2222是在本地PC上的.
 同时，需要设置 `Potr` 为 `2222`.
@@ -83,7 +85,7 @@ don't need to visit the PC133 first, and then login the Test device by ssh.
 
 - - -
 
-#### Setup IP Tunnel in the Server
+### Setup IP Tunnel in the Server
 
     ssh -L 2222:192.168.255.5:22 root@10.69.6.133 -fN
 
