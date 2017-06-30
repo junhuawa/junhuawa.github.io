@@ -109,7 +109,7 @@ Number of strings in $fep_matching_list[@]
 
 #### Command find
 
-    [junhuawa@ling30]$find . -type f -exec file '{}' \;
+    [junhuawa@Tesla]$find . -type f -exec file '{}' \;
 
 Find normal file, and use file cmd to show the results. 
 

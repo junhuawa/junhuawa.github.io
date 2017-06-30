@@ -96,7 +96,7 @@ Done
    Loading Device Tree to 007fb000, end 007fffff ... OK
 [    0.000000] Using FCMD machine description
 [    0.000000] Memory CAM mapping: 64/64/64 Mb, residual: 48Mb
-[    0.000000] Linux version 2.6.32.60-2-sampleversion-fcmd (junhuawa@ling42.c
+[    0.000000] Linux version 2.6.32.60-2-sampleversion-fcmd (junhuawa@Tesla.c
 [    0.000000] Found initrd at 0xc78f8000:0xc7fffd18
 [    0.000000] bootconsole [udbg0] enabled
 setup_arch: bootmem
@@ -363,12 +363,12 @@ FCMD login: [   44.828065] UDPCP protocol stack version 0.9.3 compiled at 17:06:
 FCMD login: toor4nns
 Password:
 Login incorrect
-FCMD login: toor4nsn
+FCMD login: root
 Password:
 xecuting /opt/appstart.d/hwapi.appstart
 
 Login incorrect
-FCMD login: toor4nsn
+FCMD login: root
 Password:
 appstart: [user.info] executing /opt/appstart.d/hwapi.appstart
 insmod /lib/modules/2.6.32.60-2-sampleversion-fcmd/kernel/lib/libcrc32c.ko
@@ -383,14 +383,14 @@ FCMD login: [   44.828065] UDPCP protocol stack version 0.9.3 compiled at 17:06:
 FCMD login: toor4nns
 Password:
 Login incorrect
-FCMD login: toor4nsn
+FCMD login: root
 Password:
 xecuting /opt/appstart.d/hwapi.appstart
 
 Login incorrect
 
 Login incorrect
-FCMD login: toor4nsn
+FCMD login: root
 Password:
 root@FCMD:~ >ls
 root@FCMD:~ >cd /ffs/run/
