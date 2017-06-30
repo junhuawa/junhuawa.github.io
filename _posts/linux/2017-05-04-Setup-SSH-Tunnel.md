@@ -19,19 +19,19 @@ don't need to visit the PC133 first, and then login the Test device by ssh.
    在MyPC侧的 ~/.ssh/config 配置免密登陆, 主机名为 pc133.
 
 ```sh
-Host pc133
-HostName 10.69.6.133
-StrictHostKeyChecking no
-UserKnownHostsFile=/dev/null
-IdentityFile ~/.ssh/id_rsa_root
-User root
+    Host pc133
+    HostName 10.69.6.133
+    StrictHostKeyChecking no
+    UserKnownHostsFile=/dev/null
+    IdentityFile ~/.ssh/id_rsa_root
+    User root
 ```
 
 ```sh
-15:09 junhuawa@Tesla:~ $ ssh pc133
-Warning: Permanently added '10.69.6.133' (ECDSA) to the list of known hosts.
-Last login: Fri Jun 30 03:06:59 2017 from 10.140.24.210
-[root@localhost ~]# 
+    15:09 junhuawa@Tesla:~ $ ssh pc133
+    Warning: Permanently added '10.69.6.133' (ECDSA) to the list of known hosts.
+    Last login: Fri Jun 30 03:06:59 2017 from 10.140.24.210
+    [root@localhost ~]# 
 ```
 
 2. 在 MyPC 端创建连接 Test Device 的 SSH 隧道
@@ -56,29 +56,32 @@ Last login: Fri Jun 30 03:06:59 2017 from 10.140.24.210
 ```
 4. 也可以设置 ssh config 文件实现免密登陆 Test Device
 
-注意，此时的 HostName 应是 `localhost`, 因为监听的端口2222是在本地PC上的.
+注意，此时的 `HostName` 应是 `localhost`, 因为监听的端口2222是在本地PC上的.
+同时，需要设置 `Potr` 为 `2222`.
 
 ```sh
-Host testdevice 
-HostName localhost
-StrictHostKeyChecking no
-UserKnownHostsFile=/dev/null
-IdentityFile ~/.ssh/id_rsa_root
-User root
-Port 2222
+    Host testdevice 
+    HostName localhost
+    StrictHostKeyChecking no
+    UserKnownHostsFile=/dev/null
+    IdentityFile ~/.ssh/id_rsa_root
+    User root
+    Port 2222
 ```
 
 ```sh
-15:43 junhuawa@Tesla:~/junhuawa.github.io/_posts/linux $ ssh testdevice
-Warning: Permanently added '[localhost]:2222' (RSA) to the list of known hosts.
-You are about to access a private system. This system is for the use
-of authorized users only. All connections are logged to the extent and
-by means acceptable by the local legislation. Any unauthorized access
-or access attempts may be punished to the fullest extent possible
-under the applicable local legislation.
-root@FSPC:~ >exit
-logout
+    15:43 junhuawa@Tesla:~/junhuawa.github.io/_posts/linux $ ssh testdevice
+    Warning: Permanently added '[localhost]:2222' (RSA) to the list of known hosts.
+    You are about to access a private system. This system is for the use
+    of authorized users only. All connections are logged to the extent and
+    by means acceptable by the local legislation. Any unauthorized access
+    or access attempts may be punished to the fullest extent possible
+    under the applicable local legislation.
+    root@FSPC:~ >exit
+    logout
 ```
+
+- - -
 
 #### Setup IP Tunnel in the Server
 
