@@ -11,7 +11,7 @@ version is below:
 
     -bash-4.3# iperf3 --version
     iperf 3.0.6
-    Linux LRC 3.10.64--sampleversion-lcpa #9 SMP PREEMPT Fri Dec 2 14:21:44 CST 2016 mips64 GNU/Linux
+    Linux Test 3.10.64--sampleversion-lcpa #9 SMP PREEMPT Fri Dec 2 14:21:44 CST 2016 mips64 GNU/Linux
     -bash-4.3# 
 
 

@@ -77,7 +77,7 @@ For example:
     ## Setup new Test Line Main Steps  
     ## Detailed Steps  
     ## IP address and UART Console address  
-    ## Config the IP address permanently in the LRC  
+    ## Config the IP address permanently in the Test  
 
 Use below command can add anchor
 
@@ -90,7 +90,7 @@ result:
     1. [Setup new Test Line Main Steps](#setup new test line main steps)
     1. [Detailed Steps](#detailed steps)
     1. [IP address and UART Console address](#ip address and uart console address)
-    1. [Config the IP address permanently in the LRC](#config the ip address permanently in the lrc)
+    1. [Config the IP address permanently in the Test](#config the ip address permanently in the lrc)
 
 Use macro recording to replace ' ' with '-' in anchor:
 
@@ -104,7 +104,7 @@ Result is like this, still not work:
     1. [Setup new Test Line Main Steps](#setup-new-test-line-main-steps)
     1. [Detailed Steps](#detailed-steps)
     1. [IP address and UART Console address](#ip-address-and-uart-console-address)
-    1. [Config the IP address permanently in the LRC](#config-the-ip-address-permanently-in-the-lrc)
+    1. [Config the IP address permanently in the Test](#config-the-ip-address-permanently-in-the-lrc)
 
 Finally, we can use command f to do the replace.
 

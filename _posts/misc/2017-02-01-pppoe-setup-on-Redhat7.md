@@ -14,7 +14,7 @@ your system to make sure the PPPoE client is installed properly...
 
 LOGIN NAME
 
-Enter your Login Name (default junhuawa): hzaliym2
+Enter your Login Name (default junhuawa): test
 
 INTERFACE
 
@@ -81,7 +81,7 @@ Please enter no or yes (default no):no
 ** Summary of what you entered **
 
 Ethernet Interface: enp0s25
-User name:          hzaliym2
+User name:          test
 Activate-on-demand: No
 Primary DNS:        8.8.8.8
 Secondary DNS:      4.2.2.2

@@ -124,7 +124,7 @@ Set env to build the kernel module, then set KDIR and PWD variable value.
          e1000_82575.o e1000_mac.o e1000_nvm.o e1000_phy.o e1000_mbx.o \
          e1000_api.o e1000_manage.o kcompat.o
 
-    KDIR := /home/xiayi/windriver_3_107_0/distro_build/work_nsn_acpi4_wr4/build/linux-nsn_acpi4-standard-build/
+    KDIR := /home/xiayi/windriver_3_107_0/distro_build/work_acpi4_wr4/build/linux-acpi4-standard-build/
     PWD := $(shell pwd)
     default:
          $(MAKE) -C $(KDIR) SUBDIRS=$(PWD) modules

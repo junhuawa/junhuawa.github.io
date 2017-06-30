@@ -9,7 +9,7 @@ tags: [bsp]
 Bash src.rpm package (bash-3.2-30.fc10.src.rpm) is from the WR, new patches are got from WR website by Matti. 
 The patches are added to directory: /linux_builds/dxscm/WR_Kernel/wrl-403.010/WR/wrlinux-4/layers/wrll-userspace/core/dist in default, 
 but we don't have the permission because it's maintained by SCM team, 
-so we need to add the patch to our LinDX layer.
+so we need to add the patch to our Test layer.
 
 bash-3.2-30.fc10.src.rpm is from dir: 
 
@@ -19,9 +19,9 @@ bash-3.2-30.fc10.src.rpm is from dir:
 
 1) In the /wrll-userspace/core/dist directory, use patch cmd to create the final patches.
 
-    [lindx@esling48]$pwd
+    [junhuawa@Tesla]$pwd
     /linux_builds/dxscm/WR_Kernel/wrl-403.010/WR/wrlinux-4/layers/wrll-userspace/core/dist
-    [lindx@esling48]$tree bash/
+    [junhuawa@Tesla]$tree bash/
     bash/
     |-- Makefile
     |-- Makefile.var
@@ -98,11 +98,11 @@ Before do real patch, we can use --dry-run to test if patch can by done successf
 
      ../../host-cross/bin/quilt diff
 
-6) Use quilt refresh can create the final patches we will use in the LinDX layer.
+6) Use quilt refresh can create the final patches we will use in the Test layer.
 
      ../../host-cross/bin/quilt refresh
 
-7) Then, use exportPatches.tcl to create the custom layer in the LinDX directory
+7) Then, use exportPatches.tcl to create the custom layer in the Test directory
 
     export QUILT_PATCHES=wrlinux_quilt_patches
     export QUILT_PC=.pc
@@ -114,16 +114,16 @@ Before do real patch, we can use --dry-run to test if patch can by done successf
     EXPORT_PATCH_LAYER=path_to_layer \
     EXPORT_PATCH_DESCR=”text”
 
-    exportpatches -f EXPORT_PATCH_PATCH=/var/fpwork/lindx/junhuawa/trunk/distro_build/work_nsn_cpvc/build/bash-3.2/wrlinux_quilt_patches/2014-10-27_07-11-50-bash.patch EXPORT_PATCH_LAYER=/var/fpwork/lindx/junhuawa/trunk/layer/WR4.3/LinDX/ EXPORT_PATCH_DESCR="PR 46209ESPE06: ShellShock patch update for Linux bash shell binary"
+    exportpatches -f EXPORT_PATCH_PATCH=/home/junhuawa/trunk/distro_build/work_cpvc/build/bash-3.2/wrlinux_quilt_patches/2014-10-27_07-11-50-bash.patch EXPORT_PATCH_LAYER=/home/junhuawa/trunk/layer/WR4.3/Test/ EXPORT_PATCH_DESCR="PR 46209ESPE06: ShellShock patch update for Linux bash shell binary"
 
-It will create a directory in /var/fpwork/lindx/junhuawa/trunk/layer/WR4.3/LinDX/
+It will create a directory in /home/junhuawa/trunk/layer/WR4.3/Test/
 
 8) Because we found the patch create by quilt don't have all the changes we done to the src code, so we not use the patch finally, 
 we add the raw patches to the layer directly.
 
-    [lindx@esling48]$pwd
-    /var/fpwork/lindx/junhuawa/trunk/layer/WR4.3/LinDX
-    [lindx@esling48]$tree dist/
+    [junhuawa@Tesla]$pwd
+    /home/junhuawa/trunk/layer/WR4.3/Test
+    [junhuawa@Tesla]$tree dist/
     dist/
     |-- bash
     |   |-- Makefile
@@ -152,15 +152,15 @@ Need to modify bash.spec, rpm_patches.list to add new patches to the files.
 
 11) If this is a new feature like mcelog, we need to add directory in the templates/feature/ directory:
 
-    [lindx@esling48]$tree  templates/feature/bash/
+    [junhuawa@Tesla]$tree  templates/feature/bash/
     templates/feature/bash/
     `-- pkglist.add
 
     0 directories, 1 file
-    [lindx@esling48]$cat templates/feature/bash/pkglist.add
+    [junhuawa@Tesla]$cat templates/feature/bash/pkglist.add
     bash
 
-    [lindx@esling48]$
+    [junhuawa@Tesla]$
 
 ### Reference 
 

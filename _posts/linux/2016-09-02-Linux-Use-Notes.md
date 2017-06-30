@@ -64,7 +64,7 @@ rpm -ql package
 -l, --list
 List files in package.
 
-    [junhuawa@Tesla docomo-ps]$ rpm -ql qbittorrent
+    [junhuawa@Tesla tesla-ps]$ rpm -ql qbittorrent
     /usr/bin/qbittorrent
     /usr/share/appdata/qBittorrent.appdata.xml
     /usr/share/applications/qBittorrent.desktop
@@ -72,7 +72,7 @@ List files in package.
     /usr/share/doc/qbittorrent-3.3.5/AUTHORS
     ...
     /usr/share/pixmaps/qbittorrent.png
-    [junhuawa@Tesla docomo-ps]$ 
+    [junhuawa@Tesla tesla-ps]$ 
 
 ### Convert an rpm package to cpio archive package
 
@@ -82,7 +82,7 @@ List files in package.
 
     rpm -qf /etc/environment
 
-    [junhuawa@Tesla docomo-ps]$ rpm -qf /etc/environment 
+    [junhuawa@Tesla tesla-ps]$ rpm -qf /etc/environment 
     setup-2.8.71-6.el7.noarch
 
 ### Create a terminal in linux terminal
