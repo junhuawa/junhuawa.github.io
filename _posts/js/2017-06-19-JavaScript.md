@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "HTML & CSS!"
+title:  "JavaScript"
 date: 2017-06-19
 category: html 
 tags: [html]
