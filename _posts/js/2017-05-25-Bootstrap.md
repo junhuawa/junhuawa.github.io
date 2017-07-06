@@ -118,3 +118,12 @@ http://getbootstrap.com/css/
 Less 是一门 CSS 预处理语言，它扩充了 CSS 语言，增加了诸如变量、混合（mixin）、函数等功能，让 CSS 更易维护、方便制作主题、扩充。
 
 Less 可以运行在 Node、浏览器和 Rhino 平台上。网上有很多第三方工具帮助你编译 Less 源码。
+
+
+### "jquery.min.css" vs "jquery.css"
+
+The min version is minified, compressed. Functionally they should be identical. The minified version is smaller and downloads faster and should be used in production, but is unreadable and therefore bad during development.
+
+#### Minification
+
+Minification (also minimisation or minimization), in computer programming languages and especially JavaScript, is the process of removing all unnecessary characters from source code, without changing its functionality. These unnecessary characters usually include white space characters, new line characters, comments, and sometimes block delimiters, which are used to add readability to the code but are not required for it to execute.

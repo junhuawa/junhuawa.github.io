@@ -138,3 +138,52 @@ By doing so, .html files will use the whole file as context. Thus, the javascrip
 Preferences -> Privacy -> History 
 
 ![image](../../images/html-css/remember-cookie.png)
+
+#### Problem we do performance testing web develop
+当我加载我的性能测试网页时，没有任何的数据显示，按Show/hide也没有任何显示，
+用console.log() 打印出来，发现在输出LSPA_AXM_c03之后报错.
+![image](../../images/html-css/getElementError.png)
+
+    TypeError: document.getElementById(...) is null
+
+看代码发现，是在查找一个checkbox 的ID，因为找不到ID，所以返回null，报错. 
+原来，原因是LSPA_AXM_c03对应的checkbox没有添加导致这个问题.
+
+```javascript
+function populate_selected_checkboxes()
+{
+    var splitted_cpus = cpus.split(",");
+    for (var i = 0; i < splitted_cpus.length; i++) {
+        console.log(splitted_cpus[i]);
+        document.getElementById("select_" + splitted_cpus[i]).checked = true;
+    }
+}
+```
+加上 select_X86_64 这个ID后问题还是没有解决. 
+```html
+
+    <li><a href="#" class="small" data-value="option1" tabIndex="-1">
+        <input type="checkbox" id="select_X86_64" onclick="select_cpu_clicked('select_X86_64')"/>&nbsp;X86_64</a></li>
+```
+
+原来在匹配对应的CPU时，没有匹配成功，原因是因为用split()函数拆分字符串得到的CPU
+string，包含前置的0，导致匹配不成功。 
+
+```javascript
+var graphs_inputs = [];
+var line_labels = [];
+var default_cpus = "arm,x86_64,powerpc,mips";
+/*var default_cpus = "arm, x86_64, powerpc, mips"; */
+var cpus = default_cpus.split(",");
+
+if (cpus.indexOf("x86_64") != -1) {
+    graphs_inputs[graphs_inputs.length] = "x86_64-c0";
+    line_labels[line_labels.length] = "Intel";
+}
+
+console.log(graphs_inputs);
+console.log(line_labels);
+
+```
+
+
