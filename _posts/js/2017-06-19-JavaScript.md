@@ -186,4 +186,12 @@ console.log(line_labels);
 
 ```
 
+#### Load the page from other computer very slow
+
+性能测试网页在我本地apache
+server上跑起来，本地访问非常快，但是通过别人电脑访问比较慢。
+后来发现原来网页中用到一些google的CDN, 没有用代理，所以访问很慢,
+用了代理之后就好了。第一次稍微慢点，再次打开因为有缓存，速度很快！
+
+![image](../../images/html-css/perf-network.png)
 
