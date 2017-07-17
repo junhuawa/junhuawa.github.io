@@ -102,3 +102,7 @@ scim: Smart Common Input Method
 ibus:  Intelligent Input Bus 
 
 ibus-typing-booster 
+
+#### 文件名转换
+%E5%B0%8F%E5%96%87%E5%8F%AD%E5%B9%BF%E6%92%AD%E5%89%A7.MP3.24K.45%E5%9B%9E.%5B%E9%98%B3%E5%85%89%E5%AE%9D%E8%B4%9D%5D.rar
+
