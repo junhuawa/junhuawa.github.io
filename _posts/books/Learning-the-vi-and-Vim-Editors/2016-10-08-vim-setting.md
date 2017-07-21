@@ -61,6 +61,11 @@ Load external ctags database:
 
     cscope -Rbq
 
+**默认情况下, cscope 只会对 C (.c and .h) 和 yacc (.y) 源文件进行解析,
+如果要解析 C++
+文件, 必须通过文件名指定, 因此, 可以将需要解析的文件名保存到一个文件里, 传给 cscope**
+
+    cscope -bkq -i /tmp/cscope.files
 
 ### 设置使用哪一个cscope
 
