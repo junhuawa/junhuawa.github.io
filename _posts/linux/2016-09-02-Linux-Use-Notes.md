@@ -39,7 +39,6 @@ tags: [linux]
     Red Hat Enterprise Linux Client release 7.2 (Maipo)
     [junhuawa@Tesla Pictures]$ 
 
-
 ### How to return terminal from a ssh connection?
 
 Normal keys are forwarded over the ssh session, so none of those will work. Instead, use the escape sequences. 
@@ -54,15 +53,15 @@ Pinta: A very simple image editor. Pinta is a drawing/editing program modeled on
 Its goal is to provide a simplified alternative to the GIMP for casual users. 
 
 ### bittorrent client
+
     yum search torrent
     yum install qbittorrent
 
 ### Get a rpm package's content
 
-rpm -ql package
+    rpm -ql package
 
--l, --list
-List files in package.
+    -l, --list List files in package.
 
     [junhuawa@Tesla tesla-ps]$ rpm -ql qbittorrent
     /usr/bin/qbittorrent
@@ -117,7 +116,6 @@ in order for the newly added group to get picked up by your user account.
 
 ![image](../../images/usb-device-select-for-windows-vm.png)
 
-
 ### Take Screenshots in Linux
 
 * Take a snapshot of screen in linux by PrintScreen Button
@@ -127,7 +125,7 @@ in order for the newly added group to get picked up by your user account.
 
 * Take snapshot by Screenshot tool in gnome
 
-    It has delay to take snapshot function    
+It has delay to take snapshot function    
 
 ![image](../../images/delay-seconds-to-take-snapshot.png)
 
@@ -179,22 +177,26 @@ LXC: linux container
 ### Firefox address autocomplete
 
 about:config
+
     Set browser.urlbar.auto* related config to true.
 
 #### Disable save fingerprint of remote machine when using ssh/scp
-$ ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no peter@192.168.0.100
-Warning: Permanently added '192.168.0.100' (RSA) to the list of known hosts.
-peter@192.168.0.100's password:
 
-Also we can set the setting to /etc/ssh/ssh_config to let it take effect globally. 
+    $ ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no peter@192.168.0.100
+    Warning: Permanently added '192.168.0.100' (RSA) to the list of known hosts.
+    peter@192.168.0.100's password:
+
+Also we can set the setting to `/etc/ssh/ssh_config` to let it take effect globally. 
 Also can target a particular user, modify the user-specific SSH configuration file (~/.ssh/config).
 Also can bypass key checking for a particular subnet (10.56.8.0/24).
 
 > Host 10.56.*.*
+
     StrictHostKeyChecking no
     UserKnownHostsFile=/dev/null
 
->     bash-4.1$ cat ~/.ssh/config 
+> bash-4.1$ cat ~/.ssh/config 
+
     Host 10.56.*.*
         StrictHostKeyChecking no
         UserKnownHostsFile=/dev/null
@@ -210,32 +212,42 @@ Also can bypass key checking for a particular subnet (10.56.8.0/24).
 problem: 
 
     *. Can change text in a copied box?
-        use F2/Enter Key enter text edit mode(dia version 0.97). 
+
+        Use F2/Enter Key enter text edit mode(dia version 0.97). 
 
 ![image](../../images/linux-use-related/Enter-Text-Edit-mode-in-Dia.png)
 
         Hit Escape/Click outside of editable area leave the Text Edit mode. 
 
- What are the five radio-buttons in the Select menu for?
+#### What are the five radio-buttons in the Select menu for?
 
 They determine what happens when you drag-select objects. Normally (Replace), only the objects included in the drag area end up selected. By selecting other choices in the Select radio menu, you can change that behavior:
 
 Union
+
     Both the drag-selected objects and the previously selected objects end up selected. 
+
 Intersect
+
     The only objects that end up selected are those that were already selected and were drag-selected. 
+
 Remove
+
     Those previously selected objects that are in the drag area become unselected. 
+
 Invert
+
     The objects in the drag area change selectedness: Unselected objects become selected, selected objects become unselected. The objects outside the drag area are not affected. 
 
-These operations correspond to set operations between the previously selected objects and the drag-selected objects.
+
+**These operations correspond to set operations between the previously selected objects and the drag-selected objects.**
 
 ### Tool for file compare like beyond compare in windows
 
     meld
 
 ### /etc/service
+
     provide the service port/protocol map currently used in this machine/server.
 
 ### download rpm packages, not installed
@@ -244,50 +256,52 @@ These operations correspond to set operations between the previously selected ob
     yumdownloader RPM_Name
 
 ### Install aspell checker
-[root@Tesla books]# rpm -qa |grep aspell
-aspell-en-7.1-5.el7.x86_64
-aspell-0.60.6.1-9.el7.x86_64
-[root@Tesla books]# 
 
-[root@Tesla books]# aspell dump dicts
-    en
-    en-variant_0
-    en-variant_1
-    en-variant_2
-    en-w_accents
-    en-wo_accents
-    en_CA
-    en_CA-variant_0
-    en_CA-variant_1
-    en_CA-w_accents
-    en_CA-wo_accents
-    en_GB
-    en_GB-ise
-    en_GB-ise-w_accents
-    en_GB-ise-wo_accents
-    en_GB-ize
-    en_GB-ize-w_accents
-    en_GB-ize-wo_accents
-    en_GB-variant_0
-    en_GB-variant_1
-    en_GB-w_accents
-    en_GB-wo_accents
-    en_US
-    en_US-variant_0
-    en_US-variant_1
-    en_US-w_accents
-    en_US-wo_accents
+    [root@Tesla books]# rpm -qa |grep aspell
+    aspell-en-7.1-5.el7.x86_64
+    aspell-0.60.6.1-9.el7.x86_64
+    [root@Tesla books]# 
+
+    [root@Tesla books]# aspell dump dicts
+        en
+        en-variant_0
+        en-variant_1
+        en-variant_2
+        en-w_accents
+        en-wo_accents
+        en_CA
+        en_CA-variant_0
+        en_CA-variant_1
+        en_CA-w_accents
+        en_CA-wo_accents
+        en_GB
+        en_GB-ise
+        en_GB-ise-w_accents
+        en_GB-ise-wo_accents
+        en_GB-ize
+        en_GB-ize-w_accents
+        en_GB-ize-wo_accents
+        en_GB-variant_0
+        en_GB-variant_1
+        en_GB-w_accents
+        en_GB-wo_accents
+        en_US
+        en_US-variant_0
+        en_US-variant_1
+        en_US-w_accents
+        en_US-wo_accents
 
 aspell -c file
 
 ### Only show file name which grep finds the string "Linux"
-grep -l "Linux"
 
-grep -l prints the filenames whose contents match the pattern, without printing the actual matching lines.
+    grep -l "Linux"
+
+    grep -l prints the filenames whose contents match the pattern, without printing the actual matching lines.
 
 ### Syntax Highlight for Markdown file in Vim
 
-If you use [Pathogen](https://github.com/tpope/vim-pathogen), do this:
+If you use `[Pathogen](https://github.com/tpope/vim-pathogen)`, do this:
 
 ```sh
 cd ~/.vim/bundle
@@ -312,15 +326,6 @@ discount-2.1.8-2.el7.x86_64
 ```
 
 markdown -o Linux-Use-Note.html 2016-09-02-Linux-Use-Notes.md
-
-
-/bin/bash: xunlei.md: command not found
-/bin/bash: xunlei.md: command not found
-/bin/bash: xunlei.md: command not found
-
-### Xunlei address translation
-    [junhuawa@Tesla ~]$ echo "QUFodHRwOi8vYWlrYW5keS5vcmcvW+efpeeUteW9sXd3dy56aGlkeS5jb21d44CQT01HIE9oIE15IEdvZCHjgJHjgJDpq5jmuIXok53lhYk3MjBQ54mIQkQtUk1WQi7kuK3lrZfjgJEucm12Yj9maWQ9eFZiZFpObUFWMk96dzNSLTNSdWI4ODdoNVdFQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQSZtaWQ9NjY2JnRocmVzaG9sZD0xNTAmdGlkPUU1MUREN0JDMDFBOTI4MkJBNzdFQzFDM0JFQjNDQkY3JnNyY2lkPTEyMCZ2ZXJubz0xWlo=" |base64 -d
-    AAhttp://aikandy.org/[知电影www.zhidy.com]【OMG Oh My God!】【高清蓝光720P版BD-RMVB.中字】.rmvb?fid=xVbdZNmAV2Ozw3R-3Rub887h5WEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA&mid=666&threshold=150&tid=E51DD7BC01A9282BA77EC1C3BEB3CBF7&srcid=120&verno=1ZZ[junhuawa@Tesla ~]$ 
 
 ### How to enter ssh password in a script automatically
 
@@ -347,23 +352,24 @@ Variant II
     use command: vimgrep "struct module {" * to find the matched files.
     Then use C+\ f to open the matched file.
 
-[junhuawa@Tesla ccfinderx-core]$ ./autoconf_init.sh 
-./autoconf_init.sh: line 2: libtoolize: command not found
-aclocal: warning: autoconf input should be named 'configure.ac', not 'configure.in'
-automake: warning: autoconf input should be named 'configure.ac', not 'configure.in'
-automake: warning: autoconf input should be named 'configure.ac', not 'configure.in'
-Makefile.am:10: error: Libtool library used but 'LIBTOOL' is undefined
-Makefile.am:10:   The usual way to define 'LIBTOOL' is to add 'LT_INIT'
-Makefile.am:10:   to 'configure.in' and run 'aclocal' and 'autoconf' again.
-Makefile.am:10:   If 'LT_INIT' is in 'configure.in', make sure
-Makefile.am:10:   its definition is in aclocal's search path.
+    [junhuawa@Tesla ccfinderx-core]$ ./autoconf_init.sh 
+    ./autoconf_init.sh: line 2: libtoolize: command not found
+    aclocal: warning: autoconf input should be named 'configure.ac', not 'configure.in'
+    automake: warning: autoconf input should be named 'configure.ac', not 'configure.in'
+    automake: warning: autoconf input should be named 'configure.ac', not 'configure.in'
+    Makefile.am:10: error: Libtool library used but 'LIBTOOL' is undefined
+    Makefile.am:10:   The usual way to define 'LIBTOOL' is to add 'LT_INIT'
+    Makefile.am:10:   to 'configure.in' and run 'aclocal' and 'autoconf' again.
+    Makefile.am:10:   If 'LT_INIT' is in 'configure.in', make sure
+    Makefile.am:10:   its definition is in aclocal's search path.
 
 yum install libtool
 
-CentOS minimal eth config
-vi /etc/sysconfig/network-config/ifcfg-enpos
-onboot=yes
-service network restart
+#### CentOS minimal eth config
+
+    vi /etc/sysconfig/network-config/ifcfg-enpos
+    onboot=yes
+    service network restart
 
 ####
 One of the possible reasons for this is : Unsupported fonts.
@@ -378,31 +384,32 @@ Step 4 : Rebuild your font-cache with fc-cache -f -v or reboot.
 
 ### Set static ip addr for network interface in CentOS7
 
-/etc/sysconfig/network-scripts/ifcfg-enp0s11u1
+    /etc/sysconfig/network-scripts/ifcfg-enp0s11u1
 
 
 ### Calculator in the linux environment
+
 bc - An arbitrary precision calculator language
 
 It have 4 special variables: scale, ibase, obase, last
 
-scale defines how some operations  use  digits  after  the  decimal point.   The  default  value of scale is 0. 
+`scale` defines how some operations  use  digits  after  the  decimal point.   The  default  value of scale is 0. 
 
-ibase and obase define the conversion base for input and output numbers.  The default for both input and output is base 10.
+`ibase` and `obase` define the conversion base for input and output numbers.  The default for both input and output is base 10.
 
-last (an extension) is a variable that has the value of the last printed number.
+`last` (an extension) is a variable that has the value of the last printed number.
 
-Input numbers may contain the characters 0-9 and A-F. (Note: They must be capitals.  Lower case letters are variable names.)
+**Input numbers may contain the characters 0-9 and A-F. (Note: They must be capitals.  Lower case letters are variable names.)**
 
 ### How to capture output from a linux terminal
 
-script - make typescript of terminal session
+`script` - make typescript of terminal session
 
 Before execute your cmd, issue `script`, after execution your cmd, issue `exit`, the log file typescript will be in your local directory.
 
 ### Show thread name from linux terminal
 
-$ ps -eLf | egrep "th_name|UID"
+    $ ps -eLf | egrep "th_name|UID"
 
 ### How do I make Thunderbird's reply format look like Outlook's?
 
@@ -410,14 +417,15 @@ http://askubuntu.com/questions/173505/how-do-i-make-thunderbirds-reply-format-lo
 
 ### Linux Terminal 上下翻页
 
-shift+PageUp
-shift+PageDown
+    shift+PageUp
+    shift+PageDown
 
 ### Auto ssh
-autossh
 
-tigervnc
-tigervnc-server
+    autossh
+
+    tigervnc
+    tigervnc-server
 
 ### shunit2
 http://ssb.stsci.edu/testing/shunit2/shunit2.html

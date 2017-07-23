@@ -2,11 +2,11 @@
 layout: post
 title: "Base64 Binary-To-Text Encoding Schemes"
 date: 2017-07-22
-category: "linux" 
-tags: [linux]
+category: "Linux" 
+tags: [Linux]
 ---
 
-这两天有位同事也要装linux系统连接公司网络办公，但是被连接公司Wifi失败卡住了，连接公司的网络需要配置Certificate，但是根据guide配置后一直连接不上，也不知道什么原因。 
+这两天有位同事也要装Linux系统连接公司网络办公，但是被连接公司Wifi失败卡住了，连接公司的网络需要配置Certificate，但是根据guide配置后一直连接不上，也不知道什么原因。 
 
 我自己以前也配置过，但是我实际上也模模糊糊，不明白。今天特地查了下相关的资料，虽然还是不明白，但是先记录下一些有价值的发现.
 
@@ -41,3 +41,20 @@ Base64编码要求把3个8位字节（3*8=24）转化为4个6位的字节（4*6=
 ![image](../../images/misc/base64.png)
 
 X.509公钥证书也好，电子邮件数据也好，经常要用到Base64编码.
+
+http://blog.csdn.net/xuplus/article/details/51613883
+
+### Xunlei address translation
+
+迅雷的地址一般也用base64编码, 可以用`base64 -d`对其进行解码.
+解码出来，可以看出迅雷的链接头上一般带 "AA", 结尾一般带"ZZ".
+
+    [junhuawa@Tesla ~]$ echo "QUFodHRwOi8vYWlrYW5keS5vcmcvW+efpeeUteW9sXd3dy56aGlkeS5jb21d44CQT01HIE9oIE15IEdvZCHjgJHjgJDpq5jmuIXok53lhYk3MjBQ54mIQkQtUk1WQi7kuK3lrZfjgJEucm12Yj9maWQ9eFZiZFpObUFWMk96dzNSLTNSdWI4ODdoNVdFQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQSZtaWQ9NjY2JnRocmVzaG9sZD0xNTAmdGlkPUU1MUREN0JDMDFBOTI4MkJBNzdFQzFDM0JFQjNDQkY3JnNyY2lkPTEyMCZ2ZXJubz0xWlo=" |base64 -d
+    AAhttp://aikandy.org/[知电影www.zhidy.com]【OMG Oh My God!】【高清蓝光720P版BD-RMVB.中字】.rmvb?fid=xVbdZNmAV2Ozw3R-3Rub887h5WEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA&mid=666&threshold=150&tid=E51DD7BC01A9282BA77EC1C3BEB3CBF7&srcid=120&verno=1ZZ
+    [junhuawa@Tesla ~]$ 
+
+比如这个链接 thunder://QUFodHRwOi8vYy5zcXd1eXQuY29tL2dnZzk2My5yYXJaWg==,
+用 base64 解码出来如下:
+
+    echo "QUFodHRwOi8vYy5zcXd1eXQuY29tL2dnZzk2My5yYXJaWg==" |base64 -d
+    AAhttp://c.sqwuyt.com/ggg963.rarZZ09:01
