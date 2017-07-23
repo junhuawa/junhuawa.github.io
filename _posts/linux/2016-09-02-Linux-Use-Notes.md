@@ -86,6 +86,7 @@ List files in package.
     setup-2.8.71-6.el7.noarch
 
 ### Create a terminal in linux terminal
+
     gnome-terminal -e "ssh root@10.69.120.13"
 
 ### Tool to manage ssh sessions in Linux
@@ -96,20 +97,19 @@ fcitx，ibus是输入法的一种框架，具体的输入法一般都有google p
 
 ### Use Jabra UC VOICE 750 Duo Drk in Redhat
 
-After plug-in the Jabra, select Jabra UC VOICE 750a as the device for sound output/input in System Tools -> Settings -> Sound.
-
+After plug-in the Jabra, select `Jabra UC VOICE 750a` as the device for sound output/input in `System Tools -> Settings -> Sound`.
 
 ### Use usb device in the windows VM in Redhat
 
 * Add vboxusers group for your username, if not, no usb devices can be selected for VM, relogin the user, 
 in order for the newly added group to get picked up by your user account.
 
-    sudo usermod -a -G vboxusers  junhuawa  
-    groups junhuawa
+        sudo usermod -a -G vboxusers  junhuawa  
+        groups junhuawa
 
-    [junhuawa@Tesla ~]$ groups junhuawa  
-    junhuawa : everybody vboxusers  
-    [junhuawa@Tesla ~]$  
+        [junhuawa@Tesla ~]$ groups junhuawa  
+        junhuawa : everybody vboxusers  
+        [junhuawa@Tesla ~]$  
 
 * In the USB Settings, Enable USB Controller(USB 2.0 EHCI Controller)
 
@@ -122,9 +122,8 @@ in order for the newly added group to get picked up by your user account.
 
 * Take a snapshot of screen in linux by PrintScreen Button
 
-    fn + PrintScreen
-
-    The image will be saved to Pictures directory with name "Screenshot from 2016-xx-xx xx-xx-xx.png"
+        fn + PrintScreen
+        The image will be saved to Pictures directory with name "Screenshot from 2016-xx-xx xx-xx-xx.png"
 
 * Take snapshot by Screenshot tool in gnome
 
@@ -134,12 +133,12 @@ in order for the newly added group to get picked up by your user account.
 
 * Use command line, need install imagemagick
 
-    show imagemagick version:
-    import --version
+        show imagemagick version:
+        import --version
 
-    [junhuawa@Tesla misc]$ rpm -qa |grep ImageMagick
-    ImageMagick-6.7.8.9-15.el7_2.x86_64
-    [junhuawa@Tesla misc]$ 
+        [junhuawa@Tesla misc]$ rpm -qa |grep ImageMagick
+        ImageMagick-6.7.8.9-15.el7_2.x86_64
+        [junhuawa@Tesla misc]$ 
 
 Command:
 
@@ -147,7 +146,7 @@ Command:
 
 then, use mouse select an area, a png file will be created in current directory.
 
-show the image:
+Show the image:
 
     eog MyScreen.png
 
@@ -155,25 +154,24 @@ To capture the entire screen after a delay (so you can open some menus or whatev
 
     sleep 10; import -window root MyScreenshot2.png
 
-import -window root, tells ImageMagick to import the "root" window — that is, the entire screen. 
+`import -window root`, tells ImageMagick to import the "root" window — that is, the entire screen. 
 
     sleep 15; import -window root MyScreenshot3.png; gimp MyScreenshot3.png;
 
 Take a screenshot and resize the image to a width of 500 pixels:
+
     import -window root -resize 500 AnotherScreenshot.png
 
 * Take screenshot with GIMP
 
-To take a screenshot with the GIMP, find the following menu option: File —> Create —> Screen Shot. 
+To take a screenshot with the GIMP, find the following menu option: `File —> Create —> Screen Shot`. 
 
 You will then be offered some options for the screenshot such as length of delay and whether you want to take a screenshot of the entire screen, or just a window. Click Snap to take the screenshot, 
 When you're finished, the screenshot will open in the GIMP editing window. 
 
 ![image](../../images/Gimp-screenshot.png)
 
-* Other methods
-
-[http://tips.webdesign10.com/how-to-take-a-screenshot-on-ubuntu-linux](URL)
+[Other methods](http://tips.webdesign10.com/how-to-take-a-screenshot-on-ubuntu-linux)
 
 
 LXC: linux container
