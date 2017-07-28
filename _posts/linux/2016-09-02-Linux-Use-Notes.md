@@ -431,3 +431,7 @@ http://askubuntu.com/questions/173505/how-do-i-make-thunderbirds-reply-format-lo
 http://ssb.stsci.edu/testing/shunit2/shunit2.html
 
 shell script unit test framework
+
+### OpenGrok
+
+OpenGrok is a source code search and cross reference engine. It helps programmers to search, cross-reference and navigate source code trees.
