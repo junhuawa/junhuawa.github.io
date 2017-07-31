@@ -75,6 +75,12 @@ I just used the following syntax <del> ... </del> successfully on GitHub in an i
 ### Lists
 
 1. First ordered list item
+    ```javascript
+        this.func = function(){
+        
+            console.log("Hellow World");
+        }
+    ```
 2. Another item
 ⋅⋅* Unordered sub-list. 
 1. Actual numbers don't matter, just that it's a number
@@ -90,6 +96,9 @@ spaces.⋅⋅
 ⋅⋅⋅Note that this line is separate, but within the same paragraph.⋅⋅
 ⋅⋅⋅(This is contrary to the typical GFM line break behaviour, where trailing
 spaces are not required.)
+
+**对于ordered list，如果里面有code block，则必须缩进(indentation),
+否则，代码块会结束这个list.**
 
 * Unordered list can use asterisks
 * - Or minuses
