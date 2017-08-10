@@ -223,3 +223,8 @@ fi
     fi
 ```
 
+#### Move 10 latest files to specific directory
+
+    ll -t |head -10 |awk '{print $9}' |xargs -i mv {} ~/WorldMarket/EFS/
+
+    mv $(ls | grep IDENTIFIER) /path/to/dest/dir
