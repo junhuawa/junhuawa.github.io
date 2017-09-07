@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "HSFN value is wrong in the critical area"
+title: "HSFN value is wrong in the critical area(Wrong Update HSFN value Order Cause the problem)"
 date: 2017-05-12
 category: "eDRX feature" 
 tags: [hsfn]
@@ -134,6 +134,6 @@ Correct order in the isr handler:
     #endif
 ```
 
-`local_hsfn_update(local_hsfn)` used to correct the hsfn value, because we
+`local_hsfn_update(local_hsfn)` used to correct the hsfn value, because we are
 afraid in some cases, the isr handler will be lost to run in every 10ms, but
 the SFN value got from Casa register is right.
