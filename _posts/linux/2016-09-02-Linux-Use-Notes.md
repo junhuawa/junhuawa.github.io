@@ -435,3 +435,28 @@ shell script unit test framework
 ### OpenGrok
 
 OpenGrok is a source code search and cross reference engine. It helps programmers to search, cross-reference and navigate source code trees.
+
+
+### linux-gate.so.1
+
+当我们用ldd查看一个可执行文件依赖的动态库时, 会看到一个很奇怪的依赖库. 
+
+
+    20:51 junhuawa@Tesla:~/testchroot $ ldd mkimg
+        linux-gate.so.1 =>  (0xf77a2000)
+        libc.so.6 => /lib/libc.so.6 (0xf75bc000)
+        /lib/ld-linux.so.2 (0xf77a3000)
+
+这里linux-gate.so.1没有指向任何目录中的存储地址, 实际上, 这个不是一个真正的文件, 而是内核给每个进程地址空间map的共享对象, 叫
+virtual DSO: dynamically shared object. 
+用/proc/pid/maps可以看到该对象.
+
+    7f4891c4d000-7f4891db1000 rw-p 00000000 00:00 0                          [heap]
+    7ffc357df000-7ffc35800000 rw-p 00000000 00:00 0                          [stack]
+    7ffc359cf000-7ffc359d1000 r-xp 00000000 00:00 0                          [vdso]
+
+
+    root@FCTE:/proc >cat /proc/driver/rtc
+    rtc_time        : 02:40:35
+    rtc_date        : 2012-02-19
+    24hr            : yes

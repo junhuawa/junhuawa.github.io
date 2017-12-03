@@ -47,5 +47,26 @@ Internal Network
     can't visit host.
 
 Host Only Adapter
-
+    就是说只有主机和VM之间的一个网络，需要先在主机上配置一张虚拟网卡,
+    再在VM的setting里配置Host Only Network, 这样即使没有连接网络,
+    host和VM之间也可以互相访问. 
     complicated
+
+#### Can not connect USB Stick to VM
+
+    Change the USB controller setting to USB 3.0 (xHCI) in your VM's settings. 
+
+#### VM配置Host Only Adapter
+
+#### VM 网络配置
+在安装VM时(尤其安装公司windows时), 需要用Bridged Network,
+通过cable连接到外部网络, 使虚拟机得到一个外部的IP地址. 
+
+
+安装好后, 一般给VM配置2张网卡, 一张网卡设置成NAT, 另一张设置成采用Host Only
+Adapter. 
+
+
+#### 安装CentOS虚拟机问题
+安装好后, 再安装GNOME Desktop, 重启后进不了Desktop, 直接黑屏， 查原因,
+是因为开了3D Acceleration, 将其Disable就好了. 
