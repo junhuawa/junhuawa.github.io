@@ -1,0 +1,26 @@
+# File mddg/sfn/Makefile
+# version 1.0
+# Description
+#	Makefile for ddal_sfn_mod.ko
+#
+# Author
+#    Rade Bozic	 ,SYSGO AG,	 rade.bozic.ext@nsn.com 
+#
+# History
+#    	Rade Bozic 	, SYSGO AG,	6.2.2008 		 First version 1.0
+#
+#     Copyright (C) Nokia 2014
+#
+
+MODULE=mddg_sfn
+
+#KDIR  := /utran/fdd/nodeb/cc/linux/kernel-2.6/
+KDIR  := /dev/shm/junhuawa/mREC/src-fsmbos/src/kernel/build/fcmd/kernel 
+PWD   := $(shell pwd)
+
+default:
+	$(MAKE) -C $(KDIR)  SUBDIRS=$(PWD) modules ARCH=powerpc CROSS_COMPILE=/build/home/SC_LFS/sdk/tags/PS_LFS_SDK_3_28/bld-tools/x86_64-pc-linux-gnu/bin/powerpc-e500-linux-gnu- EXTRA_CFLAGS="-g -DCONFIG_FCMD"
+
+clean:
+	rm -rf $(MODULE).o *~ core .depend .*.cmd *.ko *.mod.[co] .tmp_versions Module.symvers
+

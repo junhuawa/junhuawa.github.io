@@ -31,3 +31,27 @@ Then, open outlook, it should works!
 
 Another solution is enter safe mode first(by issue `outlook /safe`), and then,
 restart  the outlook, it should works!
+
+#### Open another person's calendar
+
+
+In Calendar, click Home.
+
+In the Manage Calendars group, click Open Calendar, and then click Open Shared
+Calendar.
+
+Type a name in the Name box, or click Name to select a name from the Address
+Book.
+
+The shared Calendar appears next to any calendar that is already in the view.
+
+After you access a shared Calendar for the first time, the Calendar is added
+to the folder pane. The next time that you want to view the shared Calendar,
+you can click it in the Folder Pane.
+
+If the other person whose Calendar you want to open hasn’t granted you
+permission to view it, Outlook prompts you to ask the person for permission.
+If you click Yes, a sharing request email message opens automatically. The
+message requests the person to share his or her Calendar with you and also
+provides the option to share your default Calendar with him or her.
+
